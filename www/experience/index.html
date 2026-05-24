@@ -1,0 +1,2183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Experience | Dann Butt</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* -----------------------------------------------
+            RESET & BASE STYLES - BLACK BACKGROUND, WHITE TEXT
+        ----------------------------------------------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000000;
+            font-family: 'Inter', sans-serif;
+            color: #ffffff;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Typography System - ALL WHITE */
+        h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, h6 {
+            color: #ffffff;
+        }
+
+        h1, .h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        h2, .h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        h3, .h3 {
+            font-size: clamp(1.4rem, 3vw, 1.8rem);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        h4, .h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+            color: #ffffff;
+        }
+
+        .sqsrte-large {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            opacity: 0.8;
+        }
+
+        /* Layout Utilities */
+        .site-wrapper {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 0 3vw;
+        }
+
+        /* Header Styles - ENLARGED TEXT WITH DROPDOWN */
+        .site-header {
+            position: relative;
+            background: #000000;
+            padding: 1.5vw 3vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            border-bottom: 1px solid #333333;
+        }
+
+       .header-title a {
+    font-size: 3.6rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+}
+
+.header-nav-list a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 2.4rem;
+    transition: opacity 0.2s ease;
+}
+
+.dropbtn {
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: #ffffff;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-family: inherit;
+    transition: opacity 0.2s ease;
+} 
+
+        .header-nav-list {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+
+/* Dropdown Styles - JavaScript Controlled */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: #ffffff;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-family: inherit;
+    transition: opacity 0.2s ease;
+}
+
+.dropbtn:hover {
+    opacity: 0.7;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: -1rem;
+    background-color: #111111;
+    min-width: 220px;
+    border-radius: 12px;
+    border: 1px solid #333333;
+    z-index: 100;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.dropdown-content.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-content a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: background 0.2s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #222222;
+    opacity: 1;
+}
+
+.dropdown-divider {
+    height: 1px;
+    background: #333333;
+    margin: 0.25rem 0;
+}
+
+/* Category-specific hover colors */
+.dropdown-content a[href*="Project%20Management"]:hover { background: #1a3a2a; }
+.dropdown-content a[href*="Technical%20Direction"]:hover { background: #2a2a3a; }
+.dropdown-content a[href*="Fabrication"]:hover { background: #3a2a1a; }
+.dropdown-content a[href*="Drafting"]:hover { background: #1a2a3a; }
+.dropdown-content a[href*="Miscellaneous"]:hover { background: #2a1a3a; }
+
+                /* Responsive Header */
+       @media (max-width: 768px) {
+    .site-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 4vw;
+    }
+    .header-nav-list {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .header-title a {
+        font-size: 2.5rem;
+    }
+    .header-nav-list a,
+    .dropbtn {
+        font-size: 1.6rem;
+    }
+    .dropdown-content {
+        position: static;
+        display: none;
+        margin-top: 0.5rem;
+        background: #1a1a1a;
+    }
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+} 
+
+        /* Section Styles */
+        .page-section {
+            padding: 4vw 0;
+            width: 100%;
+        }
+
+        .full-bleed-section {
+            padding: 0;
+        }
+
+        /* Hero Video Block */
+        .hero-video {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0;
+            line-height: 0;
+        }
+        
+        .hero-video video {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Two Column Text Section */
+        .two-column-text {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4rem;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .text-left {
+            flex: 1.2;
+        }
+
+        .text-right {
+            flex: 0.8;
+            text-align: right;
+        }
+
+        @media (max-width: 768px) {
+            .two-column-text {
+                flex-direction: column;
+                gap: 2rem;
+                padding: 2rem 1.5rem;
+            }
+            .text-right {
+                text-align: left;
+            }
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease;
+            background: #111111;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card img {
+            width: 100%;
+            aspect-ratio: 3 / 2;
+            object-fit: cover;
+            display: block;
+        }
+
+        .project-card h3 {
+            font-size: 1.25rem;
+            margin: 1rem 1rem 0.5rem;
+            color: #ffffff;
+        }
+
+        .project-card p {
+            font-size: 0.9rem;
+            color: #cccccc;
+            margin: 0 1rem 1rem;
+        }
+
+        .project-card .btn {
+            display: inline-block;
+            background: #ffffff;
+            color: #000000;
+            padding: 0.6rem 1.2rem;
+            margin: 0 1rem 1rem;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border-radius: 30px;
+            text-align: center;
+            align-self: flex-start;
+            transition: background 0.2s ease;
+        }
+
+        .project-card .btn:hover {
+            background: #dddddd;
+        }
+
+        /* Feature Row */
+        .feature-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            align-items: center;
+            max-width: 1400px;
+            margin: 3rem auto;
+            padding: 2rem;
+        }
+
+        .feature-row.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .feature-text {
+            flex: 1;
+            color: #ffffff;
+        }
+
+        .feature-image {
+            flex: 1;
+        }
+
+       .feature-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 30px;
+    transition: border-radius 0.3s ease;
+}
+
+.feature-image img:hover {
+    border-radius: 8px;
+} 
+
+        @media (max-width: 768px) {
+            .feature-row, .feature-row.reverse {
+                flex-direction: column;
+            }
+        }
+
+        /* Horizontal Rule */
+        hr {
+            margin: 2rem 0;
+            border: 0;
+            height: 1px;
+            background: #333333;
+        }
+
+        /* Recent Grid */
+        .recent-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .recent-item h4 {
+            margin-bottom: 0.25rem;
+            color: #ffffff;
+        }
+
+        .recent-item p {
+            color: #aaaaaa;
+            font-size: 0.9rem;
+        }
+
+       /* Footer with Contact Info */
+.site-footer {
+    padding: 2rem 2rem;
+    text-align: center;
+    border-top: 1px solid #222222;
+    margin-top: 2rem;
+    background-color: #000000;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-contact {
+    margin-bottom: 1rem;
+}
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+    color: #ffffff;
+}
+
+.contact-link.linkedin:hover {
+    color: #0077b5;
+}
+
+.contact-icon {
+    font-size: 0.9rem;
+}
+
+.contact-divider {
+    color: #444444;
+}
+
+.footer-copyright p {
+    font-size: 0.75rem;
+    color: #777777;
+    margin-bottom: 0;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .contact-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .contact-divider {
+        display: none;
+    }
+    
+    .site-footer {
+        padding: 1.5rem;
+    }
+} 
+
+        /* Video Showcase Section */
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            background: #000000;
+        }
+
+        .showcase-video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Carousel Styles */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: #aaaaaa;
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .carousel-track-container {
+            overflow: hidden;
+            flex: 1;
+            border-radius: 16px;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            gap: 2rem;
+        }
+
+        .carousel-slide {
+            min-width: calc(33.333% - 1.33rem);
+            flex-shrink: 0;
+        }
+
+        .project-card-carousel {
+            background: #111111;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+
+        .project-card-carousel:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-image-wrapper-carousel {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            background: #222222;
+        }
+
+        .project-image-wrapper-carousel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card-carousel:hover .project-image-wrapper-carousel img {
+            transform: scale(1.05);
+        }
+
+        .project-category-badge-carousel {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255,255,255,0.95);
+            color: #000000;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .project-info-carousel {
+            padding: 1.25rem;
+        }
+
+        .project-title-carousel {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.35rem;
+            color: #ffffff;
+        }
+
+        .project-role-carousel {
+            font-size: 0.8rem;
+            color: #aaaaaa;
+            margin-bottom: 0.25rem;
+        }
+
+        .project-year-carousel {
+            font-size: 0.75rem;
+            color: #777777;
+            margin-bottom: 1rem;
+        }
+
+        .btn-carousel {
+            display: inline-block;
+            background: #ffffff;
+            color: #000000;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border-radius: 30px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-carousel:hover {
+            background: #dddddd;
+            transform: translateX(3px);
+        }
+
+        /* Carousel Arrows */
+        .carousel-arrow {
+            background: #222222;
+            border: 1px solid #444444;
+            color: #ffffff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .carousel-arrow:hover {
+            background: #ffffff;
+            color: #000000;
+            border-color: #ffffff;
+        }
+
+        /* Carousel Dots */
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 2rem;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #444444;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .dot:hover {
+            background: #888888;
+        }
+
+        .dot.active {
+            background: #ffffff;
+            width: 24px;
+            border-radius: 10px;
+        }
+
+        /* Filter Buttons */
+        .category-filters {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.25rem;
+            background: transparent;
+            border: 1.5px solid #444444;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #dddddd;
+        }
+
+        .filter-btn:hover {
+            border-color: #ffffff;
+            color: #ffffff;
+        }
+
+        .filter-btn.active {
+            background: #ffffff;
+            border-color: #ffffff;
+            color: #000000;
+        }
+
+        /* Performance Schedule */
+        .performance-schedule {
+            background: #111111;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+        }
+        
+        .performance-schedule h3 {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            margin-bottom: 0.75rem;
+            color: #ffffff;
+        }
+        
+        .performance-schedule ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+        
+        .performance-schedule li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #222222;
+            color: #e0e0e0;
+        }
+
+        .talkback-badge {
+            background: #ffffff;
+            color: #000000;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-left: 0.75rem;
+        }
+
+        .talkback-notice {
+            background: #111111;
+            border-left: 4px solid #ffffff;
+            padding: 1rem 1.25rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .talkback-notice p {
+            margin: 0;
+            color: #e0e0e0;
+        }
+        
+        .talkback-notice strong {
+            color: #ffffff;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 640px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            .projects-grid {
+                gap: 1.5rem;
+                padding: 0 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .video-container {
+                border-radius: 8px;
+            }
+            
+            .carousel-slide {
+                min-width: 100%;
+            }
+            
+            .carousel-arrow {
+                width: 32px;
+                height: 32px;
+                font-size: 1rem;
+            }
+            
+            .carousel-container {
+                gap: 0.5rem;
+            }
+        }
+
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .carousel-slide {
+                min-width: calc(50% - 1rem);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="site-wrapper">
+<!-- HEADER WITH JS DROPDOWN -->
+<header class="site-header">
+    <div class="header-title">
+        <a href="/">Dann Butt</a>
+    </div>
+    <nav>
+        <ul class="header-nav-list">
+            <li><a href="/">Home</a></li>
+            <li class="dropdown" id="experienceDropdown">
+                <button class="dropbtn" id="dropbtn">Experience ▼</button>
+                <div class="dropdown-content" id="dropdownContent">
+                    <a href="/experience/">📁 All Experience</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="/experience/?category=Project%20Management">📋 Project Management</a>
+                    <a href="/experience/?category=Technical%20Direction">🔧 Technical Direction</a>
+                    <a href="/experience/?category=Fabrication">🛠️ Fabrication</a>
+                    <a href="/experience/?category=Drafting">✏️ Drafting</a>
+                    <a href="/experience/?category=Miscellaneous">🎭 Miscellaneous</a>
+                </div>
+            </li>
+            <li><a href="/resume/">Resume & About</a></li>
+        </ul>
+    </nav>
+</header>
+
+        <main>
+            
+<section class="page-section">
+    <div class="container">
+        <div class="experience-header">
+            <h2 class="experience-title">Experience</h2>
+            <p class="experience-subtitle">Project Management | Technical Direction | Fabrication | Drafting | Miscellaneous</p>
+        </div>
+        
+        <!-- Dropdown Filter -->
+        <div class="filter-container">
+            <label for="category-select" class="filter-label">Filter by category:</label>
+            <select id="category-select" class="category-select">
+                <option value="all">All Experience</option>
+                <option value="Project Management">Project Management</option>
+                <option value="Technical Direction">Technical Direction</option>
+                <option value="Fabrication">Fabrication</option>
+                <option value="Drafting">Drafting</option>
+                <option value="Miscellaneous">Miscellaneous</option>
+            </select>
+        </div>
+        
+        <div class="experience-grid" id="experienceGrid">
+            
+            <div class="experience-card" data-category="Project Management">
+                <a href="/experience/celebrate-israel-parade/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://d19nu91zz7veuv.cloudfront.net/wp-content/uploads/20240501231909/Celebrate-Israel-Livestream-Thumbnail-1.png" alt="Celebrate Israel Parade" loading="lazy">
+                        <div class="experience-category-badge">Project Management</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Celebrate Israel Parade</h3>
+                        <p class="experience-role">Assistant to Event Project Manager</p>
+                        <p class="experience-year">2026</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Project Management">
+                <a href="/experience/walk-ms-nj/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://donordrivecontent.com/mssociety/images/$event2514$/facebookImage.png?v=202605201454" alt="Walk MS: New Jersey" loading="lazy">
+                        <div class="experience-category-badge">Project Management</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Walk MS: New Jersey</h3>
+                        <p class="experience-role">Assistant to Event Project Manager</p>
+                        <p class="experience-year">2026</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Project Management">
+                <a href="/experience/walk-ms-nyc/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://donordrivecontent.com/mssociety/images/$event2514$/facebookImage.png?v=202605201454" alt="Walk MS: NYC" loading="lazy">
+                        <div class="experience-category-badge">Project Management</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Walk MS: NYC</h3>
+                        <p class="experience-role">Assistant to Event Project Manager</p>
+                        <p class="experience-year">2026</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Project Management">
+                <a href="/experience/walk-ms-long-island/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://donordrivecontent.com/mssociety/images/$event2514$/facebookImage.png?v=202605201454" alt="Walk MS: Long Island" loading="lazy">
+                        <div class="experience-category-badge">Project Management</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Walk MS: Long Island</h3>
+                        <p class="experience-role">Assistant to Event Project Manager</p>
+                        <p class="experience-year">2026</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Project Management">
+                <a href="/experience/nyc-half-marathon/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://www.runningusa.org/wp-content/uploads/2023/01/NYCM_HorizontalLogo_FC_RGB-640x375.png" alt="NYC Half Marathon" loading="lazy">
+                        <div class="experience-category-badge">Project Management</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">NYC Half Marathon</h3>
+                        <p class="experience-role">Assistant to Event Project Manager</p>
+                        <p class="experience-year">2026</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Project Management">
+                <a href="/experience/nyc-brooklyn-half/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQruWYs-1ps-EHs_qjPijqduKH1XY_HQRGqLw&amp;s" alt="NYC Brooklyn Half" loading="lazy">
+                        <div class="experience-category-badge">Project Management</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">NYC Brooklyn Half</h3>
+                        <p class="experience-role">Assistant to Event Project Manager</p>
+                        <p class="experience-year">2026</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Project Management">
+                <a href="/experience/aha-wall-street-run/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://cdn.raceroster.com/events/0119ba09-2fd5-4ce2-ae9c-8dfcf23166a1/images/640656f67cd71.png" alt="AHA Wall Street Run" loading="lazy">
+                        <div class="experience-category-badge">Project Management</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">AHA Wall Street Run</h3>
+                        <p class="experience-role">Assistant to Event Project Manager</p>
+                        <p class="experience-year">2026</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Project Management">
+                <a href="/experience/northwell-walk-li/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://dam.northwell.edu/m/173ca8235af00e28/Drupal-NEWS_Northwell-Health-Walk-2024.jpg" alt="Northwell Walk LI" loading="lazy">
+                        <div class="experience-category-badge">Project Management</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Northwell Walk LI</h3>
+                        <p class="experience-role">Assistant to Event Project Manager</p>
+                        <p class="experience-year">2026</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Project Management">
+                <a href="/experience/kindeva/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://mma.prnewswire.com/media/1162639/kindeva_logos_2_color_blk.jpg?p=facebook" alt="Kindeva" loading="lazy">
+                        <div class="experience-category-badge">Project Management</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Kindeva</h3>
+                        <p class="experience-role">Assistant to Event Project Manager</p>
+                        <p class="experience-year">2026</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Project Management">
+                <a href="/experience/nyc-ball-drop/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="NYC Ball Drop" loading="lazy">
+                        <div class="experience-category-badge">Project Management</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">NYC Ball Drop</h3>
+                        <p class="experience-role">Stage Carpenter</p>
+                        <p class="experience-year">2025</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Project Management">
+                <a href="/experience/pier-36/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Pier 36 - Independence" loading="lazy">
+                        <div class="experience-category-badge">Project Management</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Pier 36 - Independence</h3>
+                        <p class="experience-role">Stage Carpenter</p>
+                        <p class="experience-year">2026</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Project Management">
+                <a href="/experience/sleep-out-in-times-square/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Sleep Out in Times Square" loading="lazy">
+                        <div class="experience-category-badge">Project Management</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Sleep Out in Times Square</h3>
+                        <p class="experience-role">Post-Production Aide</p>
+                        <p class="experience-year">2026</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Fabrication">
+                <a href="/experience/scene-shop-assistant/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Scene Shop Assistant" loading="lazy">
+                        <div class="experience-category-badge">Fabrication</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Scene Shop Assistant</h3>
+                        <p class="experience-role">Scene Shop Assistant</p>
+                        <p class="experience-year">2024-2026</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Fabrication">
+                <a href="/experience/linda-gross-theater-reconstruction/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Linda Gross Theater Reconstruction" loading="lazy">
+                        <div class="experience-category-badge">Fabrication</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Linda Gross Theater Reconstruction</h3>
+                        <p class="experience-role">Shop Carpenter</p>
+                        <p class="experience-year">2025</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Fabrication">
+                <a href="/experience/claire-tow-theater/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Claire Tow Theater - Women Among Women" loading="lazy">
+                        <div class="experience-category-badge">Fabrication</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Claire Tow Theater - Women Among Women</h3>
+                        <p class="experience-role">Shop Carpenter</p>
+                        <p class="experience-year">2026</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Fabrication">
+                <a href="/experience/kentucky/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Kentucky" loading="lazy">
+                        <div class="experience-category-badge">Fabrication</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Kentucky</h3>
+                        <p class="experience-role">Shop Carpenter &amp; Painter</p>
+                        <p class="experience-year">2024</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Fabrication">
+                <a href="/experience/the-sins-of-sor-juana/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="The Sins of Sor Juana" loading="lazy">
+                        <div class="experience-category-badge">Fabrication</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">The Sins of Sor Juana</h3>
+                        <p class="experience-role">Shop Carpenter &amp; Painter</p>
+                        <p class="experience-year">2024</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Fabrication">
+                <a href="/experience/three-penny-opera/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Three Penny Opera" loading="lazy">
+                        <div class="experience-category-badge">Fabrication</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Three Penny Opera</h3>
+                        <p class="experience-role">Shop Carpenter &amp; Painter</p>
+                        <p class="experience-year">2024</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Fabrication">
+                <a href="/experience/the-amethyst-and-the-peridot/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="The Amethyst and the Peridot" loading="lazy">
+                        <div class="experience-category-badge">Fabrication</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">The Amethyst and the Peridot</h3>
+                        <p class="experience-role">Shop Carpenter &amp; Painter</p>
+                        <p class="experience-year">2024</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Fabrication">
+                <a href="/experience/horoscope/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Horoscope" loading="lazy">
+                        <div class="experience-category-badge">Fabrication</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Horoscope</h3>
+                        <p class="experience-role">Shop Carpenter &amp; Painter</p>
+                        <p class="experience-year">2025</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Fabrication">
+                <a href="/experience/by-the-way-meet-vera-stark/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66e8a3eeddfd12111f8eabbb/0892f094-8536-4d99-90d2-3979f50e98d1/VeraStark400x600+%281%29.jpg" alt="By the Way, Meet Vera Stark" loading="lazy">
+                        <div class="experience-category-badge">Fabrication</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">By the Way, Meet Vera Stark</h3>
+                        <p class="experience-role">Shop Carpenter &amp; Painter</p>
+                        <p class="experience-year">2025</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Fabrication">
+                <a href="/experience/the-tempest/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66e8a3eeddfd12111f8eabbb/6d9c4a36-cf3a-4644-9a23-02b56ddb630d/Tempest400x600.jpg" alt="The Tempest" loading="lazy">
+                        <div class="experience-category-badge">Fabrication</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">The Tempest</h3>
+                        <p class="experience-role">Shop Carpenter &amp; Painter</p>
+                        <p class="experience-year">2025</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Fabrication">
+                <a href="/experience/a-lunar-rhapsody/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66e8a3eeddfd12111f8eabbb/cf67a848-72f2-4544-82cd-85af125a8436/LunarRhapsody400x600+%281%29.jpg" alt="A Lunar Rhapsody" loading="lazy">
+                        <div class="experience-category-badge">Fabrication</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">A Lunar Rhapsody</h3>
+                        <p class="experience-role">Shop Carpenter &amp; Painter</p>
+                        <p class="experience-year">2025</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Fabrication">
+                <a href="/experience/eurydice/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66e8a3eeddfd12111f8eabbb/2378a4e8-b812-4737-bab8-16b5df8b92e5/Eurydice400x600.jpg" alt="Eurydice" loading="lazy">
+                        <div class="experience-category-badge">Fabrication</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Eurydice</h3>
+                        <p class="experience-role">Shop Carpenter &amp; Painter</p>
+                        <p class="experience-year">2026</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Technical Direction">
+                <a href="/experience/turandot/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Turandot" loading="lazy">
+                        <div class="experience-category-badge">Technical Direction</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Turandot</h3>
+                        <p class="experience-role">Stage Carpenter</p>
+                        <p class="experience-year">2025</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Technical Direction">
+                <a href="/experience/the-barber-of-seville/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="The Barber of Seville" loading="lazy">
+                        <div class="experience-category-badge">Technical Direction</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">The Barber of Seville</h3>
+                        <p class="experience-role">Stage Carpenter</p>
+                        <p class="experience-year">2025</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Technical Direction">
+                <a href="/experience/the-queen-of-spades/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="The Queen of Spades" loading="lazy">
+                        <div class="experience-category-badge">Technical Direction</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">The Queen of Spades</h3>
+                        <p class="experience-role">Stage Carpenter</p>
+                        <p class="experience-year">2025</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Technical Direction">
+                <a href="/experience/anthony-and-cleopatra/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Anthony and Cleopatra" loading="lazy">
+                        <div class="experience-category-badge">Technical Direction</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Anthony and Cleopatra</h3>
+                        <p class="experience-role">Stage Carpenter</p>
+                        <p class="experience-year">2025</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Technical Direction">
+                <a href="/experience/aida/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Aida" loading="lazy">
+                        <div class="experience-category-badge">Technical Direction</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Aida</h3>
+                        <p class="experience-role">Stage Carpenter</p>
+                        <p class="experience-year">2025</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Technical Direction">
+                <a href="/experience/salome/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Salome" loading="lazy">
+                        <div class="experience-category-badge">Technical Direction</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Salome</h3>
+                        <p class="experience-role">Stage Carpenter</p>
+                        <p class="experience-year">2025</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Technical Direction">
+                <a href="/experience/le-nozze-di-figaro/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Le Nozze di Figaro" loading="lazy">
+                        <div class="experience-category-badge">Technical Direction</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Le Nozze di Figaro</h3>
+                        <p class="experience-role">Stage Carpenter</p>
+                        <p class="experience-year">2025</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Technical Direction">
+                <a href="/experience/arabella/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Arabella" loading="lazy">
+                        <div class="experience-category-badge">Technical Direction</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Arabella</h3>
+                        <p class="experience-role">Stage Carpenter</p>
+                        <p class="experience-year">2025</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Technical Direction">
+                <a href="/experience/andrea-chenier/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Andrea Chenier" loading="lazy">
+                        <div class="experience-category-badge">Technical Direction</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Andrea Chenier</h3>
+                        <p class="experience-role">Stage Carpenter</p>
+                        <p class="experience-year">2025</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Technical Direction">
+                <a href="/experience/carmen/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Carmen" loading="lazy">
+                        <div class="experience-category-badge">Technical Direction</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Carmen</h3>
+                        <p class="experience-role">Stage Carpenter</p>
+                        <p class="experience-year">2025</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Technical Direction">
+                <a href="/experience/don-giovanni/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Don Giovanni" loading="lazy">
+                        <div class="experience-category-badge">Technical Direction</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Don Giovanni</h3>
+                        <p class="experience-role">Stage Carpenter</p>
+                        <p class="experience-year">2025</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Technical Direction">
+                <a href="/experience/la-fille-du-regiment/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="La Fille du Regiment" loading="lazy">
+                        <div class="experience-category-badge">Technical Direction</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">La Fille du Regiment</h3>
+                        <p class="experience-role">Stage Carpenter</p>
+                        <p class="experience-year">2025</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Technical Direction">
+                <a href="/experience/the-magic-flute/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="The Magic Flute" loading="lazy">
+                        <div class="experience-category-badge">Technical Direction</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">The Magic Flute</h3>
+                        <p class="experience-role">Stage Carpenter</p>
+                        <p class="experience-year">2026</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Technical Direction">
+                <a href="/experience/porgy-and-bess/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Porgy and Bess" loading="lazy">
+                        <div class="experience-category-badge">Technical Direction</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Porgy and Bess</h3>
+                        <p class="experience-role">Stage Carpenter</p>
+                        <p class="experience-year">2026</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Technical Direction">
+                <a href="/experience/i-puritani/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="I Puritani" loading="lazy">
+                        <div class="experience-category-badge">Technical Direction</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">I Puritani</h3>
+                        <p class="experience-role">Stage Carpenter</p>
+                        <p class="experience-year">2026</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Technical Direction">
+                <a href="/experience/madama-butterfly/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Madama Butterfly" loading="lazy">
+                        <div class="experience-category-badge">Technical Direction</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Madama Butterfly</h3>
+                        <p class="experience-role">Stage Carpenter</p>
+                        <p class="experience-year">2025</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Technical Direction">
+                <a href="/experience/tristan-und-isolde/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Tristan Und Isolde" loading="lazy">
+                        <div class="experience-category-badge">Technical Direction</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Tristan Und Isolde</h3>
+                        <p class="experience-role">Stage Carpenter</p>
+                        <p class="experience-year">2026</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Technical Direction">
+                <a href="/experience/innocence/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Innocence" loading="lazy">
+                        <div class="experience-category-badge">Technical Direction</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Innocence</h3>
+                        <p class="experience-role">Stage Carpenter</p>
+                        <p class="experience-year">2026</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Technical Direction">
+                <a href="/experience/el-ultimo-sueno-de-frida/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="El Ultimo Sueno de Frida" loading="lazy">
+                        <div class="experience-category-badge">Technical Direction</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">El Ultimo Sueno de Frida</h3>
+                        <p class="experience-role">Stage Carpenter</p>
+                        <p class="experience-year">2026</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Technical Direction">
+                <a href="/experience/kavalier-and-clay/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Kavalier and Clay" loading="lazy">
+                        <div class="experience-category-badge">Technical Direction</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Kavalier and Clay</h3>
+                        <p class="experience-role">Uprigger/Board Operator</p>
+                        <p class="experience-year">2025</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Technical Direction">
+                <a href="/experience/la-boheme/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="La Boheme" loading="lazy">
+                        <div class="experience-category-badge">Technical Direction</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">La Boheme</h3>
+                        <p class="experience-role">Stage Electrician</p>
+                        <p class="experience-year">2025</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Technical Direction">
+                <a href="/experience/swan-lake/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Swan Lake" loading="lazy">
+                        <div class="experience-category-badge">Technical Direction</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Swan Lake</h3>
+                        <p class="experience-role">Stage Carpenter</p>
+                        <p class="experience-year">2025</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Technical Direction">
+                <a href="/experience/woolf-works/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Woolf Works" loading="lazy">
+                        <div class="experience-category-badge">Technical Direction</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Woolf Works</h3>
+                        <p class="experience-role">Stage Carpenter</p>
+                        <p class="experience-year">2025</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Technical Direction">
+                <a href="/experience/giselle/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Giselle" loading="lazy">
+                        <div class="experience-category-badge">Technical Direction</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Giselle</h3>
+                        <p class="experience-role">Stage Carpenter</p>
+                        <p class="experience-year">2025</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Technical Direction">
+                <a href="/experience/the-winters-tale/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="The Winter&#39;s Tale" loading="lazy">
+                        <div class="experience-category-badge">Technical Direction</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">The Winter&#39;s Tale</h3>
+                        <p class="experience-role">Stage Carpenter</p>
+                        <p class="experience-year">2025</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Technical Direction">
+                <a href="/experience/sylvia/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Sylvia" loading="lazy">
+                        <div class="experience-category-badge">Technical Direction</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Sylvia</h3>
+                        <p class="experience-role">Stage Carpenter</p>
+                        <p class="experience-year">2025</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Technical Direction">
+                <a href="/experience/fall-orchestra-concert/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Fall Orchestra Concert" loading="lazy">
+                        <div class="experience-category-badge">Technical Direction</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Fall Orchestra Concert</h3>
+                        <p class="experience-role">Stagehand</p>
+                        <p class="experience-year">2025</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Fabrication">
+                <a href="/experience/b-is-for-baby/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="B is for Baby" loading="lazy">
+                        <div class="experience-category-badge">Fabrication</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">B is for Baby</h3>
+                        <p class="experience-role">Stagehand</p>
+                        <p class="experience-year">2025</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Technical Direction">
+                <a href="/experience/peerless/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Peerless" loading="lazy">
+                        <div class="experience-category-badge">Technical Direction</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Peerless</h3>
+                        <p class="experience-role">Stagehand</p>
+                        <p class="experience-year">2026</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Drafting">
+                <a href="/experience/perry-and-the-proletariat/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Perry and the Proletariat" loading="lazy">
+                        <div class="experience-category-badge">Drafting</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Perry and the Proletariat</h3>
+                        <p class="experience-role">Lighting Designer</p>
+                        <p class="experience-year">2025</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Technical Direction">
+                <a href="/experience/where-is-my-husband/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Where Is My Husband?" loading="lazy">
+                        <div class="experience-category-badge">Technical Direction</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Where Is My Husband?</h3>
+                        <p class="experience-role">Production Assistant</p>
+                        <p class="experience-year">2025</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+            <div class="experience-card" data-category="Technical Direction">
+                <a href="/experience/ravens/" class="experience-card-link">
+                    <div class="experience-image-wrapper">
+                        <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Ravens" loading="lazy">
+                        <div class="experience-category-badge">Technical Direction</div>
+                    </div>
+                    <div class="experience-info">
+                        <h3 class="experience-title-card">Ravens</h3>
+                        <p class="experience-role">Assistant Director</p>
+                        <p class="experience-year">2024-2025</p>
+                    </div>
+                    <div class="experience-button-wrapper">
+                        <span class="experience-button">View Details →</span>
+                    </div>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<style>
+    .experience-header {
+        text-align: center;
+        margin-bottom: 2rem;
+        padding: 2rem 0 1rem;
+    }
+
+    .experience-title {
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+        letter-spacing: -0.02em;
+        color: #ffffff;
+    }
+
+    .experience-subtitle {
+        font-size: 1.2rem;
+        color: #aaaaaa;
+        font-weight: 400;
+    }
+
+    /* Dropdown Filter */
+    .filter-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 2.5rem;
+        flex-wrap: wrap;
+    }
+
+    .filter-label {
+        color: #ffffff;
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+
+    .category-select {
+        background: #111111;
+        color: #ffffff;
+        border: 1.5px solid #444444;
+        border-radius: 30px;
+        padding: 0.5rem 1.5rem;
+        font-size: 0.85rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-family: inherit;
+    }
+
+    .category-select:hover {
+        border-color: #ffffff;
+    }
+
+    .category-select:focus {
+        outline: none;
+        border-color: #ffffff;
+    }
+
+    /* Experience Grid */
+    .experience-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 2rem;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 1rem 0 3rem;
+    }
+
+    .experience-card {
+        background: #111111;
+        border-radius: 12px;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    }
+
+    .experience-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+    }
+
+    .experience-card-link {
+        text-decoration: none;
+        display: block;
+    }
+
+    .experience-image-wrapper {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        overflow: hidden;
+        background: #222222;
+    }
+
+    .experience-image-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+        display: block;
+        transition: transform 0.3s ease;
+    }
+
+    .experience-card:hover .experience-image-wrapper img {
+        transform: scale(1.03);
+    }
+
+    .experience-category-badge {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: rgba(255,255,255,0.95);
+        color: #000000;
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+    }
+
+    .experience-info {
+        padding: 1.25rem 1.25rem 0.5rem;
+    }
+
+    .experience-title-card {
+        font-size: 1.2rem;
+        font-weight: 600;
+        margin-bottom: 0.35rem;
+        color: #ffffff;
+    }
+
+    .experience-role {
+        font-size: 0.85rem;
+        color: #cccccc;
+        margin-bottom: 0.25rem;
+    }
+
+    .experience-year {
+        font-size: 0.8rem;
+        color: #888888;
+    }
+
+    .experience-button-wrapper {
+        padding: 0 1.25rem 1.25rem;
+        text-align: left;
+    }
+
+    .experience-button {
+        display: inline-block;
+        color: #ffffff;
+        font-size: 0.85rem;
+        font-weight: 500;
+        text-decoration: none;
+        transition: all 0.2s ease;
+    }
+
+    .experience-card:hover .experience-button {
+        color: #0066cc;
+        transform: translateX(3px);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .experience-grid {
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            padding: 0 1rem 2rem;
+        }
+        
+        .filter-container {
+            margin-bottom: 1.5rem;
+            padding: 0 1rem;
+        }
+        
+        .experience-info {
+            padding: 1rem 1rem 0.25rem;
+        }
+        
+        .experience-button-wrapper {
+            padding: 0 1rem 1rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .experience-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .filter-container {
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+    }
+</style>
+
+<script>
+    // Dropdown filter functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const categorySelect = document.getElementById('category-select');
+        const experienceCards = document.querySelectorAll('.experience-card');
+        
+        function filterProjects() {
+            const selectedCategory = categorySelect.value;
+            
+            experienceCards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                
+                if (selectedCategory === 'all' || cardCategory === selectedCategory) {
+                    card.style.display = 'block';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'scale(1)';
+                    }, 10);
+                } else {
+                    card.style.opacity = '0';
+                    card.style.transform = 'scale(0.8)';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 200);
+                }
+            });
+        }
+        
+        categorySelect.addEventListener('change', filterProjects);
+    });
+</script>
+
+        </main>
+
+       <!-- FOOTER WITH CONTACT INFO -->
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-contact">
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/dann-butt-1401a7307/" target="_blank" rel="noopener noreferrer" class="contact-link linkedin">
+                    <span class="contact-icon">🔗</span> LinkedIn
+                </a>
+                <span class="contact-divider">|</span>
+                <a href="tel:516-551-6754" class="contact-link">
+                    <span class="contact-icon">📞</span> (516) 551-6754
+                </a>
+                <span class="contact-divider">|</span>
+                <a href="mailto:buttdann84@gmail.com" class="contact-link">
+                    <span class="contact-icon">✉️</span> buttdann84@gmail.com
+                </a>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <p>&copy; :2026 Dann Butt. All rights reserved.</p>
+        </div>
+    </div>
+</footer> 
+    </div>
+
+    <script>
+        // Carousel functionality (from your homepage)
+        document.addEventListener('DOMContentLoaded', function() {
+            const track = document.querySelector('.carousel-track');
+            if (!track) return;
+            
+            const slides = Array.from(document.querySelectorAll('.carousel-slide'));
+            const nextButton = document.querySelector('.carousel-arrow.next');
+            const prevButton = document.querySelector('.carousel-arrow.prev');
+            const dots = document.querySelectorAll('.dot');
+            
+            let currentIndex = 0;
+            let slidesToShow = getSlidesToShow();
+            
+            function getSlidesToShow() {
+                if (window.innerWidth <= 768) return 1;
+                if (window.innerWidth <= 1024) return 2;
+                return 3;
+            }
+            
+            function updateCarousel() {
+                const slideWidth = slides[0].getBoundingClientRect().width;
+                const gap = 32;
+                const newPosition = currentIndex * (slideWidth + gap);
+                track.style.transform = `translateX(-${newPosition}px)`;
+                
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
+                });
+            }
+            
+            function nextSlide() {
+                const maxIndex = slides.length - slidesToShow;
+                if (currentIndex < maxIndex) {
+                    currentIndex++;
+                    updateCarousel();
+                }
+            }
+            
+            function prevSlide() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateCarousel();
+                }
+            }
+            
+            if (nextButton) nextButton.addEventListener('click', nextSlide);
+            if (prevButton) prevButton.addEventListener('click', prevSlide);
+            
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentIndex = index;
+                    updateCarousel();
+                });
+            });
+            
+            window.addEventListener('resize', () => {
+                slidesToShow = getSlidesToShow();
+                if (currentIndex > slides.length - slidesToShow) {
+                    currentIndex = Math.max(0, slides.length - slidesToShow);
+                }
+                updateCarousel();
+            });
+            
+            updateCarousel();
+        });
+    </script>
+<script>
+    // Dropdown with delay - stays open long enough for cursor to reach menu
+    document.addEventListener('DOMContentLoaded', function() {
+        const dropdown = document.getElementById('experienceDropdown');
+        const dropdownContent = document.getElementById('dropdownContent');
+        let timeoutId;
+        const delay = 300; // milliseconds - adjust this value to make it stay longer/shorter
+        
+        function showDropdown() {
+            clearTimeout(timeoutId);
+            dropdownContent.classList.add('show');
+        }
+        
+        function hideDropdown() {
+            timeoutId = setTimeout(function() {
+                dropdownContent.classList.remove('show');
+            }, delay);
+        }
+        
+        // Show when hovering over dropdown or content
+        dropdown.addEventListener('mouseenter', showDropdown);
+        dropdown.addEventListener('mouseleave', hideDropdown);
+        dropdownContent.addEventListener('mouseenter', showDropdown);
+        dropdownContent.addEventListener('mouseleave', hideDropdown);
+    });
+</script>
+</body>
+</html>

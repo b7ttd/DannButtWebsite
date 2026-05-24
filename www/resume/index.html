@@ -5,11 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Resume | Dann Butt</title>
     
-    <!-- Preconnect for Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     
     <style>
@@ -96,7 +93,7 @@
             padding: 0 3vw;
         }
 
-        /* Header Styles - ENLARGED TEXT */
+        /* Header Styles - ENLARGED TEXT WITH DROPDOWN */
         .site-header {
             position: relative;
             background: #000000;
@@ -109,52 +106,140 @@
             border-bottom: 1px solid #333333;
         }
 
-        .header-title a {
-            font-size: 1.8rem;
-            font-weight: 700;
-            text-decoration: none;
-            color: #ffffff;
-            letter-spacing: -0.01em;
-        }
+       .header-title a {
+    font-size: 3.6rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+}
+
+.header-nav-list a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 2.4rem;
+    transition: opacity 0.2s ease;
+}
+
+.dropbtn {
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: #ffffff;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-family: inherit;
+    transition: opacity 0.2s ease;
+} 
 
         .header-nav-list {
             display: flex;
-            gap: 2.5rem;
+            gap: 2rem;
             list-style: none;
+            align-items: center;
         }
 
-        .header-nav-list a {
-            text-decoration: none;
-            color: #ffffff;
-            font-weight: 500;
-            font-size: 1.2rem;
-            transition: opacity 0.2s ease;
-        }
+/* Dropdown Styles - JavaScript Controlled */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
 
-        .header-nav-list a:hover,
-        .header-nav-list a.active {
-            opacity: 0.7;
-        }
+.dropbtn {
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: #ffffff;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-family: inherit;
+    transition: opacity 0.2s ease;
+}
 
-        /* Responsive Header */
-        @media (max-width: 768px) {
-            .site-header {
-                flex-direction: column;
-                text-align: center;
-                padding: 4vw;
-            }
-            .header-nav-list {
-                gap: 1.5rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .header-title a {
-                font-size: 1.5rem;
-            }
-            .header-nav-list a {
-                font-size: 1rem;
-            }
-        }
+.dropbtn:hover {
+    opacity: 0.7;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: -1rem;
+    background-color: #111111;
+    min-width: 220px;
+    border-radius: 12px;
+    border: 1px solid #333333;
+    z-index: 100;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.dropdown-content.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-content a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: background 0.2s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #222222;
+    opacity: 1;
+}
+
+.dropdown-divider {
+    height: 1px;
+    background: #333333;
+    margin: 0.25rem 0;
+}
+
+/* Category-specific hover colors */
+.dropdown-content a[href*="Project%20Management"]:hover { background: #1a3a2a; }
+.dropdown-content a[href*="Technical%20Direction"]:hover { background: #2a2a3a; }
+.dropdown-content a[href*="Fabrication"]:hover { background: #3a2a1a; }
+.dropdown-content a[href*="Drafting"]:hover { background: #1a2a3a; }
+.dropdown-content a[href*="Miscellaneous"]:hover { background: #2a1a3a; }
+
+                /* Responsive Header */
+       @media (max-width: 768px) {
+    .site-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 4vw;
+    }
+    .header-nav-list {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .header-title a {
+        font-size: 2.5rem;
+    }
+    .header-nav-list a,
+    .dropbtn {
+        font-size: 1.6rem;
+    }
+    .dropdown-content {
+        position: static;
+        display: none;
+        margin-top: 0.5rem;
+        background: #1a1a1a;
+    }
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+} 
 
         /* Section Styles */
         .page-section {
@@ -299,12 +384,17 @@
             flex: 1;
         }
 
-        .feature-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 8px;
-        }
+       .feature-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 30px;
+    transition: border-radius 0.3s ease;
+}
+
+.feature-image img:hover {
+    border-radius: 8px;
+} 
 
         @media (max-width: 768px) {
             .feature-row, .feature-row.reverse {
@@ -340,16 +430,79 @@
             font-size: 0.9rem;
         }
 
-        /* Footer */
-        .site-footer {
-            padding: 3rem 2rem;
-            text-align: center;
-            border-top: 1px solid #222222;
-            margin-top: 2rem;
-            font-size: 0.8rem;
-            color: #777777;
-            background-color: #000000;
-        }
+       /* Footer with Contact Info */
+.site-footer {
+    padding: 2rem 2rem;
+    text-align: center;
+    border-top: 1px solid #222222;
+    margin-top: 2rem;
+    background-color: #000000;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-contact {
+    margin-bottom: 1rem;
+}
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+    color: #ffffff;
+}
+
+.contact-link.linkedin:hover {
+    color: #0077b5;
+}
+
+.contact-icon {
+    font-size: 0.9rem;
+}
+
+.contact-divider {
+    color: #444444;
+}
+
+.footer-copyright p {
+    font-size: 0.75rem;
+    color: #777777;
+    margin-bottom: 0;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .contact-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .contact-divider {
+        display: none;
+    }
+    
+    .site-footer {
+        padding: 1.5rem;
+    }
+} 
 
         /* Video Showcase Section */
         .video-container {
@@ -673,36 +826,30 @@
 </head>
 <body>
     <div class="site-wrapper">
-        
-        <!-- HEADER -->
-        <header class="site-header">
-            <div class="header-title">
-                <a href="/">Dann Butt</a>
-            </div>
-            <nav>
-                <ul class="header-nav-list">
-                    
-                    <li>
-                        <a href="/" >
-                            Home
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="/projects/" >
-                            Projects
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="/resume/" class="active">
-                            Resume and About
-                        </a>
-                    </li>
-                    
-                </ul>
-            </nav>
-        </header>
+<!-- HEADER WITH JS DROPDOWN -->
+<header class="site-header">
+    <div class="header-title">
+        <a href="/">Dann Butt</a>
+    </div>
+    <nav>
+        <ul class="header-nav-list">
+            <li><a href="/">Home</a></li>
+            <li class="dropdown" id="experienceDropdown">
+                <button class="dropbtn" id="dropbtn">Experience ▼</button>
+                <div class="dropdown-content" id="dropdownContent">
+                    <a href="/experience/">📁 All Experience</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="/experience/?category=Project%20Management">📋 Project Management</a>
+                    <a href="/experience/?category=Technical%20Direction">🔧 Technical Direction</a>
+                    <a href="/experience/?category=Fabrication">🛠️ Fabrication</a>
+                    <a href="/experience/?category=Drafting">✏️ Drafting</a>
+                    <a href="/experience/?category=Miscellaneous">🎭 Miscellaneous</a>
+                </div>
+            </li>
+            <li><a href="/resume/">Resume & About</a></li>
+        </ul>
+    </nav>
+</header>
 
         <main>
             
@@ -817,14 +964,33 @@
 
         </main>
 
-        <!-- FOOTER -->
-        <footer class="site-footer">
+       <!-- FOOTER WITH CONTACT INFO -->
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-contact">
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/dann-butt-1401a7307/" target="_blank" rel="noopener noreferrer" class="contact-link linkedin">
+                    <span class="contact-icon">🔗</span> LinkedIn
+                </a>
+                <span class="contact-divider">|</span>
+                <a href="tel:516-551-6754" class="contact-link">
+                    <span class="contact-icon">📞</span> (516) 551-6754
+                </a>
+                <span class="contact-divider">|</span>
+                <a href="mailto:buttdann84@gmail.com" class="contact-link">
+                    <span class="contact-icon">✉️</span> buttdann84@gmail.com
+                </a>
+            </div>
+        </div>
+        <div class="footer-copyright">
             <p>&copy; :2026 Dann Butt. All rights reserved.</p>
-        </footer>
+        </div>
+    </div>
+</footer> 
     </div>
 
     <script>
-        // Carousel functionality
+        // Carousel functionality (from your homepage)
         document.addEventListener('DOMContentLoaded', function() {
             const track = document.querySelector('.carousel-track');
             if (!track) return;
@@ -890,5 +1056,31 @@
             updateCarousel();
         });
     </script>
+<script>
+    // Dropdown with delay - stays open long enough for cursor to reach menu
+    document.addEventListener('DOMContentLoaded', function() {
+        const dropdown = document.getElementById('experienceDropdown');
+        const dropdownContent = document.getElementById('dropdownContent');
+        let timeoutId;
+        const delay = 300; // milliseconds - adjust this value to make it stay longer/shorter
+        
+        function showDropdown() {
+            clearTimeout(timeoutId);
+            dropdownContent.classList.add('show');
+        }
+        
+        function hideDropdown() {
+            timeoutId = setTimeout(function() {
+                dropdownContent.classList.remove('show');
+            }, delay);
+        }
+        
+        // Show when hovering over dropdown or content
+        dropdown.addEventListener('mouseenter', showDropdown);
+        dropdown.addEventListener('mouseleave', hideDropdown);
+        dropdownContent.addEventListener('mouseenter', showDropdown);
+        dropdownContent.addEventListener('mouseleave', hideDropdown);
+    });
+</script>
 </body>
 </html>

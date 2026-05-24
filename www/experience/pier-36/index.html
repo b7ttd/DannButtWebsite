@@ -1,0 +1,394 @@
+
+<section class="project-detail-section">
+    <div class="container">
+        <!-- Back button -->
+        <div class="back-button">
+            <a href="/projects-management/" class="back-link">← Back to all projects</a>
+        </div>
+        
+        <!-- Project Header -->
+        <div class="project-header">
+            <h1 class="project-title">pier 36</h1>
+            <div class="project-meta">
+                <p><strong>Role:</strong> TBD</p>
+                <p><strong>Year:</strong> 2025</p>
+                
+                <p><strong>Venue/Location:</strong> TBD</p>
+                
+            </div>
+        </div>
+        
+        <!-- Hero Image -->
+        
+        <div class="project-hero">
+            <img src="/images/placeholder.jpg" alt="pier 36">
+        </div>
+        
+        
+        <!-- Two column layout for content -->
+        <div class="project-content">
+            <div class="project-main">
+                
+## About This Production
+
+Content coming soon.
+
+            </div>
+            
+            <div class="project-sidebar">
+                <!-- Event Stats Section -->
+                
+                
+                <!-- Budget Section -->
+                
+                
+                <!-- Credits Section -->
+                
+                
+                <!-- Download Section -->
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Black background, white text for project detail pages */
+    .project-detail-section {
+        background-color: #000000;
+        padding: 3rem 2rem;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    /* Back Button */
+    .back-button {
+        margin-bottom: 2rem;
+    }
+
+    .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 0.9rem;
+        transition: opacity 0.2s ease;
+    }
+
+    .back-link:hover {
+        opacity: 0.7;
+    }
+
+    /* Project Header */
+    .project-header {
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .project-title {
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 600;
+        margin-bottom: 1rem;
+        letter-spacing: -0.02em;
+        color: #ffffff;
+    }
+
+    .project-meta {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
+        color: #cccccc;
+        border-top: 1px solid #333333;
+        padding-top: 1rem;
+    }
+
+    .project-meta p {
+        color: #cccccc;
+    }
+
+    .project-meta strong {
+        color: #ffffff;
+    }
+
+    /* Hero Image */
+    .project-hero {
+        margin-bottom: 2.5rem;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+
+    .project-hero img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Two Column Layout */
+    .project-content {
+        display: grid;
+        grid-template-columns: 1fr 0.4fr;
+        gap: 3rem;
+    }
+
+    /* Main Content */
+    .project-main {
+        font-size: 1.05rem;
+        line-height: 1.6;
+        color: #ffffff;
+    }
+
+    .project-main h2 {
+        font-size: 1.5rem;
+        margin: 1.5rem 0 1rem;
+        color: #ffffff;
+    }
+
+    .project-main h3 {
+        font-size: 1.2rem;
+        margin: 1.2rem 0 0.8rem;
+        color: #ffffff;
+    }
+
+    .project-main h4 {
+        font-size: 1rem;
+        margin: 1rem 0 0.5rem;
+        font-weight: 600;
+        color: #ffffff;
+    }
+
+    .project-main p {
+        margin-bottom: 1rem;
+        color: #e0e0e0;
+    }
+
+    .project-main ul, .project-main ol {
+        margin-left: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .project-main li {
+        margin-bottom: 0.35rem;
+        color: #e0e0e0;
+    }
+
+    .project-main strong {
+        color: #ffffff;
+    }
+
+    /* Sidebar */
+    .project-sidebar {
+        background: #111111;
+        padding: 1.5rem;
+        border-radius: 12px;
+        align-self: start;
+    }
+
+    .stats-section,
+    .budget-section,
+    .credits-section,
+    .download-section {
+        margin-bottom: 1.5rem;
+    }
+
+    .stats-section h3,
+    .budget-section h3,
+    .credits-section h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: #ffffff;
+    }
+
+    .stats-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .stat-item {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.85rem;
+    }
+
+    .stat-label {
+        font-weight: 500;
+        color: #aaaaaa;
+    }
+
+    .stat-value {
+        color: #ffffff;
+        text-align: right;
+    }
+
+    .budget-stats {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .budget-item {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.85rem;
+        padding: 0.3rem 0;
+        border-bottom: 1px dashed #333333;
+    }
+
+    .budget-item.total {
+        margin-top: 0.5rem;
+        padding-top: 0.5rem;
+        border-top: 1px solid #444444;
+        border-bottom: none;
+        font-weight: 600;
+    }
+
+    .budget-label {
+        color: #aaaaaa;
+    }
+
+    .budget-value {
+        color: #ffffff;
+    }
+
+    .credits-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .credits-section li {
+        margin-bottom: 0.5rem;
+        font-size: 0.85rem;
+        line-height: 1.4;
+        color: #e0e0e0;
+    }
+
+    .credits-section strong {
+        color: #ffffff;
+    }
+
+    .download-link {
+        display: inline-block;
+        background: #ffffff;
+        color: #000000;
+        padding: 0.6rem 1rem;
+        text-decoration: none;
+        border-radius: 8px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        transition: background 0.2s ease;
+        text-align: center;
+        width: 100%;
+    }
+
+    .download-link:hover {
+        background: #dddddd;
+    }
+
+    /* Performance Schedule (for Kentucky page) */
+    .performance-schedule {
+        background: #111111;
+        padding: 1.5rem;
+        border-radius: 12px;
+        margin: 1.5rem 0;
+    }
+    
+    .performance-schedule h3 {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+        margin-bottom: 0.75rem;
+        color: #ffffff;
+    }
+    
+    .performance-schedule ul {
+        list-style: none;
+        margin-bottom: 1rem;
+    }
+    
+    .performance-schedule li {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #222222;
+        color: #e0e0e0;
+    }
+
+    .talkback-badge {
+        background: #ffffff;
+        color: #000000;
+        padding: 0.2rem 0.6rem;
+        border-radius: 20px;
+        font-size: 0.7rem;
+        font-weight: 600;
+        margin-left: 0.75rem;
+    }
+
+    .talkback-notice {
+        background: #111111;
+        border-left: 4px solid #ffffff;
+        padding: 1rem 1.25rem;
+        border-radius: 8px;
+        margin: 1.5rem 0;
+    }
+
+    .talkback-notice p {
+        margin: 0;
+        color: #e0e0e0;
+    }
+    
+    .talkback-notice strong {
+        color: #ffffff;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .project-detail-section {
+            padding: 2rem 1rem;
+        }
+
+        .project-content {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+
+        .project-meta {
+            flex-direction: column;
+            gap: 0.5rem;
+            text-align: center;
+        }
+
+        .project-header {
+            text-align: left;
+        }
+
+        .project-meta {
+            text-align: left;
+        }
+
+        .stat-item {
+            font-size: 0.8rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .project-title {
+            font-size: 1.8rem;
+        }
+
+        .stat-item {
+            flex-direction: column;
+            gap: 0.2rem;
+        }
+
+        .stat-value {
+            text-align: left;
+        }
+    }
+</style>

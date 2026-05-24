@@ -5,11 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Home | Dann Butt</title>
     
-    <!-- Preconnect for Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
     
     <style>
@@ -96,7 +93,7 @@
             padding: 0 3vw;
         }
 
-        /* Header Styles - ENLARGED TEXT */
+        /* Header Styles - ENLARGED TEXT WITH DROPDOWN */
         .site-header {
             position: relative;
             background: #000000;
@@ -109,52 +106,140 @@
             border-bottom: 1px solid #333333;
         }
 
-        .header-title a {
-            font-size: 1.8rem;
-            font-weight: 700;
-            text-decoration: none;
-            color: #ffffff;
-            letter-spacing: -0.01em;
-        }
+       .header-title a {
+    font-size: 3.6rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+}
+
+.header-nav-list a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 2.4rem;
+    transition: opacity 0.2s ease;
+}
+
+.dropbtn {
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: #ffffff;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-family: inherit;
+    transition: opacity 0.2s ease;
+} 
 
         .header-nav-list {
             display: flex;
-            gap: 2.5rem;
+            gap: 2rem;
             list-style: none;
+            align-items: center;
         }
 
-        .header-nav-list a {
-            text-decoration: none;
-            color: #ffffff;
-            font-weight: 500;
-            font-size: 1.2rem;
-            transition: opacity 0.2s ease;
-        }
+/* Dropdown Styles - JavaScript Controlled */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
 
-        .header-nav-list a:hover,
-        .header-nav-list a.active {
-            opacity: 0.7;
-        }
+.dropbtn {
+    font-size: 2.4rem;
+    font-weight: 500;
+    color: #ffffff;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-family: inherit;
+    transition: opacity 0.2s ease;
+}
 
-        /* Responsive Header */
-        @media (max-width: 768px) {
-            .site-header {
-                flex-direction: column;
-                text-align: center;
-                padding: 4vw;
-            }
-            .header-nav-list {
-                gap: 1.5rem;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .header-title a {
-                font-size: 1.5rem;
-            }
-            .header-nav-list a {
-                font-size: 1rem;
-            }
-        }
+.dropbtn:hover {
+    opacity: 0.7;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: -1rem;
+    background-color: #111111;
+    min-width: 220px;
+    border-radius: 12px;
+    border: 1px solid #333333;
+    z-index: 100;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.dropdown-content.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-content a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    transition: background 0.2s ease;
+}
+
+.dropdown-content a:hover {
+    background-color: #222222;
+    opacity: 1;
+}
+
+.dropdown-divider {
+    height: 1px;
+    background: #333333;
+    margin: 0.25rem 0;
+}
+
+/* Category-specific hover colors */
+.dropdown-content a[href*="Project%20Management"]:hover { background: #1a3a2a; }
+.dropdown-content a[href*="Technical%20Direction"]:hover { background: #2a2a3a; }
+.dropdown-content a[href*="Fabrication"]:hover { background: #3a2a1a; }
+.dropdown-content a[href*="Drafting"]:hover { background: #1a2a3a; }
+.dropdown-content a[href*="Miscellaneous"]:hover { background: #2a1a3a; }
+
+                /* Responsive Header */
+       @media (max-width: 768px) {
+    .site-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 4vw;
+    }
+    .header-nav-list {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .header-title a {
+        font-size: 2.5rem;
+    }
+    .header-nav-list a,
+    .dropbtn {
+        font-size: 1.6rem;
+    }
+    .dropdown-content {
+        position: static;
+        display: none;
+        margin-top: 0.5rem;
+        background: #1a1a1a;
+    }
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+} 
 
         /* Section Styles */
         .page-section {
@@ -299,12 +384,17 @@
             flex: 1;
         }
 
-        .feature-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 8px;
-        }
+       .feature-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 30px;
+    transition: border-radius 0.3s ease;
+}
+
+.feature-image img:hover {
+    border-radius: 8px;
+} 
 
         @media (max-width: 768px) {
             .feature-row, .feature-row.reverse {
@@ -340,16 +430,79 @@
             font-size: 0.9rem;
         }
 
-        /* Footer */
-        .site-footer {
-            padding: 3rem 2rem;
-            text-align: center;
-            border-top: 1px solid #222222;
-            margin-top: 2rem;
-            font-size: 0.8rem;
-            color: #777777;
-            background-color: #000000;
-        }
+       /* Footer with Contact Info */
+.site-footer {
+    padding: 2rem 2rem;
+    text-align: center;
+    border-top: 1px solid #222222;
+    margin-top: 2rem;
+    background-color: #000000;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-contact {
+    margin-bottom: 1rem;
+}
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+    color: #ffffff;
+}
+
+.contact-link.linkedin:hover {
+    color: #0077b5;
+}
+
+.contact-icon {
+    font-size: 0.9rem;
+}
+
+.contact-divider {
+    color: #444444;
+}
+
+.footer-copyright p {
+    font-size: 0.75rem;
+    color: #777777;
+    margin-bottom: 0;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    .contact-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    .contact-divider {
+        display: none;
+    }
+    
+    .site-footer {
+        padding: 1.5rem;
+    }
+} 
 
         /* Video Showcase Section */
         .video-container {
@@ -673,47 +826,41 @@
 </head>
 <body>
     <div class="site-wrapper">
-        
-        <!-- HEADER -->
-        <header class="site-header">
-            <div class="header-title">
-                <a href="/">Dann Butt</a>
-            </div>
-            <nav>
-                <ul class="header-nav-list">
-                    
-                    <li>
-                        <a href="/" class="active">
-                            Home
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="/projects/" >
-                            Projects
-                        </a>
-                    </li>
-                    
-                    <li>
-                        <a href="/resume/" >
-                            Resume and About
-                        </a>
-                    </li>
-                    
-                </ul>
-            </nav>
-        </header>
+<!-- HEADER WITH JS DROPDOWN -->
+<header class="site-header">
+    <div class="header-title">
+        <a href="/">Dann Butt</a>
+    </div>
+    <nav>
+        <ul class="header-nav-list">
+            <li><a href="/">Home</a></li>
+            <li class="dropdown" id="experienceDropdown">
+                <button class="dropbtn" id="dropbtn">Experience ▼</button>
+                <div class="dropdown-content" id="dropdownContent">
+                    <a href="/experience/">📁 All Experience</a>
+                    <div class="dropdown-divider"></div>
+                    <a href="/experience/?category=Project%20Management">📋 Project Management</a>
+                    <a href="/experience/?category=Technical%20Direction">🔧 Technical Direction</a>
+                    <a href="/experience/?category=Fabrication">🛠️ Fabrication</a>
+                    <a href="/experience/?category=Drafting">✏️ Drafting</a>
+                    <a href="/experience/?category=Miscellaneous">🎭 Miscellaneous</a>
+                </div>
+            </li>
+            <li><a href="/resume/">Resume & About</a></li>
+        </ul>
+    </nav>
+</header>
 
         <main>
             
-<!-- PROJECT SHOWCASE VIDEO - TOP OF PAGE -->
+<!--FEATURE SECTION: Eventage --> 
 <section class="page-section">
-    <div class="container">
-        <div class="video-container">
-            <video class="showcase-video" autoplay muted loop playsinline>
-                <source src="/images/EventageVideo.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+    <div class="feature-row">
+        <div class="feature-image">
+            <img src="https://d26oc3sg82pgk3.cloudfront.net/files/media/uploads/casting_call/036e2dea-8452-4aac-aae1-f9ffb263af62-bWFpbi1uLW4tMC0wLTAtMC0w.png" alt="Pic Of Me">
+        </div>
+        <div class="feature-image">
+            <img src="https://d26oc3sg82pgk3.cloudfront.net/files/media/uploads/casting_call/ae23bb1a-d5c9-41fe-8828-4124762b96ad-bWFpbi1uLW4tMC0wLTAtMC0w.jpg" alt="Other Pic Of Me">
         </div>
     </div>
 </section>
@@ -747,846 +894,6 @@
             <div class="carousel-track-container">
                 <div class="carousel-track">
                     
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://d19nu91zz7veuv.cloudfront.net/wp-content/uploads/20240501231909/Celebrate-Israel-Livestream-Thumbnail-1.png" alt="Celebrate Israel Parade">
-                                <div class="project-category-badge-carousel">Parade</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Celebrate Israel Parade</h3>
-                                <p class="project-role-carousel">Assistant to Event Project Manager</p>
-                                <p class="project-year-carousel">2026</p>
-                                <a href="/projects/celebrate-israel-parade/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://donordrivecontent.com/mssociety/images/$event2514$/facebookImage.png?v=202605201454" alt="Walk MS: New Jersey">
-                                <div class="project-category-badge-carousel">Walk</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Walk MS: New Jersey</h3>
-                                <p class="project-role-carousel">Assistant to Event Project Manager</p>
-                                <p class="project-year-carousel">2026</p>
-                                <a href="/projects/walk-ms-nj/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://donordrivecontent.com/mssociety/images/$event2514$/facebookImage.png?v=202605201454" alt="Walk MS: NYC">
-                                <div class="project-category-badge-carousel">Walk</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Walk MS: NYC</h3>
-                                <p class="project-role-carousel">Assistant to Event Project Manager</p>
-                                <p class="project-year-carousel">2026</p>
-                                <a href="/projects/walk-ms-nyc/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://donordrivecontent.com/mssociety/images/$event2514$/facebookImage.png?v=202605201454" alt="Walk MS: Long Island">
-                                <div class="project-category-badge-carousel">Walk</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Walk MS: Long Island</h3>
-                                <p class="project-role-carousel">Assistant to Event Project Manager</p>
-                                <p class="project-year-carousel">2026</p>
-                                <a href="/projects/walk-ms-long-island/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://www.runningusa.org/wp-content/uploads/2023/01/NYCM_HorizontalLogo_FC_RGB-640x375.png" alt="NYC Half Marathon">
-                                <div class="project-category-badge-carousel">Race</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">NYC Half Marathon</h3>
-                                <p class="project-role-carousel">Assistant to Event Project Manager</p>
-                                <p class="project-year-carousel">2026</p>
-                                <a href="/projects/nyc-half-marathon/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQruWYs-1ps-EHs_qjPijqduKH1XY_HQRGqLw&amp;s" alt="NYC Brooklyn Half">
-                                <div class="project-category-badge-carousel">Race</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">NYC Brooklyn Half</h3>
-                                <p class="project-role-carousel">Assistant to Event Project Manager</p>
-                                <p class="project-year-carousel">2026</p>
-                                <a href="/projects/nyc-brooklyn-half/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://mma.prnewswire.com/media/1162639/kindeva_logos_2_color_blk.jpg?p=facebook" alt="Kindeva">
-                                <div class="project-category-badge-carousel">Corporate</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Kindeva</h3>
-                                <p class="project-role-carousel">Assistant to Event Project Manager</p>
-                                <p class="project-year-carousel">2026</p>
-                                <a href="/projects/kindeva/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://cdn.raceroster.com/events/0119ba09-2fd5-4ce2-ae9c-8dfcf23166a1/images/640656f67cd71.png" alt="AHA Wall Street Run">
-                                <div class="project-category-badge-carousel">Race</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">AHA Wall Street Run</h3>
-                                <p class="project-role-carousel">Assistant to Event Project Manager</p>
-                                <p class="project-year-carousel">2026</p>
-                                <a href="/projects/aha-wall-street-run/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://dam.northwell.edu/m/173ca8235af00e28/Drupal-NEWS_Northwell-Health-Walk-2024.jpg" alt="Northwell Walk LI">
-                                <div class="project-category-badge-carousel">Walk</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Northwell Walk LI</h3>
-                                <p class="project-role-carousel">Assistant to Event Project Manager</p>
-                                <p class="project-year-carousel">2026</p>
-                                <a href="/projects/northwell-walk-li/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Scene Shop Assistant">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Scene Shop Assistant</h3>
-                                <p class="project-role-carousel">Scene Shop Assistant</p>
-                                <p class="project-year-carousel">2024-2026</p>
-                                <a href="/projects/scene-shop-assistant/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Kentucky">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Kentucky</h3>
-                                <p class="project-role-carousel">Shop Carpenter &amp; Painter</p>
-                                <p class="project-year-carousel">2024</p>
-                                <a href="/projects/kentucky/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="The Sins of Sor Juana">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">The Sins of Sor Juana</h3>
-                                <p class="project-role-carousel">Shop Carpenter &amp; Painter</p>
-                                <p class="project-year-carousel">2024</p>
-                                <a href="/projects/the-sins-of-sor-juana/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Three Penny Theater">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Three Penny Theater</h3>
-                                <p class="project-role-carousel">Shop Carpenter &amp; Painter</p>
-                                <p class="project-year-carousel">2024</p>
-                                <a href="/projects/three-penny-opera/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="The Amethyst and the Peridot">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">The Amethyst and the Peridot</h3>
-                                <p class="project-role-carousel">Shop Carpenter &amp; Painter</p>
-                                <p class="project-year-carousel">2024</p>
-                                <a href="/projects/the-amethyst-and-the-peridot/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Horoscope">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Horoscope</h3>
-                                <p class="project-role-carousel">Shop Carpenter &amp; Painter</p>
-                                <p class="project-year-carousel">2025</p>
-                                <a href="/projects/horoscope/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Fall Orchestra Concert">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Fall Orchestra Concert</h3>
-                                <p class="project-role-carousel">Stagehand</p>
-                                <p class="project-year-carousel">2025</p>
-                                <a href="/projects/fall-orchestra-concert/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66e8a3eeddfd12111f8eabbb/0892f094-8536-4d99-90d2-3979f50e98d1/VeraStark400x600+%281%29.jpg" alt="By the Way, Meet Vera Stark">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">By the Way, Meet Vera Stark</h3>
-                                <p class="project-role-carousel">Shop Carpenter &amp; Painter</p>
-                                <p class="project-year-carousel">2025</p>
-                                <a href="/projects/by-the-way-meet-vera-stark/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="B is for Baby">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">B is for Baby</h3>
-                                <p class="project-role-carousel">Stagehand</p>
-                                <p class="project-year-carousel">2025</p>
-                                <a href="/projects/b-is-for-baby/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66e8a3eeddfd12111f8eabbb/6d9c4a36-cf3a-4644-9a23-02b56ddb630d/Tempest400x600.jpg" alt="The Tempest">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">The Tempest</h3>
-                                <p class="project-role-carousel">Shop Carpenter &amp; Painter</p>
-                                <p class="project-year-carousel">2025</p>
-                                <a href="/projects/the-tempest/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66e8a3eeddfd12111f8eabbb/cf67a848-72f2-4544-82cd-85af125a8436/LunarRhapsody400x600+%281%29.jpg" alt="A Lunar Rhapsody">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">A Lunar Rhapsody</h3>
-                                <p class="project-role-carousel">Shop Carpenter &amp; Painter</p>
-                                <p class="project-year-carousel">2025</p>
-                                <a href="/projects/a-lunar-rhapsody/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66e8a3eeddfd12111f8eabbb/2378a4e8-b812-4737-bab8-16b5df8b92e5/Eurydice400x600.jpg" alt="Eurydice">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Eurydice</h3>
-                                <p class="project-role-carousel">Shop Carpenter &amp; Painter</p>
-                                <p class="project-year-carousel">2026</p>
-                                <a href="/projects/eurydice/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Peerless">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Peerless</h3>
-                                <p class="project-role-carousel">Stagehand</p>
-                                <p class="project-year-carousel">2026</p>
-                                <a href="/projects/peerless/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Turandot">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Turandot</h3>
-                                <p class="project-role-carousel">Stage Carpenter</p>
-                                <p class="project-year-carousel">2025</p>
-                                <a href="/projects/turandot/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="The Barber of Seville">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">The Barber of Seville</h3>
-                                <p class="project-role-carousel">Stage Carpenter</p>
-                                <p class="project-year-carousel">2025</p>
-                                <a href="/projects/the-barber-of-seville/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="The Queen of Spades">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">The Queen of Spades</h3>
-                                <p class="project-role-carousel">Stage Carpenter</p>
-                                <p class="project-year-carousel">2025</p>
-                                <a href="/projects/the-queen-of-spades/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Anthony and Cleopatra">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Anthony and Cleopatra</h3>
-                                <p class="project-role-carousel">Stage Carpenter</p>
-                                <p class="project-year-carousel">2025</p>
-                                <a href="/projects/anthony-and-cleopatra/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Aida">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Aida</h3>
-                                <p class="project-role-carousel">Stage Carpenter</p>
-                                <p class="project-year-carousel">2025</p>
-                                <a href="/projects/aida/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Salome">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Salome</h3>
-                                <p class="project-role-carousel">Stage Carpenter</p>
-                                <p class="project-year-carousel">2025</p>
-                                <a href="/projects/salome/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Le Nozze di Figaro">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Le Nozze di Figaro</h3>
-                                <p class="project-role-carousel">Stage Carpenter</p>
-                                <p class="project-year-carousel">2025</p>
-                                <a href="/projects/le-nozze-di-figaro/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Arabella">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Arabella</h3>
-                                <p class="project-role-carousel">Stage Carpenter</p>
-                                <p class="project-year-carousel">2025</p>
-                                <a href="/projects/arabella/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Andrea Chenier">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Andrea Chenier</h3>
-                                <p class="project-role-carousel">Stage Carpenter</p>
-                                <p class="project-year-carousel">2025</p>
-                                <a href="/projects/andrea-chenier/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Carmen">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Carmen</h3>
-                                <p class="project-role-carousel">Stage Carpenter</p>
-                                <p class="project-year-carousel">2025</p>
-                                <a href="/projects/carmen/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Don Giovanni">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Don Giovanni</h3>
-                                <p class="project-role-carousel">Stage Carpenter</p>
-                                <p class="project-year-carousel">2025</p>
-                                <a href="/projects/don-giovanni/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="La Fille du Regiment">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">La Fille du Regiment</h3>
-                                <p class="project-role-carousel">Stage Carpenter</p>
-                                <p class="project-year-carousel">2025</p>
-                                <a href="/projects/la-fille-du-regiment/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="The Magic Flute">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">The Magic Flute</h3>
-                                <p class="project-role-carousel">Stage Carpenter</p>
-                                <p class="project-year-carousel">2026</p>
-                                <a href="/projects/the-magic-flute/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Porgy and Bess">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Porgy and Bess</h3>
-                                <p class="project-role-carousel">Stage Carpenter</p>
-                                <p class="project-year-carousel">2026</p>
-                                <a href="/projects/porgy-and-bess/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="I Puritani">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">I Puritani</h3>
-                                <p class="project-role-carousel">Stage Carpenter</p>
-                                <p class="project-year-carousel">2026</p>
-                                <a href="/projects/i-puritani/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Madama Butterfly">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Madama Butterfly</h3>
-                                <p class="project-role-carousel">Stage Carpenter</p>
-                                <p class="project-year-carousel">2025</p>
-                                <a href="/projects/madama-butterfly/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Tristan Und Isolde">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Tristan Und Isolde</h3>
-                                <p class="project-role-carousel">Stage Carpenter</p>
-                                <p class="project-year-carousel">2026</p>
-                                <a href="/projects/tristan-und-isolde/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Innocence">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Innocence</h3>
-                                <p class="project-role-carousel">Stage Carpenter</p>
-                                <p class="project-year-carousel">2026</p>
-                                <a href="/projects/innocence/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="El Ultimo Sueno de Frida">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">El Ultimo Sueno de Frida</h3>
-                                <p class="project-role-carousel">Stage Carpenter</p>
-                                <p class="project-year-carousel">2026</p>
-                                <a href="/projects/el-ultimo-sueno-de-frida/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Kavalier and Clay">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Kavalier and Clay</h3>
-                                <p class="project-role-carousel">Uprigger/Board Theatertor</p>
-                                <p class="project-year-carousel">2025</p>
-                                <a href="/projects/kavalier-and-clay/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="La Boheme">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">La Boheme</h3>
-                                <p class="project-role-carousel">Stage Electrician</p>
-                                <p class="project-year-carousel">2025</p>
-                                <a href="/projects/la-boheme/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Swan Lake">
-                                <div class="project-category-badge-carousel">Ballet</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Swan Lake</h3>
-                                <p class="project-role-carousel">Stage Carpenter</p>
-                                <p class="project-year-carousel">2025</p>
-                                <a href="/projects/swan-lake/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Woolf Works">
-                                <div class="project-category-badge-carousel">Ballet</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Woolf Works</h3>
-                                <p class="project-role-carousel">Stage Carpenter</p>
-                                <p class="project-year-carousel">2025</p>
-                                <a href="/projects/woolf-works/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Giselle">
-                                <div class="project-category-badge-carousel">Ballet</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Giselle</h3>
-                                <p class="project-role-carousel">Stage Carpenter</p>
-                                <p class="project-year-carousel">2025</p>
-                                <a href="/projects/giselle/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="The Winter&#39;s Tale">
-                                <div class="project-category-badge-carousel">Ballet</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">The Winter&#39;s Tale</h3>
-                                <p class="project-role-carousel">Stage Carpenter</p>
-                                <p class="project-year-carousel">2025</p>
-                                <a href="/projects/the-winters-tale/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Sylvia">
-                                <div class="project-category-badge-carousel">Ballet</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Sylvia</h3>
-                                <p class="project-role-carousel">Stage Carpenter</p>
-                                <p class="project-year-carousel">2025</p>
-                                <a href="/projects/sylvia/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Linda Gross Theater Reconstruction">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Linda Gross Theater Reconstruction</h3>
-                                <p class="project-role-carousel">Shop Carpenter</p>
-                                <p class="project-year-carousel">2025</p>
-                                <a href="/projects/linda-gross-theater-reconstruction/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Claire Tow Theater - Women Among Women">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Claire Tow Theater - Women Among Women</h3>
-                                <p class="project-role-carousel">Shop Carpenter</p>
-                                <p class="project-year-carousel">2026</p>
-                                <a href="/projects/claire-tow-theater/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="NYC Ball Drop">
-                                <div class="project-category-badge-carousel">Event</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">NYC Ball Drop</h3>
-                                <p class="project-role-carousel">Stage Carpenter</p>
-                                <p class="project-year-carousel">2025</p>
-                                <a href="/projects/nyc-ball-drop/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Pier 36 - Independence">
-                                <div class="project-category-badge-carousel">Event</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Pier 36 - Independence</h3>
-                                <p class="project-role-carousel">Stage Carpenter</p>
-                                <p class="project-year-carousel">2026</p>
-                                <a href="/projects/pier-36/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Sleep Out in Times Square">
-                                <div class="project-category-badge-carousel">Event</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Sleep Out in Times Square</h3>
-                                <p class="project-role-carousel">Post-Production Aide</p>
-                                <p class="project-year-carousel">2026</p>
-                                <a href="/projects/sleep-out-in-times-square/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Perry and the Proletariat">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Perry and the Proletariat</h3>
-                                <p class="project-role-carousel">Lighting Designer</p>
-                                <p class="project-year-carousel">2026</p>
-                                <a href="/projects/perry-and-the-proletariat/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Where Is My Husband?">
-                                <div class="project-category-badge-carousel">Film</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Where Is My Husband?</h3>
-                                <p class="project-role-carousel">Production Assistant</p>
-                                <p class="project-year-carousel">2025</p>
-                                <a href="/projects/where-is-my-husband/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="carousel-slide">
-                        <div class="project-card-carousel">
-                            <div class="project-image-wrapper-carousel">
-                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Ravens">
-                                <div class="project-category-badge-carousel">Theater</div>
-                            </div>
-                            <div class="project-info-carousel">
-                                <h3 class="project-title-carousel">Ravens</h3>
-                                <p class="project-role-carousel">Assistant Director</p>
-                                <p class="project-year-carousel">2024-2025</p>
-                                <a href="/projects/ravens/" class="btn-carousel">View Details →</a>
-                            </div>
-                        </div>
-                    </div>
-                    
                 </div>
             </div>
 
@@ -1594,118 +901,6 @@
         </div>
 
         <div class="carousel-dots">
-            
-            <button class="dot" data-index="0"></button>
-            
-            <button class="dot" data-index="1"></button>
-            
-            <button class="dot" data-index="2"></button>
-            
-            <button class="dot" data-index="3"></button>
-            
-            <button class="dot" data-index="4"></button>
-            
-            <button class="dot" data-index="5"></button>
-            
-            <button class="dot" data-index="6"></button>
-            
-            <button class="dot" data-index="7"></button>
-            
-            <button class="dot" data-index="8"></button>
-            
-            <button class="dot" data-index="9"></button>
-            
-            <button class="dot" data-index="10"></button>
-            
-            <button class="dot" data-index="11"></button>
-            
-            <button class="dot" data-index="12"></button>
-            
-            <button class="dot" data-index="13"></button>
-            
-            <button class="dot" data-index="14"></button>
-            
-            <button class="dot" data-index="15"></button>
-            
-            <button class="dot" data-index="16"></button>
-            
-            <button class="dot" data-index="17"></button>
-            
-            <button class="dot" data-index="18"></button>
-            
-            <button class="dot" data-index="19"></button>
-            
-            <button class="dot" data-index="20"></button>
-            
-            <button class="dot" data-index="21"></button>
-            
-            <button class="dot" data-index="22"></button>
-            
-            <button class="dot" data-index="23"></button>
-            
-            <button class="dot" data-index="24"></button>
-            
-            <button class="dot" data-index="25"></button>
-            
-            <button class="dot" data-index="26"></button>
-            
-            <button class="dot" data-index="27"></button>
-            
-            <button class="dot" data-index="28"></button>
-            
-            <button class="dot" data-index="29"></button>
-            
-            <button class="dot" data-index="30"></button>
-            
-            <button class="dot" data-index="31"></button>
-            
-            <button class="dot" data-index="32"></button>
-            
-            <button class="dot" data-index="33"></button>
-            
-            <button class="dot" data-index="34"></button>
-            
-            <button class="dot" data-index="35"></button>
-            
-            <button class="dot" data-index="36"></button>
-            
-            <button class="dot" data-index="37"></button>
-            
-            <button class="dot" data-index="38"></button>
-            
-            <button class="dot" data-index="39"></button>
-            
-            <button class="dot" data-index="40"></button>
-            
-            <button class="dot" data-index="41"></button>
-            
-            <button class="dot" data-index="42"></button>
-            
-            <button class="dot" data-index="43"></button>
-            
-            <button class="dot" data-index="44"></button>
-            
-            <button class="dot" data-index="45"></button>
-            
-            <button class="dot" data-index="46"></button>
-            
-            <button class="dot" data-index="47"></button>
-            
-            <button class="dot" data-index="48"></button>
-            
-            <button class="dot" data-index="49"></button>
-            
-            <button class="dot" data-index="50"></button>
-            
-            <button class="dot" data-index="51"></button>
-            
-            <button class="dot" data-index="52"></button>
-            
-            <button class="dot" data-index="53"></button>
-            
-            <button class="dot" data-index="54"></button>
-            
-            <button class="dot" data-index="55"></button>
             
         </div>
     </div>
@@ -1801,14 +996,33 @@
 
         </main>
 
-        <!-- FOOTER -->
-        <footer class="site-footer">
+       <!-- FOOTER WITH CONTACT INFO -->
+<footer class="site-footer">
+    <div class="footer-container">
+        <div class="footer-contact">
+            <div class="contact-links">
+                <a href="https://www.linkedin.com/in/dann-butt-1401a7307/" target="_blank" rel="noopener noreferrer" class="contact-link linkedin">
+                    <span class="contact-icon">🔗</span> LinkedIn
+                </a>
+                <span class="contact-divider">|</span>
+                <a href="tel:516-551-6754" class="contact-link">
+                    <span class="contact-icon">📞</span> (516) 551-6754
+                </a>
+                <span class="contact-divider">|</span>
+                <a href="mailto:buttdann84@gmail.com" class="contact-link">
+                    <span class="contact-icon">✉️</span> buttdann84@gmail.com
+                </a>
+            </div>
+        </div>
+        <div class="footer-copyright">
             <p>&copy; :2026 Dann Butt. All rights reserved.</p>
-        </footer>
+        </div>
+    </div>
+</footer> 
     </div>
 
     <script>
-        // Carousel functionality
+        // Carousel functionality (from your homepage)
         document.addEventListener('DOMContentLoaded', function() {
             const track = document.querySelector('.carousel-track');
             if (!track) return;
@@ -1874,5 +1088,31 @@
             updateCarousel();
         });
     </script>
+<script>
+    // Dropdown with delay - stays open long enough for cursor to reach menu
+    document.addEventListener('DOMContentLoaded', function() {
+        const dropdown = document.getElementById('experienceDropdown');
+        const dropdownContent = document.getElementById('dropdownContent');
+        let timeoutId;
+        const delay = 300; // milliseconds - adjust this value to make it stay longer/shorter
+        
+        function showDropdown() {
+            clearTimeout(timeoutId);
+            dropdownContent.classList.add('show');
+        }
+        
+        function hideDropdown() {
+            timeoutId = setTimeout(function() {
+                dropdownContent.classList.remove('show');
+            }, delay);
+        }
+        
+        // Show when hovering over dropdown or content
+        dropdown.addEventListener('mouseenter', showDropdown);
+        dropdown.addEventListener('mouseleave', hideDropdown);
+        dropdownContent.addEventListener('mouseenter', showDropdown);
+        dropdownContent.addEventListener('mouseleave', hideDropdown);
+    });
+</script>
 </body>
 </html>

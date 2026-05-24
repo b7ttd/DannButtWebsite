@@ -5,12 +5,11 @@
             "url": "/"
         },
         {
-            "text": "Projects",
-            "url": "/projects/",
-            "active": true
+            "text": "Experience",
+            "url": "/experience/"
         },
         {
-            "text": "Resume and About",
+            "text": "Resume & About",
             "url": "/resume/"
         }
     ]

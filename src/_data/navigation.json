@@ -5,8 +5,8 @@
             "url": "/"
         },
         {
-            "text": "Project Management",
-            "url": "/projects-management/",
+            "text": "Projects",
+            "url": "/projects/",
             "active": true
         },
         {

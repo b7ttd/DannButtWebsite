@@ -1,0 +1,1 @@
+for dir in a-lunar-rhapsody aha-wall-street-run by-the-way-meet-vera-stark celebrate-israel-parade horoscope kentucky kindeva lets-love northwell-walk-li nyc-brooklyn-half nyc-half-marathon the-amethyst-and-the-peridot the-tempest three-penny-opera walk-ms-long-island walk-ms-nj walk-ms-nyc; do cp kindeva/index.njk "$dir/index.njk"; done

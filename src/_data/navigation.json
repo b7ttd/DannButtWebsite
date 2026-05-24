@@ -1,0 +1,17 @@
+{
+    "items": [
+        {
+            "text": "Home",
+            "url": "/"
+        },
+        {
+            "text": "Project Management",
+            "url": "/projects-management/",
+            "active": true
+        },
+        {
+            "text": "Resume and About",
+            "url": "/resume/"
+        }
+    ]
+}

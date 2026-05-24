@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Home | Dann Butt</title>
+    
+    <!-- Preconnect for Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* -----------------------------------------------
+            RESET & BASE STYLES - BLACK BACKGROUND, WHITE TEXT
+        ----------------------------------------------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000000;
+            font-family: 'Inter', sans-serif;
+            color: #ffffff;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Typography System - ALL WHITE */
+        h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, h6 {
+            color: #ffffff;
+        }
+
+        h1, .h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        h2, .h2 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        h3, .h3 {
+            font-size: clamp(1.4rem, 3vw, 1.8rem);
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+
+        h4, .h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        p {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+            color: #ffffff;
+        }
+
+        .sqsrte-large {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            opacity: 0.8;
+        }
+
+        /* Layout Utilities */
+        .site-wrapper {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1500px;
+            margin: 0 auto;
+            padding: 0 3vw;
+        }
+
+        /* Header Styles - ENLARGED TEXT */
+        .site-header {
+            position: relative;
+            background: #000000;
+            padding: 1.5vw 3vw;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            border-bottom: 1px solid #333333;
+        }
+
+        .header-title a {
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: #ffffff;
+            letter-spacing: -0.01em;
+        }
+
+        .header-nav-list {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .header-nav-list a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 500;
+            font-size: 1.2rem;
+            transition: opacity 0.2s ease;
+        }
+
+        .header-nav-list a:hover,
+        .header-nav-list a.active {
+            opacity: 0.7;
+        }
+
+        /* Responsive Header */
+        @media (max-width: 768px) {
+            .site-header {
+                flex-direction: column;
+                text-align: center;
+                padding: 4vw;
+            }
+            .header-nav-list {
+                gap: 1.5rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .header-title a {
+                font-size: 1.5rem;
+            }
+            .header-nav-list a {
+                font-size: 1rem;
+            }
+        }
+
+        /* Section Styles */
+        .page-section {
+            padding: 4vw 0;
+            width: 100%;
+        }
+
+        .full-bleed-section {
+            padding: 0;
+        }
+
+        /* Hero Video Block */
+        .hero-video {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0;
+            line-height: 0;
+        }
+        
+        .hero-video video {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Two Column Text Section */
+        .two-column-text {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4rem;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .text-left {
+            flex: 1.2;
+        }
+
+        .text-right {
+            flex: 0.8;
+            text-align: right;
+        }
+
+        @media (max-width: 768px) {
+            .two-column-text {
+                flex-direction: column;
+                gap: 2rem;
+                padding: 2rem 1.5rem;
+            }
+            .text-right {
+                text-align: left;
+            }
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .project-card {
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease;
+            background: #111111;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card img {
+            width: 100%;
+            aspect-ratio: 3 / 2;
+            object-fit: cover;
+            display: block;
+        }
+
+        .project-card h3 {
+            font-size: 1.25rem;
+            margin: 1rem 1rem 0.5rem;
+            color: #ffffff;
+        }
+
+        .project-card p {
+            font-size: 0.9rem;
+            color: #cccccc;
+            margin: 0 1rem 1rem;
+        }
+
+        .project-card .btn {
+            display: inline-block;
+            background: #ffffff;
+            color: #000000;
+            padding: 0.6rem 1.2rem;
+            margin: 0 1rem 1rem;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border-radius: 30px;
+            text-align: center;
+            align-self: flex-start;
+            transition: background 0.2s ease;
+        }
+
+        .project-card .btn:hover {
+            background: #dddddd;
+        }
+
+        /* Feature Row */
+        .feature-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            align-items: center;
+            max-width: 1400px;
+            margin: 3rem auto;
+            padding: 2rem;
+        }
+
+        .feature-row.reverse {
+            flex-direction: row-reverse;
+        }
+
+        .feature-text {
+            flex: 1;
+            color: #ffffff;
+        }
+
+        .feature-image {
+            flex: 1;
+        }
+
+        .feature-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .feature-row, .feature-row.reverse {
+                flex-direction: column;
+            }
+        }
+
+        /* Horizontal Rule */
+        hr {
+            margin: 2rem 0;
+            border: 0;
+            height: 1px;
+            background: #333333;
+        }
+
+        /* Recent Grid */
+        .recent-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+
+        .recent-item h4 {
+            margin-bottom: 0.25rem;
+            color: #ffffff;
+        }
+
+        .recent-item p {
+            color: #aaaaaa;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        .site-footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid #222222;
+            margin-top: 2rem;
+            font-size: 0.8rem;
+            color: #777777;
+            background-color: #000000;
+        }
+
+        /* Video Showcase Section */
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            background: #000000;
+        }
+
+        .showcase-video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Carousel Styles */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            color: #aaaaaa;
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .carousel-track-container {
+            overflow: hidden;
+            flex: 1;
+            border-radius: 16px;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            gap: 2rem;
+        }
+
+        .carousel-slide {
+            min-width: calc(33.333% - 1.33rem);
+            flex-shrink: 0;
+        }
+
+        .project-card-carousel {
+            background: #111111;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+
+        .project-card-carousel:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-image-wrapper-carousel {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            background: #222222;
+        }
+
+        .project-image-wrapper-carousel img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card-carousel:hover .project-image-wrapper-carousel img {
+            transform: scale(1.05);
+        }
+
+        .project-category-badge-carousel {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255,255,255,0.95);
+            color: #000000;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .project-info-carousel {
+            padding: 1.25rem;
+        }
+
+        .project-title-carousel {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.35rem;
+            color: #ffffff;
+        }
+
+        .project-role-carousel {
+            font-size: 0.8rem;
+            color: #aaaaaa;
+            margin-bottom: 0.25rem;
+        }
+
+        .project-year-carousel {
+            font-size: 0.75rem;
+            color: #777777;
+            margin-bottom: 1rem;
+        }
+
+        .btn-carousel {
+            display: inline-block;
+            background: #ffffff;
+            color: #000000;
+            padding: 0.5rem 1rem;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border-radius: 30px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-carousel:hover {
+            background: #dddddd;
+            transform: translateX(3px);
+        }
+
+        /* Carousel Arrows */
+        .carousel-arrow {
+            background: #222222;
+            border: 1px solid #444444;
+            color: #ffffff;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+
+        .carousel-arrow:hover {
+            background: #ffffff;
+            color: #000000;
+            border-color: #ffffff;
+        }
+
+        /* Carousel Dots */
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 2rem;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #444444;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .dot:hover {
+            background: #888888;
+        }
+
+        .dot.active {
+            background: #ffffff;
+            width: 24px;
+            border-radius: 10px;
+        }
+
+        /* Filter Buttons */
+        .category-filters {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1.25rem;
+            background: transparent;
+            border: 1.5px solid #444444;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: #dddddd;
+        }
+
+        .filter-btn:hover {
+            border-color: #ffffff;
+            color: #ffffff;
+        }
+
+        .filter-btn.active {
+            background: #ffffff;
+            border-color: #ffffff;
+            color: #000000;
+        }
+
+        /* Performance Schedule */
+        .performance-schedule {
+            background: #111111;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+        }
+        
+        .performance-schedule h3 {
+            font-size: 1.2rem;
+            margin-top: 1rem;
+            margin-bottom: 0.75rem;
+            color: #ffffff;
+        }
+        
+        .performance-schedule ul {
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+        
+        .performance-schedule li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #222222;
+            color: #e0e0e0;
+        }
+
+        .talkback-badge {
+            background: #ffffff;
+            color: #000000;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-left: 0.75rem;
+        }
+
+        .talkback-notice {
+            background: #111111;
+            border-left: 4px solid #ffffff;
+            padding: 1rem 1.25rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
+        .talkback-notice p {
+            margin: 0;
+            color: #e0e0e0;
+        }
+        
+        .talkback-notice strong {
+            color: #ffffff;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 640px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+            .projects-grid {
+                gap: 1.5rem;
+                padding: 0 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .video-container {
+                border-radius: 8px;
+            }
+            
+            .carousel-slide {
+                min-width: 100%;
+            }
+            
+            .carousel-arrow {
+                width: 32px;
+                height: 32px;
+                font-size: 1rem;
+            }
+            
+            .carousel-container {
+                gap: 0.5rem;
+            }
+        }
+
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .carousel-slide {
+                min-width: calc(50% - 1rem);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="site-wrapper">
+        
+        <!-- HEADER -->
+        <header class="site-header">
+            <div class="header-title">
+                <a href="/">Dann Butt</a>
+            </div>
+            <nav>
+                <ul class="header-nav-list">
+                    
+                    <li>
+                        <a href="/" class="active">
+                            Home
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/projects-management/" >
+                            Project Management
+                        </a>
+                    </li>
+                    
+                    <li>
+                        <a href="/resume/" >
+                            Resume and About
+                        </a>
+                    </li>
+                    
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            
+<!-- PROJECT SHOWCASE VIDEO - TOP OF PAGE -->
+<section class="page-section">
+    <div class="container">
+        <div class="video-container">
+            <video class="showcase-video" autoplay muted loop playsinline>
+                <source src="/images/EventageVideo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+</section>
+
+<!-- INTRO TEXT SECTION -->
+<section class="page-section">
+    <div class="two-column-text">
+        <div class="text-left">
+            <h3 style="font-size: 2.5rem;">Technical Direction and Project Management</h3>
+        </div>
+        <div class="text-right">
+            <p class="sqsrte-large">Bachelor of Arts in Environmental Studies - Fordham University 2027</p>
+            <p>Theater minor.</p>
+            <p class="sqsrte-large">NYS Regents Diploma - Garden City High School 2023</p>
+            <p>Recipient of many awards.</p>
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS CAROUSEL SECTION -->
+<section class="page-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Featured Projects</h2>
+            <p class="section-subtitle">Click arrows to explore my work</p>
+        </div>
+
+        <div class="carousel-container">
+            <button class="carousel-arrow prev" aria-label="Previous project">❮</button>
+            
+            <div class="carousel-track-container">
+                <div class="carousel-track">
+                    
+                    <div class="carousel-slide">
+                        <div class="project-card-carousel">
+                            <div class="project-image-wrapper-carousel">
+                                <img src="https://d19nu91zz7veuv.cloudfront.net/wp-content/uploads/20240501231909/Celebrate-Israel-Livestream-Thumbnail-1.png" alt="Celebrate Israel Parade">
+                                <div class="project-category-badge-carousel">Parade</div>
+                            </div>
+                            <div class="project-info-carousel">
+                                <h3 class="project-title-carousel">Celebrate Israel Parade</h3>
+                                <p class="project-role-carousel">Assistant to Event Project Manager</p>
+                                <p class="project-year-carousel">2026</p>
+                                <a href="/projects-management/celebrate-israel-parade/" class="btn-carousel">View Details →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-slide">
+                        <div class="project-card-carousel">
+                            <div class="project-image-wrapper-carousel">
+                                <img src="https://donordrivecontent.com/mssociety/images/$event2514$/facebookImage.png?v=202605201454" alt="Walk MS: New Jersey">
+                                <div class="project-category-badge-carousel">Walk</div>
+                            </div>
+                            <div class="project-info-carousel">
+                                <h3 class="project-title-carousel">Walk MS: New Jersey</h3>
+                                <p class="project-role-carousel">Assistant to Event Project Manager</p>
+                                <p class="project-year-carousel">2026</p>
+                                <a href="/projects-management/walk-ms-nj/" class="btn-carousel">View Details →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-slide">
+                        <div class="project-card-carousel">
+                            <div class="project-image-wrapper-carousel">
+                                <img src="https://donordrivecontent.com/mssociety/images/$event2514$/facebookImage.png?v=202605201454" alt="Walk MS: NYC">
+                                <div class="project-category-badge-carousel">Walk</div>
+                            </div>
+                            <div class="project-info-carousel">
+                                <h3 class="project-title-carousel">Walk MS: NYC</h3>
+                                <p class="project-role-carousel">Assistant to Event Project Manager</p>
+                                <p class="project-year-carousel">2026</p>
+                                <a href="/projects-management/walk-ms-nyc/" class="btn-carousel">View Details →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-slide">
+                        <div class="project-card-carousel">
+                            <div class="project-image-wrapper-carousel">
+                                <img src="https://donordrivecontent.com/mssociety/images/$event2514$/facebookImage.png?v=202605201454" alt="Walk MS: Long Island">
+                                <div class="project-category-badge-carousel">Walk</div>
+                            </div>
+                            <div class="project-info-carousel">
+                                <h3 class="project-title-carousel">Walk MS: Long Island</h3>
+                                <p class="project-role-carousel">Assistant to Event Project Manager</p>
+                                <p class="project-year-carousel">2026</p>
+                                <a href="/projects-management/walk-ms-long-island/" class="btn-carousel">View Details →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-slide">
+                        <div class="project-card-carousel">
+                            <div class="project-image-wrapper-carousel">
+                                <img src="https://www.runningusa.org/wp-content/uploads/2023/01/NYCM_HorizontalLogo_FC_RGB-640x375.png" alt="NYC Half Marathon">
+                                <div class="project-category-badge-carousel">Race</div>
+                            </div>
+                            <div class="project-info-carousel">
+                                <h3 class="project-title-carousel">NYC Half Marathon</h3>
+                                <p class="project-role-carousel">Assistant to Event Project Manager</p>
+                                <p class="project-year-carousel">2026</p>
+                                <a href="/projects-management/nyc-half-marathon/" class="btn-carousel">View Details →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-slide">
+                        <div class="project-card-carousel">
+                            <div class="project-image-wrapper-carousel">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQruWYs-1ps-EHs_qjPijqduKH1XY_HQRGqLw&amp;s" alt="NYC Brooklyn Half">
+                                <div class="project-category-badge-carousel">Race</div>
+                            </div>
+                            <div class="project-info-carousel">
+                                <h3 class="project-title-carousel">NYC Brooklyn Half</h3>
+                                <p class="project-role-carousel">Assistant to Event Project Manager</p>
+                                <p class="project-year-carousel">2026</p>
+                                <a href="/projects-management/nyc-brooklyn-half/" class="btn-carousel">View Details →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-slide">
+                        <div class="project-card-carousel">
+                            <div class="project-image-wrapper-carousel">
+                                <img src="https://mma.prnewswire.com/media/1162639/kindeva_logos_2_color_blk.jpg?p=facebook" alt="Kindeva">
+                                <div class="project-category-badge-carousel">Corporate</div>
+                            </div>
+                            <div class="project-info-carousel">
+                                <h3 class="project-title-carousel">Kindeva</h3>
+                                <p class="project-role-carousel">Assistant to Event Project Manager</p>
+                                <p class="project-year-carousel">2026</p>
+                                <a href="/projects-management/kindeva/" class="btn-carousel">View Details →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-slide">
+                        <div class="project-card-carousel">
+                            <div class="project-image-wrapper-carousel">
+                                <img src="https://cdn.raceroster.com/events/0119ba09-2fd5-4ce2-ae9c-8dfcf23166a1/images/640656f67cd71.png" alt="AHA Wall Street Run">
+                                <div class="project-category-badge-carousel">Race</div>
+                            </div>
+                            <div class="project-info-carousel">
+                                <h3 class="project-title-carousel">AHA Wall Street Run</h3>
+                                <p class="project-role-carousel">Assistant to Event Project Manager</p>
+                                <p class="project-year-carousel">2026</p>
+                                <a href="/projects-management/aha-wall-street-run/" class="btn-carousel">View Details →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-slide">
+                        <div class="project-card-carousel">
+                            <div class="project-image-wrapper-carousel">
+                                <img src="https://dam.northwell.edu/m/173ca8235af00e28/Drupal-NEWS_Northwell-Health-Walk-2024.jpg" alt="Northwell Walk LI">
+                                <div class="project-category-badge-carousel">Walk</div>
+                            </div>
+                            <div class="project-info-carousel">
+                                <h3 class="project-title-carousel">Northwell Walk LI</h3>
+                                <p class="project-role-carousel">Assistant to Event Project Manager</p>
+                                <p class="project-year-carousel">2026</p>
+                                <a href="/projects-management/northwell-walk-li/" class="btn-carousel">View Details →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-slide">
+                        <div class="project-card-carousel">
+                            <div class="project-image-wrapper-carousel">
+                                <img src="https://images.squarespace-cdn.com/content/v1/66e8a3eeddfd12111f8eabbb/cf67a848-72f2-4544-82cd-85af125a8436/LunarRhapsody400x600+%281%29.jpg" alt="A Lunar Rhapsody">
+                                <div class="project-category-badge-carousel">Theater</div>
+                            </div>
+                            <div class="project-info-carousel">
+                                <h3 class="project-title-carousel">A Lunar Rhapsody</h3>
+                                <p class="project-role-carousel">Assistant to Event Project Manager</p>
+                                <p class="project-year-carousel">2026</p>
+                                <a href="/projects-management/a-lunar-rhapsody/" class="btn-carousel">View Details →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-slide">
+                        <div class="project-card-carousel">
+                            <div class="project-image-wrapper-carousel">
+                                <img src="https://images.squarespace-cdn.com/content/v1/66e8a3eeddfd12111f8eabbb/0892f094-8536-4d99-90d2-3979f50e98d1/VeraStark400x600+%281%29.jpg" alt="By the Way, Meet Vera Stark">
+                                <div class="project-category-badge-carousel">Theater</div>
+                            </div>
+                            <div class="project-info-carousel">
+                                <h3 class="project-title-carousel">By the Way, Meet Vera Stark</h3>
+                                <p class="project-role-carousel">Assistant to Event Project Manager</p>
+                                <p class="project-year-carousel">2026</p>
+                                <a href="/projects-management/by-the-way-meet-vera-stark/" class="btn-carousel">View Details →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-slide">
+                        <div class="project-card-carousel">
+                            <div class="project-image-wrapper-carousel">
+                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Horoscope">
+                                <div class="project-category-badge-carousel">Theater</div>
+                            </div>
+                            <div class="project-info-carousel">
+                                <h3 class="project-title-carousel">Horoscope</h3>
+                                <p class="project-role-carousel">Assistant to Event Project Manager</p>
+                                <p class="project-year-carousel">2026</p>
+                                <a href="/projects-management/horoscope/" class="btn-carousel">View Details →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-slide">
+                        <div class="project-card-carousel">
+                            <div class="project-image-wrapper-carousel">
+                                <img src="https://dam.northwell.edu/m/173ca8235af00e28/Drupal-NEWS_Northwell-Health-Walk-2024.jpg" alt="Kentucky">
+                                <div class="project-category-badge-carousel">Theater</div>
+                            </div>
+                            <div class="project-info-carousel">
+                                <h3 class="project-title-carousel">Kentucky</h3>
+                                <p class="project-role-carousel">Scenic Carpenter</p>
+                                <p class="project-year-carousel">2024</p>
+                                <a href="/projects-management/kentucky/" class="btn-carousel">View Details →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-slide">
+                        <div class="project-card-carousel">
+                            <div class="project-image-wrapper-carousel">
+                                <img src="https://assets.playbill.com/playbill-covers/Lets-Love-Playbill-2025-09-25_Web_2025-10-21-155609_mrxh.jpg" alt="Let&#39;s Love">
+                                <div class="project-category-badge-carousel">Theater</div>
+                            </div>
+                            <div class="project-info-carousel">
+                                <h3 class="project-title-carousel">Let&#39;s Love</h3>
+                                <p class="project-role-carousel">Assistant to Event Project Manager</p>
+                                <p class="project-year-carousel">2026</p>
+                                <a href="/projects-management/lets-love/" class="btn-carousel">View Details →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-slide">
+                        <div class="project-card-carousel">
+                            <div class="project-image-wrapper-carousel">
+                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Ravens">
+                                <div class="project-category-badge-carousel">Theater</div>
+                            </div>
+                            <div class="project-info-carousel">
+                                <h3 class="project-title-carousel">Ravens</h3>
+                                <p class="project-role-carousel">Assistant to Event Project Manager</p>
+                                <p class="project-year-carousel">2026</p>
+                                <a href="/projects-management/ravens/" class="btn-carousel">View Details →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-slide">
+                        <div class="project-card-carousel">
+                            <div class="project-image-wrapper-carousel">
+                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Soundscapes NYC: Kenzi James">
+                                <div class="project-category-badge-carousel">Music</div>
+                            </div>
+                            <div class="project-info-carousel">
+                                <h3 class="project-title-carousel">Soundscapes NYC: Kenzi James</h3>
+                                <p class="project-role-carousel">Assistant to Event Project Manager</p>
+                                <p class="project-year-carousel">2026</p>
+                                <a href="/projects-management/soundscapesnyc-kenzi-james/" class="btn-carousel">View Details →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-slide">
+                        <div class="project-card-carousel">
+                            <div class="project-image-wrapper-carousel">
+                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="The Amethyst and the Peridot">
+                                <div class="project-category-badge-carousel">Theater</div>
+                            </div>
+                            <div class="project-info-carousel">
+                                <h3 class="project-title-carousel">The Amethyst and the Peridot</h3>
+                                <p class="project-role-carousel">Assistant to Event Project Manager</p>
+                                <p class="project-year-carousel">2026</p>
+                                <a href="/projects-management/the-amethyst-and-the-peridot/" class="btn-carousel">View Details →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-slide">
+                        <div class="project-card-carousel">
+                            <div class="project-image-wrapper-carousel">
+                                <img src="https://images.squarespace-cdn.com/content/v1/66e8a3eeddfd12111f8eabbb/6d9c4a36-cf3a-4644-9a23-02b56ddb630d/Tempest400x600.jpg" alt="The Tempest">
+                                <div class="project-category-badge-carousel">Theater</div>
+                            </div>
+                            <div class="project-info-carousel">
+                                <h3 class="project-title-carousel">The Tempest</h3>
+                                <p class="project-role-carousel">Assistant to Event Project Manager</p>
+                                <p class="project-year-carousel">2026</p>
+                                <a href="/projects-management/the-tempest/" class="btn-carousel">View Details →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-slide">
+                        <div class="project-card-carousel">
+                            <div class="project-image-wrapper-carousel">
+                                <img src="https://images.squarespace-cdn.com/content/v1/66e8a3eeddfd12111f8eabbb/2378a4e8-b812-4737-bab8-16b5df8b92e5/Eurydice400x600.jpg" alt="Eurydice">
+                                <div class="project-category-badge-carousel">Theater</div>
+                            </div>
+                            <div class="project-info-carousel">
+                                <h3 class="project-title-carousel">Eurydice</h3>
+                                <p class="project-role-carousel">Assistant to Event Project Manager</p>
+                                <p class="project-year-carousel">2026</p>
+                                <a href="/projects-management/the-tempest/" class="btn-carousel">View Details →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-slide">
+                        <div class="project-card-carousel">
+                            <div class="project-image-wrapper-carousel">
+                                <img src="https://dam.northwell.edu/m/173ca8235af00e28/Drupal-NEWS_Northwell-Health-Walk-2024.jpg" alt="Three Penny Opera">
+                                <div class="project-category-badge-carousel">Theater</div>
+                            </div>
+                            <div class="project-info-carousel">
+                                <h3 class="project-title-carousel">Three Penny Opera</h3>
+                                <p class="project-role-carousel">Scenic Carpenter</p>
+                                <p class="project-year-carousel">2024</p>
+                                <a href="/projects-management/three-penny-opera/" class="btn-carousel">View Details →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-slide">
+                        <div class="project-card-carousel">
+                            <div class="project-image-wrapper-carousel">
+                                <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/3227b1df-891f-4102-a52e-0dfd394a14ae/button.jpg" alt="Where Is My Husband?">
+                                <div class="project-category-badge-carousel">Film</div>
+                            </div>
+                            <div class="project-info-carousel">
+                                <h3 class="project-title-carousel">Where Is My Husband?</h3>
+                                <p class="project-role-carousel">Assistant to Event Project Manager</p>
+                                <p class="project-year-carousel">2026</p>
+                                <a href="/projects-management/where-is-my-husband/" class="btn-carousel">View Details →</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+            <button class="carousel-arrow next" aria-label="Next project">❯</button>
+        </div>
+
+        <div class="carousel-dots">
+            
+            <button class="dot" data-index="0"></button>
+            
+            <button class="dot" data-index="1"></button>
+            
+            <button class="dot" data-index="2"></button>
+            
+            <button class="dot" data-index="3"></button>
+            
+            <button class="dot" data-index="4"></button>
+            
+            <button class="dot" data-index="5"></button>
+            
+            <button class="dot" data-index="6"></button>
+            
+            <button class="dot" data-index="7"></button>
+            
+            <button class="dot" data-index="8"></button>
+            
+            <button class="dot" data-index="9"></button>
+            
+            <button class="dot" data-index="10"></button>
+            
+            <button class="dot" data-index="11"></button>
+            
+            <button class="dot" data-index="12"></button>
+            
+            <button class="dot" data-index="13"></button>
+            
+            <button class="dot" data-index="14"></button>
+            
+            <button class="dot" data-index="15"></button>
+            
+            <button class="dot" data-index="16"></button>
+            
+            <button class="dot" data-index="17"></button>
+            
+            <button class="dot" data-index="18"></button>
+            
+            <button class="dot" data-index="19"></button>
+            
+            <button class="dot" data-index="20"></button>
+            
+        </div>
+    </div>
+</section>
+
+<!-- FEATURE SECTION: Glimmerglass -->
+<section class="page-section">
+    <div class="feature-row">
+        <div class="feature-text">
+            <p class="sqsrte-large">Assistant Technical Director of Stage Operations</p>
+            <p>The Glimmerglass Festival Full Season 2024</p>
+            <p class="sqsrte-large" style="margin-top: 1.5rem;">Assistant Stage Operations Manager</p>
+            <p>The Glimmerglass Festival Full Season 2023</p>
+            <p style="margin-top: 1rem;">Joined the Glimmerglass family in 2023 as an Assistant Stage Operations Manager, ran scenery deck during Opera performances and assigned deck tracks to Stage Operations staff and apprentices. Led scenic changeovers, and scenery and prop transfers between three venues.</p>
+            <p>In 2024 moved to be the Assistant Technical Director of Stage Operations, interviewed and hired 12-person department. Led, managed, and scheduled two assistant managers, five stage operations staff, and four apprentices for show running, repertory changeovers, and scenery and prop transfers.</p>
+        </div>
+        <div class="feature-image">
+            <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/2bcee5ff-fad1-432c-a4cc-416b6e52c3b9/CAN2.jpg" alt="Glimmerglass Production">
+        </div>
+    </div>
+</section>
+
+<!-- FEATURE SECTION: Project Management -->
+<section class="page-section">
+    <div class="feature-row reverse">
+        <div class="feature-text">
+            <p class="sqsrte-large">Project Manager</p>
+            <p>Carnegie Mellon University 2023-2025</p>
+            <p style="margin-top: 1rem;">Manage CMU School of Drama's Technical Direction department for a period of 12 weeks for CMU's thirteen show season in three venues.</p>
+            <p>Supervise and delegate responsibilities for all technical direction students' production assignments including: budgeting, drafting, building, installing, and striking each show.</p>
+            <p>Create/maintain all schedules, build calendars, project tracking documents/databases.</p>
+        </div>
+        <div class="feature-image">
+            <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/19b69576-c8d1-49ee-b675-4a3dba77efca/mom.jpg" alt="Project Management">
+        </div>
+    </div>
+</section>
+
+<!-- FEATURE SECTION: Drafting -->
+<section class="page-section">
+    <div class="feature-row">
+        <div class="feature-text">
+            <p class="sqsrte-large">Drafting - Technical Drawings & Paperwork</p>
+            <p>2D and 3D technical drawings created in Blender</p>
+            <p>Scenic Carpentry Projects</p>
+            <p>Installation drawings</p>
+            <p>Stage Management Papers</p>
+            <p>3d Printing</p>
+        </div>
+        <div class="feature-image">
+            <img src="https://images.squarespace-cdn.com/content/v1/66a135183ddfaa43af16a576/a4687ce0-8326-4c8d-a194-8fa2de23a919/P1+STEEL+STRUCTURE.jpeg" alt="Technical Drawing">
+        </div>
+    </div>
+</section>
+
+<!-- RECENTLY / RESUME SECTION -->
+<section class="page-section">
+    <div class="container">
+        <hr>
+        <h2 style="margin-bottom: 2rem;">Recently:</h2>
+        <div class="recent-grid">
+            
+        </div>
+    </div>
+</section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer class="site-footer">
+            <p>&copy; :2026 Dann Butt. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Carousel functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const track = document.querySelector('.carousel-track');
+            if (!track) return;
+            
+            const slides = Array.from(document.querySelectorAll('.carousel-slide'));
+            const nextButton = document.querySelector('.carousel-arrow.next');
+            const prevButton = document.querySelector('.carousel-arrow.prev');
+            const dots = document.querySelectorAll('.dot');
+            
+            let currentIndex = 0;
+            let slidesToShow = getSlidesToShow();
+            
+            function getSlidesToShow() {
+                if (window.innerWidth <= 768) return 1;
+                if (window.innerWidth <= 1024) return 2;
+                return 3;
+            }
+            
+            function updateCarousel() {
+                const slideWidth = slides[0].getBoundingClientRect().width;
+                const gap = 32;
+                const newPosition = currentIndex * (slideWidth + gap);
+                track.style.transform = `translateX(-${newPosition}px)`;
+                
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === currentIndex);
+                });
+            }
+            
+            function nextSlide() {
+                const maxIndex = slides.length - slidesToShow;
+                if (currentIndex < maxIndex) {
+                    currentIndex++;
+                    updateCarousel();
+                }
+            }
+            
+            function prevSlide() {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateCarousel();
+                }
+            }
+            
+            if (nextButton) nextButton.addEventListener('click', nextSlide);
+            if (prevButton) prevButton.addEventListener('click', prevSlide);
+            
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    currentIndex = index;
+                    updateCarousel();
+                });
+            });
+            
+            window.addEventListener('resize', () => {
+                slidesToShow = getSlidesToShow();
+                if (currentIndex > slides.length - slidesToShow) {
+                    currentIndex = Math.max(0, slides.length - slidesToShow);
+                }
+                updateCarousel();
+            });
+            
+            updateCarousel();
+        });
+    </script>
+</body>
+</html>

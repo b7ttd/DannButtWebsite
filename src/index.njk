@@ -77,6 +77,168 @@ title: Home
 
 <!-- ============================================ -->
 <!-- PROJECT MANAGEMENT EXPERIENCE SECTION -->
-<!-- ============================================ -->
+<!-- RECENTLY SECTION - Grid Layout -->
+<section class="page-section">
+    <div class="container">
+        <hr>
+        
+        <div class="recent-header">
+            <h2 class="recent-title">Recently:</h2>
+        </div>
+        
+        <div class="recent-grid-layout">
+            <!-- Column 1 -->
+            <div class="recent-col">
+                <div class="recent-item">
+                    <p class="recent-year">2025-2026 New York, NY</p>
+                    <h4 class="recent-institution">Fordham Theater Company</h4>
+                    <p class="recent-role">Scene Shop Assistant (2024-2026 Seasons)</p>
+                </div>
+                
+                <div class="recent-item">
+                    <p class="recent-year">2025-2026 New York, NY</p>
+                    <h4 class="recent-institution">The Metropolitan Opera</h4>
+                    <p class="recent-role">Stage Carpenter (Turandot, Carmen, Don Giovanni, Aida, Madama Butterfly, etc.)</p>
+                </div>
+                
+                <div class="recent-item">
+                    <p class="recent-year">2025-2026 New York, NY</p>
+                    <h4 class="recent-institution">The American Ballet Theatre</h4>
+                    <p class="recent-role">Stage Carpenter (Swan Lake, Woolf Works, Giselle, The Winter's Tale, Sylvia)</p>
+                </div>
+            </div>
+            
+            <!-- Column 2 -->
+            <div class="recent-col">
+                <div class="recent-item">
+                    <p class="recent-year">2026 New York, NY</p>
+                    <h4 class="recent-institution">NYC Half Marathon</h4>
+                    <p class="recent-role">Onsite Operations Assistant / Post-Production Aide</p>
+                </div>
+                
+                <div class="recent-item">
+                    <p class="recent-year">2026 New York, NY</p>
+                    <h4 class="recent-institution">Celebrate Israel Parade</h4>
+                    <p class="recent-role">Assistant to Event Project Manager</p>
+                </div>
+                
+                <div class="recent-item">
+                    <p class="recent-year">2026 New Jersey, NYC, Long Island</p>
+                    <h4 class="recent-institution">Walk MS Events</h4>
+                    <p class="recent-role">Assistant to Event Project Manager</p>
+                </div>
+            </div>
+            
+            <!-- Column 3 -->
+            <div class="recent-col">
+                <div class="recent-item">
+                    <p class="recent-year">2025 New York, NY</p>
+                    <h4 class="recent-institution">The Tempest</h4>
+                    <p class="recent-role">Shop Carpenter & Painter - Fordham Theater Company</p>
+                </div>
+                
+                <div class="recent-item">
+                    <p class="recent-year">2025 New York, NY</p>
+                    <h4 class="recent-institution">A Lunar Rhapsody</h4>
+                    <p class="recent-role">Shop Carpenter & Painter - Fordham Theater Company</p>
+                </div>
+                
+                <div class="recent-item">
+                    <p class="recent-year">2026 New York, NY</p>
+                    <h4 class="recent-institution">Eurydice</h4>
+                    <p class="recent-role">Shop Carpenter & Painter - Fordham Theater Company</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
+<style>
+/* Recently Section */
+.recent-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.recent-title {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #ffffff;
+}
+
+.recent-grid-layout {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.recent-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.recent-item {
+    margin-bottom: 0.5rem;
+}
+
+.recent-year {
+    font-size: 0.9rem;
+    color: #aaaaaa;
+    margin-bottom: 0.25rem;
+}
+
+.recent-institution {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: #ffffff;
+}
+
+.recent-role {
+    font-size: 0.85rem;
+    color: #888888;
+    line-height: 1.4;
+}
+
+hr {
+    margin: 2rem 0;
+    border: 0;
+    height: 1px;
+    background: #333333;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .recent-grid-layout {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        padding: 0 1.5rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .recent-grid-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+    
+    .recent-year {
+        font-size: 0.8rem;
+    }
+    
+    .recent-institution {
+        font-size: 1rem;
+    }
+    
+    .recent-role {
+        font-size: 0.8rem;
+    }
+}
+</style><!-- ============================================ -->
 

@@ -12,6 +12,7 @@ module.exports = function(eleventyConfig) {
       output: "docs",
       includes: "_includes",
       data: "_data"
-    }
+    },
+    pathPrefix:"/DannButtWebsite/"
   };
 };

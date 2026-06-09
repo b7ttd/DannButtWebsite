@@ -103,6 +103,26 @@
             display: block;
         }
 
+        /* Back Button */
+        .back-button {
+            margin: 2rem 0 1rem;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #cccccc;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s ease;
+            cursor: pointer;
+        }
+
+        .back-link:hover {
+            color: #ffffff;
+        }
+
         /* Header Styles */
         .site-header {
             position: relative;
@@ -239,10 +259,6 @@
         .page-section {
             padding: 4vw 0;
             width: 100%;
-        }
-
-        .full-bleed-section {
-            padding: 0;
         }
 
         /* Two Column Text Section */
@@ -391,6 +407,93 @@
             transform: translateY(-2px);
         }
 
+        /* Project Detail Styles */
+        .project-detail-section {
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .project-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .project-meta {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            color: #cccccc;
+            border-top: 1px solid #333333;
+            padding-top: 1rem;
+        }
+
+        .project-hero {
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .project-hero img {
+            width: 100%;
+            height: auto;
+        }
+
+        .project-content {
+            display: grid;
+            grid-template-columns: 1fr 0.4fr;
+            gap: 3rem;
+        }
+
+        .project-main {
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .project-main h2 {
+            font-size: 1.5rem;
+            margin: 1.5rem 0 1rem;
+        }
+
+        .project-main ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-sidebar {
+            background: #111111;
+            padding: 1.5rem;
+            border-radius: 12px;
+            align-self: start;
+        }
+
+        .project-sidebar h3 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .performance-schedule {
+            background: #111111;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+        }
+
+        .talkback-notice {
+            background: #111111;
+            border-left: 4px solid #ffffff;
+            padding: 1rem 1.25rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+
         /* Recently Section */
         .recent-header {
             text-align: center;
@@ -442,19 +545,47 @@
             line-height: 1.4;
         }
 
-        /* Experience Page (WIP) */
-        .wip-message {
-            text-align: center;
-            padding: 4rem 2rem;
+        /* Experience Grid (WIP - placeholder) */
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 2rem auto;
+            padding: 1rem 2rem;
         }
 
-        .wip-message h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
+        .exp-card {
+            background: #111111;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
         }
 
-        .wip-message p {
-            color: #aaaaaa;
+        .exp-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .exp-card-image {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+        }
+
+        .exp-card-info {
+            padding: 1.25rem;
+        }
+
+        .exp-card-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.35rem;
+        }
+
+        .exp-card-role {
+            font-size: 0.85rem;
+            color: #cccccc;
         }
 
         /* Footer */
@@ -519,49 +650,30 @@
         @media (max-width: 900px) {
             .recent-grid-layout {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem;
-                padding: 0 1.5rem;
+            }
+            .project-content {
+                grid-template-columns: 1fr;
             }
         }
 
         @media (max-width: 768px) {
             .contact-links {
                 flex-direction: column;
-                gap: 0.5rem;
             }
             .contact-divider {
                 display: none;
             }
-            .site-footer {
-                padding: 1.5rem;
-            }
             .resume-pdf {
                 height: 70vh;
-                min-height: 500px;
             }
         }
 
         @media (max-width: 600px) {
             .recent-grid-layout {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
-                padding: 0 1rem;
             }
-            .recent-year {
-                font-size: 0.8rem;
-            }
-            .recent-institution {
-                font-size: 1rem;
-            }
-            .recent-role {
-                font-size: 0.8rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .resume-pdf {
-                height: 60vh;
-                min-height: 400px;
+            .experience-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -579,13 +691,16 @@
                     <li class="dropdown" id="experienceDropdown">
                         <button class="dropbtn" id="dropbtn">Experience ▼</button>
                         <div class="dropdown-content" id="dropdownContent">
-                            <a onclick="showExperienceCategory('all')">📁 All Experience</a>
+                            <a onclick="showPage('experience')">📁 All Experience</a>
                             <div class="dropdown-divider"></div>
-                            <a onclick="showExperienceCategory('project-management')">📋 Project Management</a>
-                            <a onclick="showExperienceCategory('technical-direction')">🔧 Technical Direction</a>
-                            <a onclick="showExperienceCategory('fabrication')">🛠️ Fabrication</a>
-                            <a onclick="showExperienceCategory('drafting')">✏️ Drafting</a>
-                            <a onclick="showExperienceCategory('miscellaneous')">🎭 Miscellaneous</a>
+                            <a onclick="showProject('the-tempest')">🎭 The Tempest</a>
+                            <a onclick="showProject('kentucky')">🎭 Kentucky</a>
+                            <a onclick="showProject('three-penny-opera')">🎭 Three Penny Opera</a>
+                            <a onclick="showProject('a-lunar-rhapsody')">🎭 A Lunar Rhapsody</a>
+                            <a onclick="showProject('eurydice')">🎭 Eurydice</a>
+                            <a onclick="showProject('turandot')">🎭 Turandot</a>
+                            <a onclick="showProject('carmen')">🎭 Carmen</a>
+                            <a onclick="showProject('swan-lake')">🎭 Swan Lake</a>
                         </div>
                     </li>
                     <li><a onclick="showPage('resume')">Resume & About</a></li>
@@ -594,7 +709,7 @@
         </header>
 
         <main>
-            <!-- HOME PAGE -->
+            <!-- ================= HOME PAGE ================= -->
             <div id="home-page" class="page active">
                 <!-- Feature Images Section -->
                 <section class="page-section" style="padding-bottom:0vw">
@@ -640,12 +755,12 @@
                                 <div class="recent-item">
                                     <p class="recent-year">2025-2026 New York, NY</p>
                                     <h4 class="recent-institution">The Metropolitan Opera</h4>
-                                    <p class="recent-role">Stage Carpenter (Turandot, Carmen, Don Giovanni, Aida, Madama Butterfly, etc.)</p>
+                                    <p class="recent-role">Stage Carpenter (Turandot, Carmen, Don Giovanni, etc.)</p>
                                 </div>
                                 <div class="recent-item">
                                     <p class="recent-year">2025-2026 New York, NY</p>
                                     <h4 class="recent-institution">The American Ballet Theatre</h4>
-                                    <p class="recent-role">Stage Carpenter (Swan Lake, Woolf Works, Giselle, The Winter's Tale, Sylvia)</p>
+                                    <p class="recent-role">Stage Carpenter (Swan Lake, Woolf Works, Giselle, etc.)</p>
                                 </div>
                             </div>
                             <div class="recent-col">
@@ -687,16 +802,77 @@
                 </section>
             </div>
 
-            <!-- EXPERIENCE PAGE (WIP) -->
+            <!-- ================= EXPERIENCE LANDING PAGE ================= -->
             <div id="experience-page" class="page">
-                <div class="wip-message">
-                    <h2>🎭 Experience</h2>
-                    <p>Currently organizing my extensive production history...</p>
-                    <p style="margin-top: 1rem;">This section is under construction. Check back soon!</p>
-                </div>
+                <section class="page-section">
+                    <div class="container">
+                        <div class="recent-header">
+                            <h2 class="recent-title">All Experience</h2>
+                            <p class="recent-subtitle" style="color:#aaaaaa; margin-bottom:2rem;">Click any project to view details</p>
+                        </div>
+                        <div class="experience-grid">
+                            <div class="exp-card" onclick="showProject('the-tempest')">
+                                <img class="exp-card-image" src="images/placeholder.jpg" alt="The Tempest" onerror="this.src='https://via.placeholder.com/400x225?text=The+Tempest'">
+                                <div class="exp-card-info">
+                                    <h3 class="exp-card-title">The Tempest</h3>
+                                    <p class="exp-card-role">Shop Carpenter & Painter (2025)</p>
+                                </div>
+                            </div>
+                            <div class="exp-card" onclick="showProject('kentucky')">
+                                <img class="exp-card-image" src="images/placeholder.jpg" alt="Kentucky" onerror="this.src='https://via.placeholder.com/400x225?text=Kentucky'">
+                                <div class="exp-card-info">
+                                    <h3 class="exp-card-title">Kentucky</h3>
+                                    <p class="exp-card-role">Shop Carpenter & Painter (2024)</p>
+                                </div>
+                            </div>
+                            <div class="exp-card" onclick="showProject('three-penny-opera')">
+                                <img class="exp-card-image" src="images/placeholder.jpg" alt="Three Penny Opera" onerror="this.src='https://via.placeholder.com/400x225?text=Three+Penny+Opera'">
+                                <div class="exp-card-info">
+                                    <h3 class="exp-card-title">Three Penny Opera</h3>
+                                    <p class="exp-card-role">Shop Carpenter & Painter (2024)</p>
+                                </div>
+                            </div>
+                            <div class="exp-card" onclick="showProject('a-lunar-rhapsody')">
+                                <img class="exp-card-image" src="images/placeholder.jpg" alt="A Lunar Rhapsody" onerror="this.src='https://via.placeholder.com/400x225?text=A+Lunar+Rhapsody'">
+                                <div class="exp-card-info">
+                                    <h3 class="exp-card-title">A Lunar Rhapsody</h3>
+                                    <p class="exp-card-role">Shop Carpenter & Painter (2025)</p>
+                                </div>
+                            </div>
+                            <div class="exp-card" onclick="showProject('eurydice')">
+                                <img class="exp-card-image" src="images/placeholder.jpg" alt="Eurydice" onerror="this.src='https://via.placeholder.com/400x225?text=Eurydice'">
+                                <div class="exp-card-info">
+                                    <h3 class="exp-card-title">Eurydice</h3>
+                                    <p class="exp-card-role">Shop Carpenter & Painter (2026)</p>
+                                </div>
+                            </div>
+                            <div class="exp-card" onclick="showProject('turandot')">
+                                <img class="exp-card-image" src="images/placeholder.jpg" alt="Turandot" onerror="this.src='https://via.placeholder.com/400x225?text=Turandot'">
+                                <div class="exp-card-info">
+                                    <h3 class="exp-card-title">Turandot</h3>
+                                    <p class="exp-card-role">Stage Carpenter (2025)</p>
+                                </div>
+                            </div>
+                            <div class="exp-card" onclick="showProject('carmen')">
+                                <img class="exp-card-image" src="images/placeholder.jpg" alt="Carmen" onerror="this.src='https://via.placeholder.com/400x225?text=Carmen'">
+                                <div class="exp-card-info">
+                                    <h3 class="exp-card-title">Carmen</h3>
+                                    <p class="exp-card-role">Stage Carpenter (2025)</p>
+                                </div>
+                            </div>
+                            <div class="exp-card" onclick="showProject('swan-lake')">
+                                <img class="exp-card-image" src="images/placeholder.jpg" alt="Swan Lake" onerror="this.src='https://via.placeholder.com/400x225?text=Swan+Lake'">
+                                <div class="exp-card-info">
+                                    <h3 class="exp-card-title">Swan Lake</h3>
+                                    <p class="exp-card-role">Stage Carpenter (2025)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
 
-            <!-- RESUME PAGE -->
+            <!-- ================= RESUME PAGE ================= -->
             <div id="resume-page" class="page">
                 <div class="resume-container">
                     <div class="resume-header">
@@ -708,6 +884,288 @@
                     </div>
                     <div class="resume-download">
                         <a href="files/ProfessionalAndTechnicalResume.pdf" download class="download-btn">📄 Download PDF Version</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ================= PROJECT DETAIL PAGES ================= -->
+            
+            <!-- The Tempest Project -->
+            <div id="project-the-tempest" class="page">
+                <div class="back-button">
+                    <a class="back-link" onclick="showPage('experience')">← Back to All Experience</a>
+                </div>
+                <div class="project-detail-section">
+                    <div class="project-header">
+                        <h1 class="project-title">The Tempest</h1>
+                        <div class="project-meta">
+                            <p><strong>Role:</strong> Shop Carpenter & Painter</p>
+                            <p><strong>Year:</strong> 2025</p>
+                            <p><strong>Venue:</strong> Fordham Theater Company</p>
+                            <p><strong>Director:</strong> Ryan Quinn</p>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-main">
+                            <h2>About the Production</h2>
+                            <p><strong>By William Shakespeare</strong></p>
+                            <p><em>The Tempest</em> tells the story of Prospero, the rightful Duke of Milan, who has been exiled to a remote island with his daughter Miranda after being overthrown by his brother Antonio. Using magical powers gained through study, Prospero conjures a storm to shipwreck his enemies on the island, setting in motion a tale of revenge, forgiveness, and redemption.</p>
+                            
+                            <h2>Cast</h2>
+                            <p><strong>Principal Cast:</strong> Carlos Bravo (Prospero), Isabelle Diaz (Miranda), Dylan Stern (Caliban), Isabella Conklin (Ariel 1), Carrie Johnson (Ariel 2), Jilliyn Acosta (Ariel 3), Brian Tong (Ariel 4), Leah John (Ferdinand), Brian Muñoz Reyes (Stephano)</p>
+                            <p><strong>Supporting Cast:</strong> Tobias Foreman (Trinculo), Fiona Nealis (Alonza), Avery Ash (Sebastian), Kei Sugae (Antonio), Maia McGowan (Gonzalo)</p>
+                            
+                            <h2>Production Team</h2>
+                            <p><strong>Direction:</strong> Ryan Quinn (Director), Elias Bernstein (Assistant Director)</p>
+                            <p><strong>Stage Management:</strong> Adam Taylor Foster (PSM), Teresa Ayers (ASM), Bel Lazarsky (ASM)</p>
+                            <p><strong>Design Team:</strong> Brittany Vasta (Scenic Designer), Lucrecia Briceño (Lighting Designer), Kal Larsen (Asst. Lighting Designer), Elijah Warrington (Sound Designer), Mikah Carpio (Asst. Sound Designer), Harri Horsley (Costume Designer), Deb Gaouette (Props Designer)</p>
+                            <p><strong>Additional:</strong> Andrea Haring (Vocal Coach), Susannah Millonzi (Choreographer)</p>
+                            
+                            <h2>My Role</h2>
+                            <p>As Shop Carpenter & Painter, I contributed to the construction and finishing of scenic elements for this production, working alongside the design team to bring Brittany Vasta's scenic vision to life.</p>
+                            
+                            <p><strong>Photos by:</strong> Cason Doyle (@doylesdoodles_)</p>
+                        </div>
+                        <div class="project-sidebar">
+                            <h3>Quick Facts</h3>
+                            <p><strong>Playwright:</strong> William Shakespeare</p>
+                            <p><strong>Company:</strong> Fordham Theater Company</p>
+                            <p><strong>Year:</strong> 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kentucky Project -->
+            <div id="project-kentucky" class="page">
+                <div class="back-button">
+                    <a class="back-link" onclick="showPage('experience')">← Back to All Experience</a>
+                </div>
+                <div class="project-detail-section">
+                    <div class="project-header">
+                        <h1 class="project-title">Kentucky</h1>
+                        <div class="project-meta">
+                            <p><strong>Role:</strong> Shop Carpenter & Painter</p>
+                            <p><strong>Year:</strong> 2024</p>
+                            <p><strong>Venue:</strong> Fordham Theater Company</p>
+                            <p><strong>Director:</strong> Timothy Zay</p>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-main">
+                            <h2>About the Production</h2>
+                            <p><em>Kentucky</em> is a theatrical production exploring themes of family, identity, and the ties that bind us to place. This moving drama takes audiences on an emotional journey through the complexities of small-town life and the relationships that define us.</p>
+                            
+                            <div class="performance-schedule">
+                                <h3>Performance Schedule</h3>
+                                <p><strong>Week 1:</strong> Thursday, November 14 (8pm), Friday, November 15 (8pm), Saturday, November 16 (8pm)</p>
+                                <p><strong>Week 2:</strong> Thursday, November 21 (8pm), Friday, November 22 (8pm), Saturday, November 23 (2pm - Talkback following), Saturday, November 23 (8pm)</p>
+                            </div>
+                            
+                            <div class="talkback-notice">
+                                <p><strong>🎭 Special Talkback Event:</strong> Following the 2:00 PM show on Saturday, November 23, the director, cast, and crew will host a talkback session for the audience.</p>
+                            </div>
+                            
+                            <h2>My Role</h2>
+                            <p>As Shop Carpenter & Painter, I contributed to the construction and finishing of scenic elements for this production.</p>
+                        </div>
+                        <div class="project-sidebar">
+                            <h3>Quick Facts</h3>
+                            <p><strong>Company:</strong> Fordham Theater Company</p>
+                            <p><strong>Year:</strong> 2024</p>
+                            <p><strong>Performances:</strong> 6 shows</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Three Penny Opera Project -->
+            <div id="project-three-penny-opera" class="page">
+                <div class="back-button">
+                    <a class="back-link" onclick="showPage('experience')">← Back to All Experience</a>
+                </div>
+                <div class="project-detail-section">
+                    <div class="project-header">
+                        <h1 class="project-title">Three Penny Opera</h1>
+                        <div class="project-meta">
+                            <p><strong>Role:</strong> Shop Carpenter & Painter</p>
+                            <p><strong>Year:</strong> 2024</p>
+                            <p><strong>Venue:</strong> Fordham Theater Company</p>
+                            <p><strong>Director:</strong> Timothy Zay</p>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-main">
+                            <h2>About the Production</h2>
+                            <p><em>Three Penny Opera</em> is a groundbreaking musical theatre work by Kurt Weill and Bertolt Brecht. Set in Victorian-era London, it follows the antihero Macheath ("Mackie Messer") and offers a sharp critique of capitalist society.</p>
+                            <h2>My Role</h2>
+                            <p>As Shop Carpenter & Painter, I worked on scenic construction and finishing for this production.</p>
+                        </div>
+                        <div class="project-sidebar">
+                            <h3>Quick Facts</h3>
+                            <p><strong>Composer:</strong> Kurt Weill</p>
+                            <p><strong>Librettist:</strong> Bertolt Brecht</p>
+                            <p><strong>Year:</strong> 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- A Lunar Rhapsody Project -->
+            <div id="project-a-lunar-rhapsody" class="page">
+                <div class="back-button">
+                    <a class="back-link" onclick="showPage('experience')">← Back to All Experience</a>
+                </div>
+                <div class="project-detail-section">
+                    <div class="project-header">
+                        <h1 class="project-title">A Lunar Rhapsody</h1>
+                        <div class="project-meta">
+                            <p><strong>Role:</strong> Shop Carpenter & Painter</p>
+                            <p><strong>Year:</strong> 2025</p>
+                            <p><strong>Venue:</strong> Fordham Theater Company</p>
+                            <p><strong>Director:</strong> Sophie Rodriguez</p>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-main">
+                            <h2>About the Production</h2>
+                            <p><em>A Lunar Rhapsody</em> is an original theatrical work exploring themes of space, isolation, and human connection.</p>
+                            <h2>My Role</h2>
+                            <p>As Shop Carpenter & Painter, I contributed to set construction and painting.</p>
+                        </div>
+                        <div class="project-sidebar">
+                            <h3>Quick Facts</h3>
+                            <p><strong>Company:</strong> Fordham Theater Company</p>
+                            <p><strong>Year:</strong> 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Eurydice Project -->
+            <div id="project-eurydice" class="page">
+                <div class="back-button">
+                    <a class="back-link" onclick="showPage('experience')">← Back to All Experience</a>
+                </div>
+                <div class="project-detail-section">
+                    <div class="project-header">
+                        <h1 class="project-title">Eurydice</h1>
+                        <div class="project-meta">
+                            <p><strong>Role:</strong> Shop Carpenter & Painter</p>
+                            <p><strong>Year:</strong> 2026</p>
+                            <p><strong>Venue:</strong> Fordham Theater Company</p>
+                            <p><strong>Director:</strong> Sophie Rodriguez</p>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-main">
+                            <h2>About the Production</h2>
+                            <p><em>Eurydice</em> is Sarah Ruhl's contemporary retelling of the Orpheus myth, reimagined from Eurydice's perspective.</p>
+                            <h2>My Role</h2>
+                            <p>As Shop Carpenter & Painter, I worked on scenic construction and finishing.</p>
+                        </div>
+                        <div class="project-sidebar">
+                            <h3>Quick Facts</h3>
+                            <p><strong>Playwright:</strong> Sarah Ruhl</p>
+                            <p><strong>Company:</strong> Fordham Theater Company</p>
+                            <p><strong>Year:</strong> 2026</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Turandot Project -->
+            <div id="project-turandot" class="page">
+                <div class="back-button">
+                    <a class="back-link" onclick="showPage('experience')">← Back to All Experience</a>
+                </div>
+                <div class="project-detail-section">
+                    <div class="project-header">
+                        <h1 class="project-title">Turandot</h1>
+                        <div class="project-meta">
+                            <p><strong>Role:</strong> Stage Carpenter</p>
+                            <p><strong>Year:</strong> 2025</p>
+                            <p><strong>Venue:</strong> The Metropolitan Opera</p>
+                            <p><strong>Director:</strong> Thomas Hackett</p>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-main">
+                            <h2>About the Production</h2>
+                            <p><em>Turandot</em> is Giacomo Puccini's final opera, set in mythical China. The story follows Prince Calaf, who risks his life to answer three riddles posed by the icy Princess Turandot.</p>
+                            <h2>My Role</h2>
+                            <p>As Stage Carpenter at The Metropolitan Opera, I was responsible for set maintenance, scene changes, and backstage operations during performances.</p>
+                        </div>
+                        <div class="project-sidebar">
+                            <h3>Quick Facts</h3>
+                            <p><strong>Composer:</strong> Giacomo Puccini</p>
+                            <p><strong>Company:</strong> The Metropolitan Opera</p>
+                            <p><strong>Year:</strong> 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carmen Project -->
+            <div id="project-carmen" class="page">
+                <div class="back-button">
+                    <a class="back-link" onclick="showPage('experience')">← Back to All Experience</a>
+                </div>
+                <div class="project-detail-section">
+                    <div class="project-header">
+                        <h1 class="project-title">Carmen</h1>
+                        <div class="project-meta">
+                            <p><strong>Role:</strong> Stage Carpenter</p>
+                            <p><strong>Year:</strong> 2025</p>
+                            <p><strong>Venue:</strong> The Metropolitan Opera</p>
+                            <p><strong>Director:</strong> Anthony Cochiarra</p>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-main">
+                            <h2>About the Production</h2>
+                            <p><em>Carmen</em> is Georges Bizet's passionate opera about the fiery gypsy woman Carmen and her tragic love triangle with Don José and the toreador Escamillo.</p>
+                            <h2>My Role</h2>
+                            <p>As Stage Carpenter at The Metropolitan Opera, I worked on backstage operations and set changes.</p>
+                        </div>
+                        <div class="project-sidebar">
+                            <h3>Quick Facts</h3>
+                            <p><strong>Composer:</strong> Georges Bizet</p>
+                            <p><strong>Company:</strong> The Metropolitan Opera</p>
+                            <p><strong>Year:</strong> 2025</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Swan Lake Project -->
+            <div id="project-swan-lake" class="page">
+                <div class="back-button">
+                    <a class="back-link" onclick="showPage('experience')">← Back to All Experience</a>
+                </div>
+                <div class="project-detail-section">
+                    <div class="project-header">
+                        <h1 class="project-title">Swan Lake</h1>
+                        <div class="project-meta">
+                            <p><strong>Role:</strong> Stage Carpenter</p>
+                            <p><strong>Year:</strong> 2025</p>
+                            <p><strong>Venue:</strong> The Metropolitan Opera / American Ballet Theatre</p>
+                            <p><strong>Director:</strong> Anthony Cochiarra</p>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-main">
+                            <h2>About the Production</h2>
+                            <p><em>Swan Lake</em> is one of the most famous ballets of all time, featuring Tchaikovsky's iconic score and the tragic story of Odette, a princess turned into a swan by an evil sorcerer.</p>
+                            <h2>My Role</h2>
+                            <p>As Stage Carpenter, I supported the American Ballet Theatre's production at The Metropolitan Opera.</p>
+                        </div>
+                        <div class="project-sidebar">
+                            <h3>Quick Facts</h3>
+                            <p><strong>Composer:</strong> Pyotr Tchaikovsky</p>
+                            <p><strong>Company:</strong> American Ballet Theatre</p>
+                            <p><strong>Year:</strong> 2025</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -741,23 +1199,40 @@
     <script>
         // Page switching functionality
         function showPage(pageName) {
-            // Hide all pages
-            document.getElementById('home-page').classList.remove('active');
-            document.getElementById('experience-page').classList.remove('active');
-            document.getElementById('resume-page').classList.remove('active');
+            // Hide all main pages
+            document.getElementById('home-page')?.classList.remove('active');
+            document.getElementById('experience-page')?.classList.remove('active');
+            document.getElementById('resume-page')?.classList.remove('active');
+            
+            // Hide all project pages
+            const projectPages = document.querySelectorAll('[id^="project-"]');
+            projectPages.forEach(page => page.classList.remove('active'));
             
             // Show selected page
-            document.getElementById(pageName + '-page').classList.add('active');
+            const targetPage = document.getElementById(pageName + '-page');
+            if (targetPage) targetPage.classList.add('active');
             
             // Scroll to top
             window.scrollTo(0, 0);
         }
 
-        // Experience category filtering (for future implementation)
-        function showExperienceCategory(category) {
-            showPage('experience');
-            // TODO: Add filtering logic when experience page is built
-            console.log('Filter experience by: ' + category);
+        // Show specific project page
+        function showProject(projectId) {
+            // Hide all main pages
+            document.getElementById('home-page')?.classList.remove('active');
+            document.getElementById('experience-page')?.classList.remove('active');
+            document.getElementById('resume-page')?.classList.remove('active');
+            
+            // Hide all project pages
+            const projectPages = document.querySelectorAll('[id^="project-"]');
+            projectPages.forEach(page => page.classList.remove('active'));
+            
+            // Show selected project
+            const targetProject = document.getElementById('project-' + projectId);
+            if (targetProject) targetProject.classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
         }
 
         // Dropdown with delay
@@ -767,18 +1242,18 @@
             let timeoutId;
             const delay = 300;
             
-            function showDropdown() {
-                clearTimeout(timeoutId);
-                dropdownContent.classList.add('show');
-            }
-            
-            function hideDropdown() {
-                timeoutId = setTimeout(function() {
-                    dropdownContent.classList.remove('show');
-                }, delay);
-            }
-            
             if (dropdown) {
+                function showDropdown() {
+                    clearTimeout(timeoutId);
+                    dropdownContent.classList.add('show');
+                }
+                
+                function hideDropdown() {
+                    timeoutId = setTimeout(function() {
+                        dropdownContent.classList.remove('show');
+                    }, delay);
+                }
+                
                 dropdown.addEventListener('mouseenter', showDropdown);
                 dropdown.addEventListener('mouseleave', hideDropdown);
                 dropdownContent.addEventListener('mouseenter', showDropdown);

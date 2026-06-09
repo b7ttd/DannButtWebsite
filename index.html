@@ -261,6 +261,36 @@
             width: 100%;
         }
 
+        /* Two Images Container - Professional Photos */
+        .two-images-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .image-card {
+            flex: 1;
+            max-width: 48%;
+        }
+
+        .curved-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 60px 60px 60px 60px;
+            transition: border-radius 0.3s ease;
+            object-fit: cover;
+            aspect-ratio: 4 / 3;
+        }
+
+        .curved-image:hover {
+            border-radius: 20px 20px 20px 20px;
+        }
+
         /* Two Column Text Section */
         .two-column-text {
             display: flex;
@@ -283,6 +313,19 @@
         }
 
         @media (max-width: 768px) {
+            .two-images-container {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+            
+            .image-card {
+                max-width: 90%;
+            }
+            
+            .curved-image {
+                border-radius: 40px 40px 40px 40px;
+            }
+            
             .two-column-text {
                 flex-direction: column;
                 gap: 2rem;
@@ -545,7 +588,7 @@
             line-height: 1.4;
         }
 
-        /* Experience Grid (WIP - placeholder) */
+        /* Experience Grid */
         .experience-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -711,14 +754,14 @@
         <main>
             <!-- ================= HOME PAGE ================= -->
             <div id="home-page" class="page active">
-                <!-- Feature Images Section -->
-                <section class="page-section" style="padding-bottom:0vw">
-                    <div class="feature-row">
-                        <div class="feature-image">
-                            <img src="images/IMG_8701.jpg" alt="Pic Of Me" onerror="this.src='https://via.placeholder.com/800x600?text=Dann+Butt'">
+                <!-- Two Professional Photos Section -->
+                <section class="page-section" style="padding-bottom: 0vw; padding-top: 2vw;">
+                    <div class="two-images-container">
+                        <div class="image-card">
+                            <img src="images/Professional1.jpg" alt="Professional Headshot" class="curved-image" onerror="this.src='https://via.placeholder.com/600x400?text=Dann+Butt'">
                         </div>
-                        <div class="feature-image">
-                            <img src="images/IMG_9763.HEIC" alt="Other Pic Of Me" onerror="this.src='https://via.placeholder.com/800x600?text=Dann+Butt'">
+                        <div class="image-card">
+                            <img src="images/Professional2.jpg" alt="Professional Portrait" class="curved-image" onerror="this.src='https://via.placeholder.com/600x400?text=Dann+Butt'">
                         </div>
                     </div>
                 </section>
@@ -909,20 +952,21 @@
                         <div class="project-main">
                             <h2>About the Production</h2>
                             <p><strong>By William Shakespeare</strong></p>
-                            <p><em>The Tempest</em> tells the story of Prospero, the rightful Duke of Milan, who has been exiled to a remote island with his daughter Miranda after being overthrown by his brother Antonio. Using magical powers gained through study, Prospero conjures a storm to shipwreck his enemies on the island, setting in motion a tale of revenge, forgiveness, and redemption.</p>
+                            <p><em>The Tempest</em> tells the story of Prospero, the rightful Duke of Milan, who has been exiled to a remote island with his daughter Miranda after being overthrown by his brother Antonio.</p>
                             
                             <h2>Cast</h2>
-                            <p><strong>Principal Cast:</strong> Carlos Bravo (Prospero), Isabelle Diaz (Miranda), Dylan Stern (Caliban), Isabella Conklin (Ariel 1), Carrie Johnson (Ariel 2), Jilliyn Acosta (Ariel 3), Brian Tong (Ariel 4), Leah John (Ferdinand), Brian Muñoz Reyes (Stephano)</p>
-                            <p><strong>Supporting Cast:</strong> Tobias Foreman (Trinculo), Fiona Nealis (Alonza), Avery Ash (Sebastian), Kei Sugae (Antonio), Maia McGowan (Gonzalo)</p>
+                            <p><strong>Principal Cast:</strong> Carlos Bravo (Prospero), Isabelle Diaz (Miranda), Dylan Stern (Caliban)</p>
+                            <p><strong>Ariel Ensemble:</strong> Isabella Conklin, Carrie Johnson, Jilliyn Acosta, Brian Tong</p>
+                            <p><strong>Supporting Cast:</strong> Leah John (Ferdinand), Brian Muñoz Reyes (Stephano), Tobias Foreman (Trinculo), Fiona Nealis (Alonza), Avery Ash (Sebastian), Kei Sugae (Antonio), Maia McGowan (Gonzalo)</p>
                             
                             <h2>Production Team</h2>
-                            <p><strong>Direction:</strong> Ryan Quinn (Director), Elias Bernstein (Assistant Director)</p>
-                            <p><strong>Stage Management:</strong> Adam Taylor Foster (PSM), Teresa Ayers (ASM), Bel Lazarsky (ASM)</p>
-                            <p><strong>Design Team:</strong> Brittany Vasta (Scenic Designer), Lucrecia Briceño (Lighting Designer), Kal Larsen (Asst. Lighting Designer), Elijah Warrington (Sound Designer), Mikah Carpio (Asst. Sound Designer), Harri Horsley (Costume Designer), Deb Gaouette (Props Designer)</p>
-                            <p><strong>Additional:</strong> Andrea Haring (Vocal Coach), Susannah Millonzi (Choreographer)</p>
+                            <p><strong>Director:</strong> Ryan Quinn | <strong>Assistant Director:</strong> Elias Bernstein</p>
+                            <p><strong>Stage Manager:</strong> Adam Taylor Foster | <strong>ASM:</strong> Teresa Ayers, Bel Lazarsky</p>
+                            <p><strong>Scenic Designer:</strong> Brittany Vasta | <strong>Lighting Designer:</strong> Lucrecia Briceño | <strong>Sound Designer:</strong> Elijah Warrington</p>
+                            <p><strong>Costume Designer:</strong> Harri Horsley | <strong>Props Designer:</strong> Deb Gaouette</p>
                             
                             <h2>My Role</h2>
-                            <p>As Shop Carpenter & Painter, I contributed to the construction and finishing of scenic elements for this production, working alongside the design team to bring Brittany Vasta's scenic vision to life.</p>
+                            <p>As Shop Carpenter & Painter, I contributed to the construction and finishing of scenic elements for this production.</p>
                             
                             <p><strong>Photos by:</strong> Cason Doyle (@doylesdoodles_)</p>
                         </div>
@@ -954,32 +998,28 @@
                     <div class="project-content">
                         <div class="project-main">
                             <h2>About the Production</h2>
-                            <p><em>Kentucky</em> is a theatrical production exploring themes of family, identity, and the ties that bind us to place. This moving drama takes audiences on an emotional journey through the complexities of small-town life and the relationships that define us.</p>
+                            <p><em>Kentucky</em> is a theatrical production exploring themes of family, identity, and the ties that bind us to place.</p>
                             
                             <div class="performance-schedule">
                                 <h3>Performance Schedule</h3>
-                                <p><strong>Week 1:</strong> Thursday, November 14 (8pm), Friday, November 15 (8pm), Saturday, November 16 (8pm)</p>
-                                <p><strong>Week 2:</strong> Thursday, November 21 (8pm), Friday, November 22 (8pm), Saturday, November 23 (2pm - Talkback following), Saturday, November 23 (8pm)</p>
+                                <p><strong>Week 1:</strong> Nov 14-16 (8pm)</p>
+                                <p><strong>Week 2:</strong> Nov 21-22 (8pm), Nov 23 (2pm & 8pm)</p>
                             </div>
                             
                             <div class="talkback-notice">
-                                <p><strong>🎭 Special Talkback Event:</strong> Following the 2:00 PM show on Saturday, November 23, the director, cast, and crew will host a talkback session for the audience.</p>
+                                <p><strong>🎭 Special Talkback:</strong> Following the 2pm show on Nov 23 with director, cast, and crew.</p>
                             </div>
-                            
-                            <h2>My Role</h2>
-                            <p>As Shop Carpenter & Painter, I contributed to the construction and finishing of scenic elements for this production.</p>
                         </div>
                         <div class="project-sidebar">
                             <h3>Quick Facts</h3>
                             <p><strong>Company:</strong> Fordham Theater Company</p>
                             <p><strong>Year:</strong> 2024</p>
-                            <p><strong>Performances:</strong> 6 shows</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Three Penny Opera Project -->
+            <!-- Three Penny Opera -->
             <div id="project-three-penny-opera" class="page">
                 <div class="back-button">
                     <a class="back-link" onclick="showPage('experience')">← Back to All Experience</a>
@@ -997,21 +1037,18 @@
                     <div class="project-content">
                         <div class="project-main">
                             <h2>About the Production</h2>
-                            <p><em>Three Penny Opera</em> is a groundbreaking musical theatre work by Kurt Weill and Bertolt Brecht. Set in Victorian-era London, it follows the antihero Macheath ("Mackie Messer") and offers a sharp critique of capitalist society.</p>
-                            <h2>My Role</h2>
-                            <p>As Shop Carpenter & Painter, I worked on scenic construction and finishing for this production.</p>
+                            <p><em>Three Penny Opera</em> is Kurt Weill and Bertolt Brecht's groundbreaking musical theatre work set in Victorian-era London.</p>
                         </div>
                         <div class="project-sidebar">
                             <h3>Quick Facts</h3>
                             <p><strong>Composer:</strong> Kurt Weill</p>
                             <p><strong>Librettist:</strong> Bertolt Brecht</p>
-                            <p><strong>Year:</strong> 2024</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- A Lunar Rhapsody Project -->
+            <!-- A Lunar Rhapsody -->
             <div id="project-a-lunar-rhapsody" class="page">
                 <div class="back-button">
                     <a class="back-link" onclick="showPage('experience')">← Back to All Experience</a>
@@ -1029,9 +1066,7 @@
                     <div class="project-content">
                         <div class="project-main">
                             <h2>About the Production</h2>
-                            <p><em>A Lunar Rhapsody</em> is an original theatrical work exploring themes of space, isolation, and human connection.</p>
-                            <h2>My Role</h2>
-                            <p>As Shop Carpenter & Painter, I contributed to set construction and painting.</p>
+                            <p>An original theatrical work exploring themes of space, isolation, and human connection.</p>
                         </div>
                         <div class="project-sidebar">
                             <h3>Quick Facts</h3>
@@ -1042,7 +1077,7 @@
                 </div>
             </div>
 
-            <!-- Eurydice Project -->
+            <!-- Eurydice -->
             <div id="project-eurydice" class="page">
                 <div class="back-button">
                     <a class="back-link" onclick="showPage('experience')">← Back to All Experience</a>
@@ -1060,21 +1095,18 @@
                     <div class="project-content">
                         <div class="project-main">
                             <h2>About the Production</h2>
-                            <p><em>Eurydice</em> is Sarah Ruhl's contemporary retelling of the Orpheus myth, reimagined from Eurydice's perspective.</p>
-                            <h2>My Role</h2>
-                            <p>As Shop Carpenter & Painter, I worked on scenic construction and finishing.</p>
+                            <p>Sarah Ruhl's contemporary retelling of the Orpheus myth, reimagined from Eurydice's perspective.</p>
                         </div>
                         <div class="project-sidebar">
                             <h3>Quick Facts</h3>
                             <p><strong>Playwright:</strong> Sarah Ruhl</p>
-                            <p><strong>Company:</strong> Fordham Theater Company</p>
                             <p><strong>Year:</strong> 2026</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Turandot Project -->
+            <!-- Turandot -->
             <div id="project-turandot" class="page">
                 <div class="back-button">
                     <a class="back-link" onclick="showPage('experience')">← Back to All Experience</a>
@@ -1092,21 +1124,18 @@
                     <div class="project-content">
                         <div class="project-main">
                             <h2>About the Production</h2>
-                            <p><em>Turandot</em> is Giacomo Puccini's final opera, set in mythical China. The story follows Prince Calaf, who risks his life to answer three riddles posed by the icy Princess Turandot.</p>
-                            <h2>My Role</h2>
-                            <p>As Stage Carpenter at The Metropolitan Opera, I was responsible for set maintenance, scene changes, and backstage operations during performances.</p>
+                            <p>Puccini's final opera, set in mythical China. Prince Calaf risks his life to answer three riddles posed by Princess Turandot.</p>
                         </div>
                         <div class="project-sidebar">
                             <h3>Quick Facts</h3>
                             <p><strong>Composer:</strong> Giacomo Puccini</p>
                             <p><strong>Company:</strong> The Metropolitan Opera</p>
-                            <p><strong>Year:</strong> 2025</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Carmen Project -->
+            <!-- Carmen -->
             <div id="project-carmen" class="page">
                 <div class="back-button">
                     <a class="back-link" onclick="showPage('experience')">← Back to All Experience</a>
@@ -1124,21 +1153,18 @@
                     <div class="project-content">
                         <div class="project-main">
                             <h2>About the Production</h2>
-                            <p><em>Carmen</em> is Georges Bizet's passionate opera about the fiery gypsy woman Carmen and her tragic love triangle with Don José and the toreador Escamillo.</p>
-                            <h2>My Role</h2>
-                            <p>As Stage Carpenter at The Metropolitan Opera, I worked on backstage operations and set changes.</p>
+                            <p>Bizet's passionate opera about the fiery gypsy woman Carmen and her tragic love triangle.</p>
                         </div>
                         <div class="project-sidebar">
                             <h3>Quick Facts</h3>
                             <p><strong>Composer:</strong> Georges Bizet</p>
                             <p><strong>Company:</strong> The Metropolitan Opera</p>
-                            <p><strong>Year:</strong> 2025</p>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Swan Lake Project -->
+            <!-- Swan Lake -->
             <div id="project-swan-lake" class="page">
                 <div class="back-button">
                     <a class="back-link" onclick="showPage('experience')">← Back to All Experience</a>
@@ -1149,22 +1175,19 @@
                         <div class="project-meta">
                             <p><strong>Role:</strong> Stage Carpenter</p>
                             <p><strong>Year:</strong> 2025</p>
-                            <p><strong>Venue:</strong> The Metropolitan Opera / American Ballet Theatre</p>
+                            <p><strong>Venue:</strong> American Ballet Theatre at The Metropolitan Opera</p>
                             <p><strong>Director:</strong> Anthony Cochiarra</p>
                         </div>
                     </div>
                     <div class="project-content">
                         <div class="project-main">
                             <h2>About the Production</h2>
-                            <p><em>Swan Lake</em> is one of the most famous ballets of all time, featuring Tchaikovsky's iconic score and the tragic story of Odette, a princess turned into a swan by an evil sorcerer.</p>
-                            <h2>My Role</h2>
-                            <p>As Stage Carpenter, I supported the American Ballet Theatre's production at The Metropolitan Opera.</p>
+                            <p>Tchaikovsky's iconic ballet telling the tragic story of Odette, a princess turned into a swan.</p>
                         </div>
                         <div class="project-sidebar">
                             <h3>Quick Facts</h3>
                             <p><strong>Composer:</strong> Pyotr Tchaikovsky</p>
                             <p><strong>Company:</strong> American Ballet Theatre</p>
-                            <p><strong>Year:</strong> 2025</p>
                         </div>
                     </div>
                 </div>

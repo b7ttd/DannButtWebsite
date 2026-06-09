@@ -12,5 +12,10 @@
   "type": "commonjs",
   "dependencies": {
     "@11ty/eleventy": "^3.1.5"
+  },
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "deply": "npm run build && neocities push ./_site"
   }
 }

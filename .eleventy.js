@@ -4,11 +4,14 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/fonts");
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("src/files");
+  eleventyConfig.addPassthroughCopy("src/.nojekyll");
 
   return {
     dir: {
       input: "src",
-      output: "www"
+      output: "docs",
+      includes: "_includes",
+      data: "_data"
     }
   };
 };

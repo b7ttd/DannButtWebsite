@@ -322,7 +322,7 @@
             margin-top: 0.5rem;
         }
 
-        /* ========== ORIGINAL PROJECT DETAIL STYLES (RESTORED) ========== */
+        /* ========== ORIGINAL PROJECT DETAIL STYLES ========== */
         .project-detail-section {
             padding: 2rem;
             max-width: 1200px;
@@ -421,45 +421,7 @@
             }
         }
 
-        /* Resume Page */
-        .resume-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 2rem 1rem;
-        }
-        .resume-header {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-        .resume-pdf-wrapper {
-            position: relative;
-            width: 100%;
-            background: #111111;
-            border-radius: 12px;
-            overflow: hidden;
-            min-height: 600px;
-        }
-        .resume-pdf {
-            width: 100%;
-            height: 85vh;
-            min-height: 600px;
-            border: none;
-            display: block;
-        }
-        .download-btn {
-            display: inline-block;
-            background: #ffffff;
-            color: #000000;
-            padding: 0.75rem 1.5rem;
-            border-radius: 30px;
-            transition: all 0.2s ease;
-        }
-        .download-btn:hover {
-            background: #dddddd;
-            transform: translateY(-2px);
-        }
-
-        /* ========== NEW ABOUT PAGE STYLES (Grid layout from reference, no other changes) ========== */
+        /* ========== NEW ABOUT PAGE STYLES ========== */
         .about-page-container {
             max-width: 1400px;
             margin: 0 auto;
@@ -476,28 +438,18 @@
             font-weight: 700;
         }
 
-        /* Two column grid for About page */
-        .about-two-col {
+        /* Top two column grid (Recognitions left, Resume Document right) */
+        .about-two-col-top {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             margin-top: 1rem;
+            margin-bottom: 3rem;
         }
 
-        /* Left column - Bio text */
-        .about-bio {
-            padding-right: 1rem;
-        }
-        
-        .about-bio p {
-            margin-bottom: 1.2rem;
-            line-height: 1.7;
-            color: #dddddd;
-        }
-
-        /* Right column - Recognitions */
+        /* Left column - Recognitions (now on left) */
         .about-recognitions {
-            text-align: right;
+            text-align: left;
         }
         
         .recognitions-title {
@@ -520,9 +472,8 @@
             color: #ffffff;
         }
 
-        /* Resume document image area */
+        /* Right column - Resume document area */
         .resume-document-area {
-            margin: 3rem 0 2rem;
             text-align: center;
         }
         
@@ -558,6 +509,48 @@
             text-decoration: underline;
         }
 
+        /* Bottom two column grid (Photo left, Bio right) */
+        .about-two-col-bottom {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            align-items: center;
+        }
+
+        /* Left column - Circular Profile Photo */
+        .about-photo {
+            text-align: center;
+        }
+        
+        .circular-photo {
+            width: 100%;
+            max-width: 350px;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 50%;
+            display: inline-block;
+            border: 2px solid #333333;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        
+        .circular-photo:hover {
+            transform: scale(1.02);
+            border-color: #666666;
+        }
+
+        /* Right column - Bio text */
+        .about-bio {
+            padding-left: 1rem;
+        }
+        
+        .about-bio p {
+            margin-bottom: 1.2rem;
+            line-height: 1.7;
+            color: #dddddd;
+        }
+
         .references-note {
             text-align: center;
             margin-top: 2rem;
@@ -569,7 +562,11 @@
             .about-page-container {
                 padding: 2rem 1rem;
             }
-            .about-two-col {
+            .about-two-col-top {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .about-two-col-bottom {
                 grid-template-columns: 1fr;
                 gap: 2rem;
             }
@@ -577,7 +574,10 @@
                 text-align: left;
             }
             .about-bio {
-                padding-right: 0;
+                padding-left: 0;
+            }
+            .circular-photo {
+                max-width: 250px;
             }
         }
 
@@ -606,14 +606,6 @@
             color: #cccccc;
             cursor: pointer;
         }
-        .resume-subtitle {
-            font-size: 1.1rem;
-            color: #aaaaaa;
-        }
-        .resume-download {
-            text-align: center;
-            margin-top: 2rem;
-        }
     </style>
 </head>
 <body>
@@ -638,14 +630,13 @@
                             <a onclick="showProject('swan-lake')">🎭 Swan Lake</a>
                         </div>
                     </li>
-                    <li><a onclick="showPage('resume')">Resume</a></li>
                     <li><a onclick="showPage('about')">About</a></li>
                 </ul>
             </nav>
         </header>
 
         <main>
-            <!-- HOME PAGE (unchanged) -->
+            <!-- HOME PAGE -->
             <div id="home-page" class="page active">
                 <section style="padding: 2vw 0 0;">
                     <div class="two-images-container">
@@ -656,11 +647,11 @@
                 <section style="padding: 1vw 0 4vw;">
                     <div class="home-intro">
                         <h3>Project Management & Technical Oversight</h3>
-                                            </div>
+                    </div>
                 </section>
             </div>
 
-            <!-- CATEGORIZED EXPERIENCE PAGE (unchanged) -->
+            <!-- CATEGORIZED EXPERIENCE PAGE -->
             <div id="experience-page" class="page">
                 <div class="experience-categories">
                     <h1 style="margin-bottom: 2rem; text-align: center;">All Experience</h1>
@@ -672,24 +663,47 @@
                 </div>
             </div>
 
-            <!-- RESUME PAGE (unchanged) -->
-            <div id="resume-page" class="page">
-                <div class="resume-container">
-                    <div class="resume-header"><h1 class="resume-title">Resume</h1><p class="resume-subtitle">Dann Butt</p></div>
-                    <div class="resume-pdf-wrapper"><embed src="https://github.com/b7ttd/DannButtWebsite/raw/2f9fe82142631dc5abf5ba9f27d17952ecfdf06d/files/Butt%2C%20Dann%20-%20Resume.pdf" type="application/pdf" class="resume-pdf"></div>
-                    <div class="resume-download"><a href="https://github.com/b7ttd/DannButtWebsite/raw/2f9fe82142631dc5abf5ba9f27d17952ecfdf06d/files/Butt%2C%20Dann%20-%20Resume.pdf" download class="download-btn">📄 Download PDF Version</a></div>
-                </div>
-            </div>
-
-            <!-- ========== ABOUT PAGE - REDESIGNED WITH GRID LAYOUT (only this section changed) ========== -->
+            <!-- ========== REDESIGNED ABOUT PAGE ========== -->
             <div id="about-page" class="page">
                 <div class="about-page-container">
                     <div class="about-header">
                         <h1>Resume and Experience</h1>
                     </div>
                     
-                    <div class="about-two-col">
-                        <!-- Left column - Bio text -->
+                    <!-- TOP ROW: Recognitions (left) + Resume Document (right) -->
+                    <div class="about-two-col-top">
+                        <!-- Left column - Recognitions -->
+                        <div class="about-recognitions">
+                            <div class="recognitions-title">Recognitions</div>
+                            <div class="recognition-item">OSHA-30 General Industry</div>
+                            <div class="recognition-item">American Heart Association Heartsaver First Aid CPR AED, Adult/Pediatric</div>
+                            <div class="recognition-item"><strong>Skills:</strong> Followspot Operator, Score Reading, Box Truck Experience, AutoCAD, Hand-drafting, Basic Stitching</div>
+                            <div class="recognition-item"><strong>Software:</strong> Microsoft/Google Suite, OBS, Q-Lab</div>
+                            <div class="recognition-item"><strong>Languages:</strong> English (Native), Spanish (Working Knowledge), Some Russian</div>
+                        </div>
+                        
+                        <!-- Right column - Resume document area -->
+                        <div class="resume-document-area">
+                            <a href="https://github.com/b7ttd/DannButtWebsite/raw/2f9fe82142631dc5abf5ba9f27d17952ecfdf06d/files/Butt%2C%20Dann%20-%20Resume.pdf" target="_blank" class="resume-image-link">
+                                <img src="https://github.com/b7ttd/DannButtWebsite/raw/main/images/ProductionResumeScreenshot.png" alt="Resume preview">
+                            </a>
+                            <div class="resume-caption">
+                                <a href="https://github.com/b7ttd/DannButtWebsite/raw/2f9fe82142631dc5abf5ba9f27d17952ecfdf06d/files/Butt%2C%20Dann%20-%20Resume.pdf" target="_blank">Click Document to Open in New Window</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- BOTTOM ROW: Profile Photo (left) + Bio Text (right) -->
+                    <div class="about-two-col-bottom">
+                        <!-- Left column - Circular Profile Photo -->
+                        <div class="about-photo">
+                            <img class="circular-photo" 
+                                 src="https://media.licdn.com/dms/image/v2/D4D03AQHL2xBTYvnhJQ/profile-displayphoto-shrink_800_800/B4DZal7s.6H0Ag-/0/1746540614659?e=1782950400&v=beta&t=N58C5Jfd0eNRlcnD_RcWR9qmQP7xvTDd3qSpA_wr0-8" 
+                                 alt="Dann Butt profile photo"
+                                 onerror="this.src='https://via.placeholder.com/400x400/222/white?text=Dann+Butt'">
+                        </div>
+                        
+                        <!-- Right column - Bio text -->
                         <div class="about-bio">
                             <p>Dann Butt is a technical theater professional, project coordinator, and lifelong builder from Long Island, New York. He is currently pursuing a B.A. in Environmental Studies with a minor in Theatre at Fordham University, where he discovered his passion for production while working in the scene shop.</p>
                             
@@ -699,26 +713,6 @@
                             
                             <p>Dann believes in honest work, clear communication, and the power of collaboration. Whether it's a sprawling opera set or a tight-turnaround event, he shows up ready to solve problems and support the team.</p>
                         </div>
-                        
-                        <!-- Right column - Recognitions (matching reference style) -->
-                        <div class="about-recognitions">
-                            <div class="recognitions-title">Recognitions</div>
-                            <div class="recognition-item">OSHA-30 General Industry</div>
-                            <div class="recognition-item">American Heart Association Heartsaver First Aid CPR AED, Adult/Pediatric</div>
-                            <div class="recognition-item"><strong>Skills:</strong> Followspot Operator, Score Reading, Box Truck Experience, AutoCAD, Hand-drafting, Basic Stitching</div>
-                            <div class="recognition-item"><strong>Software:</strong> Microsoft/Google Suite, OBS, Q-Lab</div>
-                            <div class="recognition-item"><strong>Languages:</strong> English (Native), Spanish (Working Knowledge), Some Russian</div>
-                        </div>
-                    </div>
-                    
-                    <!-- Resume document image area (clickable) -->
-                    <div class="resume-document-area">
-                        <a href="https://github.com/b7ttd/DannButtWebsite/raw/2f9fe82142631dc5abf5ba9f27d17952ecfdf06d/files/Butt%2C%20Dann%20-%20Resume.pdf" target="_blank" class="resume-image-link">
-                            <img src="https://placehold.co/400x520/111111/ffffff?text=Dann+Butt+Resume" alt="Resume preview" onerror="this.src='https://via.placeholder.com/400x520/222/white?text=Resume+Preview'">
-                        </a>
-                        <div class="resume-caption">
-                            <a href="https://github.com/b7ttd/DannButtWebsite/raw/2f9fe82142631dc5abf5ba9f27d17952ecfdf06d/files/Butt%2C%20Dann%20-%20Resume.pdf" target="_blank">Click Document to Open in New Window</a>
-                        </div>
                     </div>
                     
                     <div class="references-note">
@@ -727,7 +721,7 @@
                 </div>
             </div>
 
-            <!-- PROJECT PAGES (all unchanged) -->
+            <!-- PROJECT PAGES -->
             <div id="project-the-tempest" class="page">
                 <div class="back-button">
                     <a class="back-link" onclick="showPage('experience')">← Back to All Experience</a>
@@ -802,7 +796,7 @@
     </div>
 
     <script>
-        // Experience Data from your resume (unchanged)
+        // Experience Data from your resume
         const theaterExperiences = [
             { title: "Shop Scene Assistant", role: "Fordham Theater Company (2024-2026 Seasons)", supervisor: "" },
             { title: "Kentucky", role: "Shop Carpenter & Painter", supervisor: "Timothy Zay (2024)" },
@@ -910,7 +904,7 @@
         function handleRoute() {
             let hash = window.location.hash.slice(1);
             if (!hash || hash === 'home') showPage('home');
-            else if (['experience', 'resume', 'about'].includes(hash)) showPage(hash);
+            else if (['experience', 'about'].includes(hash)) showPage(hash);
             else if (hash.startsWith('project-')) showProject(hash.replace('project-', ''));
             else showPage('home');
         }

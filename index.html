@@ -255,7 +255,7 @@
             margin-bottom: 1.5rem;
         }
 
-        /* ========== CATEGORIZED EXPERIENCE STYLES ========== */
+        /* ========== EXPERIENCE CARD STYLES ========== */
         .experience-categories {
             max-width: 1400px;
             margin: 2rem auto;
@@ -276,27 +276,39 @@
 
         .experience-grid-category {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 1.8rem;
         }
 
-        .exp-card-placeholder {
-            background: #111111;
-            border-radius: 12px;
-            padding: 1.25rem;
-            transition: transform 0.2s ease, background 0.2s ease;
+        .exp-card {
+            background: #0f0f0f;
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
             cursor: pointer;
-            border: 1px solid #222222;
+            border: 1px solid #2a2a2a;
         }
 
-        .exp-card-placeholder:hover {
-            transform: translateY(-3px);
-            background: #1a1a1a;
+        .exp-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.4);
             border-color: #444;
         }
 
+        .exp-card-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+            background-color: #1a1a1a;
+        }
+
+        .exp-card-info {
+            padding: 1.25rem;
+        }
+
         .exp-title {
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             font-weight: 600;
             margin-bottom: 0.35rem;
             color: #ffffff;
@@ -305,9 +317,6 @@
         .exp-meta {
             font-size: 0.8rem;
             color: #aaaaaa;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.75rem;
             margin-bottom: 0.5rem;
         }
 
@@ -316,13 +325,7 @@
             color: #cccccc;
         }
 
-        .exp-supervisor {
-            font-size: 0.75rem;
-            color: #777777;
-            margin-top: 0.5rem;
-        }
-
-        /* ========== ORIGINAL PROJECT DETAIL STYLES ========== */
+        /* ========== RESTORED PROJECT DETAIL STYLES ========== */
         .project-detail-section {
             padding: 2rem;
             max-width: 1200px;
@@ -377,21 +380,11 @@
             margin: 1.5rem 0 1rem;
         }
 
-        .project-main ul {
-            margin-left: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
         .project-sidebar {
             background: #111111;
             padding: 1.5rem;
             border-radius: 12px;
             align-self: start;
-        }
-
-        .project-sidebar h3 {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
         }
 
         .performance-schedule {
@@ -419,9 +412,12 @@
             .category-title {
                 font-size: 1.4rem;
             }
+            .experience-grid-category {
+                grid-template-columns: 1fr;
+            }
         }
 
-        /* ========== NEW ABOUT PAGE STYLES ========== */
+        /* ========== ABOUT PAGE STYLES ========== */
         .about-page-container {
             max-width: 1400px;
             margin: 0 auto;
@@ -438,7 +434,6 @@
             font-weight: 700;
         }
 
-        /* Top two column grid (Recognitions left, Resume Document right) */
         .about-two-col-top {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -447,7 +442,6 @@
             margin-bottom: 3rem;
         }
 
-        /* Left column - Recognitions (now on left) */
         .about-recognitions {
             text-align: left;
         }
@@ -472,7 +466,6 @@
             color: #ffffff;
         }
 
-        /* Right column - Resume document area */
         .resume-document-area {
             text-align: center;
         }
@@ -509,7 +502,6 @@
             text-decoration: underline;
         }
 
-        /* Bottom two column grid (Photo left, Bio right) */
         .about-two-col-bottom {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -519,11 +511,6 @@
             align-items: center;
         }
 
-        /* Left column - Circular Profile Photo */
-        .about-photo {
-            text-align: center;
-        }
-        
         .circular-photo {
             width: 100%;
             max-width: 350px;
@@ -540,7 +527,6 @@
             border-color: #666666;
         }
 
-        /* Right column - Bio text */
         .about-bio {
             padding-left: 1rem;
         }
@@ -562,16 +548,9 @@
             .about-page-container {
                 padding: 2rem 1rem;
             }
-            .about-two-col-top {
+            .about-two-col-top, .about-two-col-bottom {
                 grid-template-columns: 1fr;
                 gap: 2rem;
-            }
-            .about-two-col-bottom {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            .about-recognitions {
-                text-align: left;
             }
             .about-bio {
                 padding-left: 0;
@@ -618,7 +597,10 @@
                     <li class="dropdown" id="experienceDropdown">
                         <button class="dropbtn" id="dropbtn">Experience ▼</button>
                         <div class="dropdown-content" id="dropdownContent">
-                            <a onclick="showPage('experience')">📂 All Experience</a>
+                            <a onclick="scrollToCategory('project-management')">📋 Project Management</a>
+                            <a onclick="scrollToCategory('technical-oversight')">🔧 Technical Oversight</a>
+                            <a onclick="scrollToCategory('fabrication')">🛠️ Fabrication</a>
+                            <a onclick="scrollToCategory('non-production')">🎬 Non-Production</a>
                             <div class="dropdown-divider"></div>
                             <a onclick="showProject('the-tempest')">🎭 The Tempest</a>
                             <a onclick="showProject('kentucky')">🎭 Kentucky</a>
@@ -651,77 +633,62 @@
                 </section>
             </div>
 
-            <!-- CATEGORIZED EXPERIENCE PAGE -->
+            <!-- EXPERIENCE PAGE -->
             <div id="experience-page" class="page">
                 <div class="experience-categories">
                     <h1 style="margin-bottom: 2rem; text-align: center;">All Experience</h1>
-                    <div class="category-block"><h2 class="category-title">Theater</h2><div class="experience-grid-category" id="theater-grid"></div></div>
-                    <div class="category-block"><h2 class="category-title">Opera & Dance</h2><div class="experience-grid-category" id="opera-grid"></div></div>
-                    <div class="category-block"><h2 class="category-title">Event Management</h2><div class="experience-grid-category" id="events-grid"></div></div>
-                    <div class="category-block"><h2 class="category-title">Non-Production & Technical</h2><div class="experience-grid-category" id="nonprod-grid"></div></div>
-                    <div class="category-block"><h2 class="category-title">Education & Skills</h2><div class="experience-grid-category" id="education-grid"></div></div>
+                    
+                    <div id="project-management" class="category-block">
+                        <h2 class="category-title">Project Management</h2>
+                        <div class="experience-grid-category" id="pm-grid"></div>
+                    </div>
+                    
+                    <div id="technical-oversight" class="category-block">
+                        <h2 class="category-title">Technical Oversight</h2>
+                        <div class="experience-grid-category" id="tech-grid"></div>
+                    </div>
+                    
+                    <div id="fabrication" class="category-block">
+                        <h2 class="category-title">Fabrication</h2>
+                        <div class="experience-grid-category" id="fab-grid"></div>
+                    </div>
+                    
+                    <div id="non-production" class="category-block">
+                        <h2 class="category-title">Non-Production</h2>
+                        <div class="experience-grid-category" id="nonprod-grid"></div>
+                    </div>
                 </div>
             </div>
 
-            <!-- ========== REDESIGNED ABOUT PAGE ========== -->
+            <!-- ABOUT PAGE -->
             <div id="about-page" class="page">
                 <div class="about-page-container">
-                    <div class="about-header">
-                        <h1>Resume and Experience</h1>
-                    </div>
-                    
-                    <!-- TOP ROW: Recognitions (left) + Resume Document (right) -->
+                    <div class="about-header"><h1>Resume and Experience</h1></div>
                     <div class="about-two-col-top">
-                        <!-- Left column - Recognitions -->
                         <div class="about-recognitions">
                             <div class="recognitions-title">Recognitions</div>
                             <div class="recognition-item">OSHA-30 General Industry</div>
-                            <div class="recognition-item">American Heart Association Heartsaver First Aid CPR AED, Adult/Pediatric</div>
-                            <div class="recognition-item"><strong>Skills:</strong> Followspot Operator, Score Reading, Box Truck Experience, AutoCAD, Hand-drafting, Basic Stitching</div>
-                            <div class="recognition-item"><strong>Software:</strong> Microsoft/Google Suite, OBS, Q-Lab</div>
-                            <div class="recognition-item"><strong>Languages:</strong> English (Native), Spanish (Working Knowledge), Some Russian</div>
+                            <div class="recognition-item">American Heart Association Heartsaver First Aid CPR AED</div>
+                            <div class="recognition-item"><strong>Skills:</strong> Followspot Operator, Score Reading, Box Truck, AutoCAD, Hand-drafting, Stitching</div>
+                            <div class="recognition-item"><strong>Software:</strong> MS/Google Suite, OBS, Q-Lab</div>
+                            <div class="recognition-item"><strong>Languages:</strong> English, Spanish (Working), Some Russian</div>
                         </div>
-                        
-                        <!-- Right column - Resume document area -->
                         <div class="resume-document-area">
                             <a href="https://github.com/b7ttd/DannButtWebsite/raw/2f9fe82142631dc5abf5ba9f27d17952ecfdf06d/files/Butt%2C%20Dann%20-%20Resume.pdf" target="_blank" class="resume-image-link">
                                 <img src="https://github.com/b7ttd/DannButtWebsite/raw/main/images/ProductionResumeScreenshot.png" alt="Resume preview">
                             </a>
-                            <div class="resume-caption">
-                                <a href="https://github.com/b7ttd/DannButtWebsite/raw/2f9fe82142631dc5abf5ba9f27d17952ecfdf06d/files/Butt%2C%20Dann%20-%20Resume.pdf" target="_blank">Click Document to Open in New Window</a>
-                            </div>
+                            <div class="resume-caption"><a href="https://github.com/b7ttd/DannButtWebsite/raw/2f9fe82142631dc5abf5ba9f27d17952ecfdf06d/files/Butt%2C%20Dann%20-%20Resume.pdf" target="_blank">Click Document to Open</a></div>
                         </div>
                     </div>
-                    
-                    <!-- BOTTOM ROW: Profile Photo (left) + Bio Text (right) -->
                     <div class="about-two-col-bottom">
-                        <!-- Left column - Circular Profile Photo -->
-                        <div class="about-photo">
-                            <img class="circular-photo" 
-                                 src="https://media.licdn.com/dms/image/v2/D4D03AQHL2xBTYvnhJQ/profile-displayphoto-shrink_800_800/B4DZal7s.6H0Ag-/0/1746540614659?e=1782950400&v=beta&t=N58C5Jfd0eNRlcnD_RcWR9qmQP7xvTDd3qSpA_wr0-8" 
-                                 alt="Dann Butt profile photo"
-                                 onerror="this.src='https://via.placeholder.com/400x400/222/white?text=Dann+Butt'">
-                        </div>
-                        
-                        <!-- Right column - Bio text -->
-                        <div class="about-bio">
-                            <p>Dann Butt is a technical theater professional, project coordinator, and lifelong builder from Long Island, New York. He is currently pursuing a B.A. in Environmental Studies with a minor in Theatre at Fordham University, where he discovered his passion for production while working in the scene shop.</p>
-                            
-                            <p>Dann's work lives at the intersection of craft, logistics, and creative collaboration. From scene shops in the Bronx to the grand stage of the Metropolitan Opera, he has learned that the best productions are built on precision, communication, and a little bit of grit. He has worked on everything from Shakespearean classics to grand opera, helping bring ambitious designs to life.</p>
-                            
-                            <p>Currently, Dann splits his time between Fordham Theater Company (as a shop carpenter/painter), The Metropolitan Opera, and American Ballet Theatre. When not backstage, he enjoys running trails, volunteering with event operations, and planning his next build project.</p>
-                            
-                            <p>Dann believes in honest work, clear communication, and the power of collaboration. Whether it's a sprawling opera set or a tight-turnaround event, he shows up ready to solve problems and support the team.</p>
-                        </div>
+                        <div class="about-photo"><img class="circular-photo" src="https://media.licdn.com/dms/image/v2/D4D03AQHL2xBTYvnhJQ/profile-displayphoto-shrink_800_800/B4DZal7s.6H0Ag-/0/1746540614659?e=1782950400&v=beta&t=N58C5Jfd0eNRlcnD_RcWR9qmQP7xvTDd3qSpA_wr0-8" alt="Dann Butt" onerror="this.src='https://via.placeholder.com/400x400/222/white?text=Dann+Butt'"></div>
+                        <div class="about-bio"><p>Dann Butt is a technical theater professional, project coordinator, and lifelong builder from Long Island, New York. He is currently pursuing a B.A. in Environmental Studies with a minor in Theatre at Fordham University.</p><p>Dann's work lives at the intersection of craft, logistics, and creative collaboration. From scene shops in the Bronx to the grand stage of the Metropolitan Opera, he has learned that the best productions are built on precision, communication, and grit.</p><p>Currently, Dann splits his time between Fordham Theater Company, The Metropolitan Opera, and American Ballet Theatre. When not backstage, he enjoys running trails, volunteering with event operations, and planning his next build project.</p><p>Dann believes in honest work, clear communication, and the power of collaboration.</p></div>
                     </div>
-                    
-                    <div class="references-note">
-                        References Available Upon Request
-                    </div>
+                    <div class="references-note">References Available Upon Request</div>
                 </div>
             </div>
 
-            <!-- PROJECT PAGES -->
+            <!-- ========== FULLY RESTORED THE TEMPEST PROJECT PAGE ========== -->
             <div id="project-the-tempest" class="page">
                 <div class="back-button">
                     <a class="back-link" onclick="showPage('experience')">← Back to All Experience</a>
@@ -772,7 +739,8 @@
                 </div>
             </div>
 
-            <div id="project-kentucky" class="page"><div class="back-button"><a class="back-link" onclick="showPage('experience')">← Back to All Experience</a></div><div class="project-detail-section"><div class="project-header"><h1 class="project-title">Kentucky</h1><div class="project-meta"><p><strong>Role:</strong> Shop Carpenter & Painter</p><p><strong>Year:</strong> 2024</p><p><strong>Venue:</strong> Fordham Theater Company</p><p><strong>Director:</strong> Timothy Zay</p></div></div><div class="project-content"><div class="project-main"><h2>About the Production</h2><p><em>Kentucky</em> is a theatrical production exploring themes of family, identity, and the ties that bind us to place.</p><div class="performance-schedule"><h3>Performance Schedule</h3><p><strong>Week 1:</strong> Nov 14-16 (8pm)</p><p><strong>Week 2:</strong> Nov 21-22 (8pm), Nov 23 (2pm & 8pm)</p></div><div class="talkback-notice"><p><strong>🎭 Special Talkback:</strong> Following the 2pm show on Nov 23 with director, cast, and crew.</p></div></div><div class="project-sidebar"><h3>Quick Facts</h3><p><strong>Playwright:</strong> Leah Nanako Winkler</p><p><strong>Company:</strong> Fordham Theater Company</p><p><strong>Year:</strong> 2024</p></div></div></div></div>
+            <!-- OTHER PROJECT PAGES (simplified placeholders) -->
+            <div id="project-kentucky" class="page"><div class="back-button"><a class="back-link" onclick="showPage('experience')">← Back to All Experience</a></div><div class="project-detail-section"><div class="project-header"><h1 class="project-title">Kentucky</h1><div class="project-meta"><p><strong>Role:</strong> Shop Carpenter & Painter</p><p><strong>Year:</strong> 2024</p><p><strong>Venue:</strong> Fordham Theater Company</p><p><strong>Director:</strong> Timothy Zay</p></div></div><div class="project-hero"><img src="https://images.squarespace-cdn.com/content/v1/66e8a3eeddfd12111f8eabbb/1e76c9ee-3e3b-4eea-9d66-42201c3f7aeb/L1090748.jpg?format=1500w" alt="Kentucky Production"></div><div class="project-content"><div class="project-main"><h2>About the Production</h2><p><em>Kentucky</em> is a theatrical production exploring themes of family, identity, and the ties that bind us to place.</p><div class="performance-schedule"><h3>Performance Schedule</h3><p><strong>Week 1:</strong> Nov 14-16 (8pm)</p><p><strong>Week 2:</strong> Nov 21-22 (8pm), Nov 23 (2pm & 8pm)</p></div><div class="talkback-notice"><p><strong>🎭 Special Talkback:</strong> Following the 2pm show on Nov 23 with director, cast, and crew.</p></div></div><div class="project-sidebar"><h3>Quick Facts</h3><p><strong>Playwright:</strong> Leah Nanako Winkler</p><p><strong>Company:</strong> Fordham Theater Company</p><p><strong>Year:</strong> 2024</p></div></div></div></div>
             <div id="project-three-penny-opera" class="page"><div class="back-button"><a class="back-link" onclick="showPage('experience')">← Back</a></div><div class="project-detail-section"><div class="project-header"><h1 class="project-title">Three Penny Opera</h1><div class="project-meta"><p>Shop Carpenter & Painter | 2024</p></div></div></div></div>
             <div id="project-a-lunar-rhapsody" class="page"><div class="back-button"><a class="back-link" onclick="showPage('experience')">← Back</a></div><div class="project-detail-section"><div class="project-header"><h1 class="project-title">A Lunar Rhapsody</h1><div class="project-meta"><p>Shop Carpenter & Painter | 2025</p></div></div></div></div>
             <div id="project-eurydice" class="page"><div class="back-button"><a class="back-link" onclick="showPage('experience')">← Back</a></div><div class="project-detail-section"><div class="project-header"><h1 class="project-title">Eurydice</h1><div class="project-meta"><p>Shop Carpenter & Painter | 2026</p></div></div></div></div>
@@ -796,93 +764,134 @@
     </div>
 
     <script>
-        // Experience Data from your resume
-        const theaterExperiences = [
-            { title: "Shop Scene Assistant", role: "Fordham Theater Company (2024-2026 Seasons)", supervisor: "" },
-            { title: "Kentucky", role: "Shop Carpenter & Painter", supervisor: "Timothy Zay (2024)" },
-            { title: "The Sins of Sor Juana", role: "Shop Carpenter & Painter", supervisor: "Timothy Zay (2024)" },
-            { title: "Three Penny Opera", role: "Shop Carpenter & Painter", supervisor: "Timothy Zay (2024)" },
-            { title: "The Amethyst and the Peridot", role: "Shop Carpenter & Painter", supervisor: "Boone Sommers (2024)" },
-            { title: "Horoscope", role: "Shop Carpenter & Painter", supervisor: "Timothy Zay (2025)" },
-            { title: "Fall Orchestra Concert", role: "Stagehand", supervisor: "LCCO (2025)" },
-            { title: "Behold Vera Stark", role: "Shop Carpenter & Painter", supervisor: "Sophie Rodriguez (2025)" },
-            { title: "B is for Baby", role: "Stagehand", supervisor: "Cristian Medeiros (2025)" },
-            { title: "The Tempest", role: "Shop Carpenter & Painter", supervisor: "Sophie Rodriguez (2025)" },
-            { title: "A Lunar Rhapsody", role: "Shop Carpenter & Painter", supervisor: "Sophie Rodriguez (2025)" },
-            { title: "Eurydice", role: "Shop Carpenter & Painter", supervisor: "Sophie Rodriguez (2026)" },
-            { title: "Peerless", role: "Stagehand", supervisor: "Maya Kraskauskas (2026)" },
-            { title: "Perry and the Proletariat", role: "Lighting Designer", supervisor: "Emmy Boisvert (2025)" },
-            { title: "Ravens", role: "Assistant Director", supervisor: "Kaylee Marcks (2024-2025)" }
-        ];
-
-        const operaExperiences = [
-            { title: "The Metropolitan Opera", role: "Scene Shop Assistant", supervisor: "2024-2026 Seasons" },
-            { title: "Turandot", role: "Stage Carpenter", supervisor: "Thomas Hackett (2025)" },
-            { title: "The Barber of Seville", role: "Stage Carpenter", supervisor: "Anthony Cochiarra (2025)" },
-            { title: "The Queen of Spades", role: "Stage Carpenter", supervisor: "Anthony Cochiarra (2025)" },
-            { title: "Anthony and Cleopatra", role: "Stage Carpenter", supervisor: "Anthony Cochiarra (2025)" },
-            { title: "Aida", role: "Stage Carpenter", supervisor: "Anthony Cochiarra (2025)" },
-            { title: "Salome", role: "Stage Carpenter", supervisor: "Thomas Hackett (2025)" },
-            { title: "Le Nozze di Figaro", role: "Stage Carpenter", supervisor: "Thomas Hackett (2025)" },
-            { title: "Arabella", role: "Stage Carpenter", supervisor: "Anthony Cochiarra (2025)" },
-            { title: "Andrea Chenier", role: "Stage Carpenter", supervisor: "Thomas Hackett (2025)" },
-            { title: "Carmen", role: "Stage Carpenter", supervisor: "Anthony Cochiarra (2025)" },
-            { title: "Don Giovanni", role: "Stage Carpenter", supervisor: "Anthony Cochiarra (2025)" },
-            { title: "La Fille du Regiment", role: "Stage Carpenter", supervisor: "Anthony Cochiarra (2025)" },
-            { title: "The Magic Flute", role: "Stage Carpenter", supervisor: "Anthony Cochiarra (2026)" },
-            { title: "Porgy and Bess", role: "Stage Carpenter", supervisor: "Thomas Hackett (2026)" },
-            { title: "I Puritani", role: "Stage Carpenter", supervisor: "Anthony Cochiarra (2026)" },
-            { title: "Madama Butterfly", role: "Stage Carpenter", supervisor: "Anthony Cochiarra (2025)" },
-            { title: "Tristan Und Isolde", role: "Stage Carpenter", supervisor: "Thomas Hackett (2026)" },
-            { title: "Innocence", role: "Stage Carpenter", supervisor: "Thomas Hackett (2026)" },
-            { title: "El Ultimo Sueno de Frida", role: "Stage Carpenter", supervisor: "Thomas Hackett (2026)" },
-            { title: "American Ballet Theatre - Swan Lake", role: "Stage Carpenter", supervisor: "Anthony Cochiarra (2025)" },
-            { title: "ABT - Woolf Works", role: "Stage Carpenter", supervisor: "Anthony Cochiarra (2025)" },
-            { title: "ABT - Giselle", role: "Stage Carpenter", supervisor: "Anthony Cochiarra (2025)" },
-            { title: "ABT - The Winter's Tale", role: "Stage Carpenter", supervisor: "Anthony Cochiarra (2025)" },
-            { title: "ABT - Sylvia", role: "Stage Carpenter", supervisor: "Anthony Cochiarra (2025)" }
-        ];
-
-        const eventExperiences = [
-            { title: "Sleep Out in Times Square", role: "Post-Production Aide", supervisor: "Sarah Shulman (2026)" },
-            { title: "NYC Half Marathon '25", role: "Post-Production Aide", supervisor: "Sarah Shulman (2026)" },
-            { title: "NYC Half Marathon", role: "Onsite Operations Assistant", supervisor: "J.T. Woods (2026)" },
-            { title: "Eventage Events Company", role: "Event Production Intern", supervisor: "Spring 2026" },
-            { title: "NYC Ball Drop", role: "Stage Carpenter", supervisor: "Bobby Weiss (2025)" }
-        ];
-
-        const nonprodExperiences = [
-            { title: "Kavalier and Clay", role: "Uprigger/Board Operator", supervisor: "Matthew Miller (2025)" },
-            { title: "Carmen (Elec.)", role: "Uprigger/Board Operator", supervisor: "Matthew Miller (2025)" },
-            { title: "La Boheme", role: "Stage Electrician", supervisor: "Matthew Miller (2025)" },
-            { title: "Don Giovanni (Elec.)", role: "Stage Electrician", supervisor: "Jeffrey Delgroso (2026)" },
-            { title: "Arabella (Elec.)", role: "Stage Electrician", supervisor: "Jeffrey Delgroso (2026)" },
-            { title: "Service Crew (misc. day calls)", role: "Stagehand", supervisor: "Kevin Walsh (2025-2026)" },
-            { title: "Linda Gross Theater Reconstruction", role: "Shop Carpenter", supervisor: "Emmy Boisvert (2025)" },
-            { title: "Where is My Husband", role: "Production Assistant", supervisor: "Jacob Hiss (2025)" },
-            { title: "Fordham Filmmaker's Club", role: "Studio Mechanic", supervisor: "Nicholas Cammanaro (2025)" },
-            { title: "GCCC's Religious Services", role: "Broadcast Technician", supervisor: "Steve Short (2021-2023)" }
-        ];
-
-        const educationSkills = [
-            { title: "Garden City High School", role: "NY State Regents Diploma", supervisor: "June 2023" },
-            { title: "Fordham University", role: "B.A. Environmental Studies, Minor in Theatre", supervisor: "May 2027" },
-            { title: "IATSE Local One", role: "Member / Work Calls", supervisor: "" },
-            { title: "Skills", role: "Followspot Operator, Score Reading, Autocad, Hand-drafting, Basic Stitching, MS/Google Suite, OBS, Q-Lab", supervisor: "" },
-            { title: "Languages", role: "English (Native), Spanish (Working Knowledge), Some Russian", supervisor: "" }
-        ];
-
-        function createCard(exp) {
-            return `<div class="exp-card-placeholder" onclick="alert('Details for ${exp.title} coming soon.')">
-                        <div class="exp-title">${exp.title}</div>
-                        <div class="exp-meta">${exp.role}</div>
-                        <div class="exp-role">${exp.supervisor ? 'Supervisor: ' + exp.supervisor : ''}</div>
-                    </div>`;
+        // ========== UPDATED IMAGE MAPPING FUNCTION ==========
+        function getImageForExperience(title) {
+            // Specific image mappings
+            if (title === "NYC Half Marathon '26") {
+                return "https://thinkpinkrocks.org/wp-content/uploads/2025/10/5011d68e75b07433144d7c473286c0d391ffec88.jpg";
+            }
+            if (title === "Sleep Out in Times Square") {
+                return "https://i.ytimg.com/vi/DIcLiPTk1og/mqdefault.jpg";
+            }
+            if (title === "Kindeva") {
+                return "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsou-c7qOCPoST1cixcpmHyyTX_1F1eJUhLUC7cqX2B2wuz6_9KthFBJw&s=10";
+            }
+            if (title === "American Heart Association Wall-Street Heart Walk") {
+                return "https://www2.heart.org/images/content/pagebuilder/hw_default_event20.jpg";
+            }
+            if (title === "FIFA World Cup") {
+                return "https://mma.prnewswire.com/media/2617177/FIFA_World_Cup_2026_New_York_New_Jersey_Host_CommitteeLogo.jpg?p=twitter";
+            }
+            if (title === "MS Walk Long Island" || title === "MS Walk Boston" || title === "MS Walk NYC") {
+                return "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKY-7_LMY5GXvqBq4L-_U9clom3xrx8NEre5TYugiUeFQBlsqaK2c4wcii&s=10";
+            }
+            if (title === "The Tempest") {
+                return "https://images.squarespace-cdn.com/content/v1/66e8a3eeddfd12111f8eabbb/fe28b2e4-0245-4bce-b695-91fe43496e99/L1100079.jpg?format=500w";
+            }
+            // Default placeholder
+            return "https://placehold.co/600x400/1a1a1a/ffffff?text=" + encodeURIComponent(title.split(' ').slice(0,3).join('+'));
         }
+        
+        // Project Management Data
+        const projectManagement = [
+            { title: "Sleep Out in Times Square", role: "Post-Production Aide", supervisor: "Sarah Shulman (2026)", link: null },
+            { title: "NYC Half Marathon '25", role: "Post-Production Aide", supervisor: "Sarah Shulman (2026)", link: null },
+            { title: "NYC Half Marathon", role: "Onsite Operations Assistant", supervisor: "J.T. Woods (2026)", link: null },
+            { title: "Kindeva", role: "Onsite Operations Assistant", supervisor: "J.T. Woods (2026)", link: null },
+            { title: "NYC Half Marathon '26", role: "Assistant Production Manager", supervisor: "Sarah Shulman (2026)", link: null },
+            { title: "American Heart Association Wall-Street Heart Walk", role: "Assistant Production Manager", supervisor: "Sarah Shulman (2026)", link: null },
+            { title: "FIFA World Cup", role: "Assistant Production Manager", supervisor: "Sarah Shulman (2026)", link: null },
+            { title: "JED Gala", role: "Assistant Production Manager", supervisor: "Sarah Shulman (2026)", link: null },
+            { title: "MS Walk Long Island", role: "Assistant Production Manager", supervisor: "Sarah Shulman (2026)", link: null },
+            { title: "MS Walk Boston", role: "Assistant Production Manager", supervisor: "Sarah Shulman (2026)", link: null },
+            { title: "MS Walk NYC", role: "Assistant Production Manager", supervisor: "Sarah Shulman (2026)", link: null },
+            { title: "Northwell Walk For A Cure Jones Beach", role: "Assistant Production Manager", supervisor: "Sarah Shulman (2026)", link: null },
+            { title: "Perry and the Proletariat", role: "Lighting Director", supervisor: "Fordham Experimental Theatre", link: null },
+            { title: "Where is My Husband", role: "Production Assistant", supervisor: "Jacob Hiss (2025)", link: null },
+            { title: "Ravens", role: "Assistant Director", supervisor: "Kaylee Marcks (2024-2025)", link: null }
+        ];
 
+        // Technical Oversight Data
+        const technicalOversight = [
+            { title: "Kavalier and Clay", role: "Uprigger/Board Operator", supervisor: "Matthew Miller (2025)", link: null },
+            { title: "Carmen (Elec.)", role: "Uprigger/Board Operator", supervisor: "Matthew Miller (2025)", link: null },
+            { title: "La Boheme", role: "Stage Electrician", supervisor: "Matthew Miller (2025)", link: null },
+            { title: "Don Giovanni (Elec.)", role: "Stage Electrician", supervisor: "Jeffrey Delgroso (2026)", link: null },
+            { title: "Arabella (Elec.)", role: "Stage Electrician", supervisor: "Jeffrey Delgroso (2026)", link: null },
+            { title: "Service Crew (misc. day calls)", role: "Stagehand", supervisor: "Kevin Walsh (2025-2026)", link: null },
+            { title: "Linda Gross Theater Reconstruction", role: "Shop Carpenter", supervisor: "Emmy Boisvert (2025)", link: null },
+            { title: "Innocence", role: "Stage Carpenter", supervisor: "Thomas Hackett (2026)", link: null },
+            { title: "El Ultimo Sueno de Frida", role: "Stage Carpenter", supervisor: "Thomas Hackett (2026)", link: null },
+            { title: "American Ballet Theatre - Swan Lake", role: "Stage Carpenter", supervisor: "Anthony Cochiarra (2025)", link: null },
+            { title: "ABT - Woolf Works", role: "Stage Carpenter", supervisor: "Anthony Cochiarra (2025)", link: null },
+            { title: "ABT - Giselle", role: "Stage Carpenter", supervisor: "Anthony Cochiarra (2025)", link: null },
+            { title: "ABT - The Winter's Tale", role: "Stage Carpenter", supervisor: "Anthony Cochiarra (2025)", link: null },
+            { title: "ABT - Sylvia", role: "Stage Carpenter", supervisor: "Anthony Cochiarra (2025)", link: null },
+            { title: "Salome", role: "Stage Carpenter", supervisor: "Thomas Hackett (2025)", link: null },
+            { title: "Le Nozze di Figaro", role: "Stage Carpenter", supervisor: "Thomas Hackett (2025)", link: null },
+            { title: "Arabella", role: "Stage Carpenter", supervisor: "Anthony Cochiarra (2025)", link: null },
+            { title: "Andrea Chenier", role: "Stage Carpenter", supervisor: "Thomas Hackett (2025)", link: null },
+            { title: "Carmen", role: "Stage Carpenter", supervisor: "Anthony Cochiarra (2025)", link: null },
+            { title: "Don Giovanni", role: "Stage Carpenter", supervisor: "Anthony Cochiarra (2025)", link: null },
+            { title: "La Fille du Regiment", role: "Stage Carpenter", supervisor: "Anthony Cochiarra (2025)", link: null },
+            { title: "The Magic Flute", role: "Stage Carpenter", supervisor: "Anthony Cochiarra (2026)", link: null },
+            { title: "Porgy and Bess", role: "Stage Carpenter", supervisor: "Thomas Hackett (2026)", link: null },
+            { title: "I Puritani", role: "Stage Carpenter", supervisor: "Anthony Cochiarra (2026)", link: null },
+            { title: "Madama Butterfly", role: "Stage Carpenter", supervisor: "Anthony Cochiarra (2025)", link: null },
+            { title: "Tristan Und Isolde", role: "Stage Carpenter", supervisor: "Thomas Hackett (2026)", link: null },
+            { title: "Turandot", role: "Stage Carpenter", supervisor: "Thomas Hackett (2025)", link: null },
+            { title: "The Barber of Seville", role: "Stage Carpenter", supervisor: "Anthony Cochiarra (2025)", link: null },
+            { title: "The Queen of Spades", role: "Stage Carpenter", supervisor: "Anthony Cochiarra (2025)", link: null },
+            { title: "Anthony and Cleopatra", role: "Stage Carpenter", supervisor: "Anthony Cochiarra (2025)", link: null },
+            { title: "Aida", role: "Stage Carpenter", supervisor: "Anthony Cochiarra (2025)", link: null },
+            { title: "Fall Orchestra Concert", role: "Stagehand", supervisor: "LCCO (2025)", link: null },
+            { title: "Peerless", role: "Stagehand", supervisor: "Maya Kraskauskas (2026)", link: null }
+        ];
+
+        // Fabrication Data - with project links
+        const fabrication = [
+            { title: "Behold Vera Stark", role: "Shop Carpenter & Painter", supervisor: "Sophie Rodriguez (2025)", link: null },
+            { title: "B is for Baby", role: "Stagehand", supervisor: "Cristian Medeiros (2025)", link: null },
+            { title: "The Tempest", role: "Shop Carpenter & Painter", supervisor: "Sophie Rodriguez (2025)", link: "the-tempest" },
+            { title: "A Lunar Rhapsody", role: "Shop Carpenter & Painter", supervisor: "Sophie Rodriguez (2025)", link: "a-lunar-rhapsody" },
+            { title: "Eurydice", role: "Shop Carpenter & Painter", supervisor: "Sophie Rodriguez (2026)", link: "eurydice" },
+            { title: "Kentucky", role: "Shop Carpenter & Painter", supervisor: "Timothy Zay (2024)", link: "kentucky" },
+            { title: "The Sins of Sor Juana", role: "Shop Carpenter & Painter", supervisor: "Timothy Zay (2024)", link: null },
+            { title: "Three Penny Opera", role: "Shop Carpenter & Painter", supervisor: "Timothy Zay (2024)", link: "three-penny-opera" },
+            { title: "The Amethyst and the Peridot", role: "Shop Carpenter & Painter", supervisor: "Boone Sommers (2024)", link: null },
+            { title: "Horoscope", role: "Shop Carpenter & Painter", supervisor: "Timothy Zay (2025)", link: null }
+        ];
+
+        // Non-Production Data
+        const nonProduction = [
+            { title: "Town of Hempstead Parks and Recreation", role: "Lifeguard", supervisor: "Andrew Rinn", link: null }
+        ];
+
+        // Helper to render a category
         function renderCategory(containerId, items) {
             const container = document.getElementById(containerId);
-            if (container) container.innerHTML = items.map(createCard).join('');
+            if (!container) return;
+            container.innerHTML = items.map(item => {
+                const imgUrl = getImageForExperience(item.title);
+                const linkId = item.link || null;
+                const onclickAttr = linkId ? `onclick="showProject('${linkId}')"` : `onclick="alert('Details for ${item.title} coming soon.')"`;
+                return `<div class="exp-card" ${onclickAttr}>
+                            <img class="exp-card-image" src="${imgUrl}" alt="${item.title}" onerror="this.src='https://placehold.co/600x400/1a1a1a/ffffff?text=Event+Photo'">
+                            <div class="exp-card-info">
+                                <div class="exp-title">${item.title}</div>
+                                <div class="exp-meta">${item.role}</div>
+                                <div class="exp-role">${item.supervisor ? 'Supervisor: ' + item.supervisor : ''}</div>
+                            </div>
+                        </div>`;
+            }).join('');
+        }
+
+        function scrollToCategory(categoryId) {
+            showPage('experience');
+            setTimeout(() => {
+                const element = document.getElementById(categoryId);
+                if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
         }
 
         function showPage(pageName) {
@@ -904,17 +913,17 @@
         function handleRoute() {
             let hash = window.location.hash.slice(1);
             if (!hash || hash === 'home') showPage('home');
-            else if (['experience', 'about'].includes(hash)) showPage(hash);
+            else if (hash === 'experience') showPage('experience');
+            else if (hash === 'about') showPage('about');
             else if (hash.startsWith('project-')) showProject(hash.replace('project-', ''));
             else showPage('home');
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            renderCategory('theater-grid', theaterExperiences);
-            renderCategory('opera-grid', operaExperiences);
-            renderCategory('events-grid', eventExperiences);
-            renderCategory('nonprod-grid', nonprodExperiences);
-            renderCategory('education-grid', educationSkills);
+            renderCategory('pm-grid', projectManagement);
+            renderCategory('tech-grid', technicalOversight);
+            renderCategory('fab-grid', fabrication);
+            renderCategory('nonprod-grid', nonProduction);
 
             const dropdown = document.getElementById('experienceDropdown');
             const content = document.getElementById('dropdownContent');

@@ -402,6 +402,51 @@
             margin: 1.5rem 0;
         }
 
+        /* ========== NEW PHOTO GALLERY STYLES ========== */
+        .project-gallery {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #333333;
+        }
+
+        .gallery-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            background: #111111;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item .caption {
+            padding: 0.75rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #aaaaaa;
+        }
+
         @media (max-width: 768px) {
             .project-content {
                 grid-template-columns: 1fr;
@@ -414,6 +459,9 @@
             }
             .experience-grid-category {
                 grid-template-columns: 1fr;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             }
         }
 
@@ -789,15 +837,11 @@
                     <div class="project-content">
                         <div class="project-main">
                             <h2>About the Event</h2>
-                            <p>Sleep Out in Times Square is a fundraising event to support homeless youth. As Post-Production Aide, I supported the event operations and post-production coordination.</p>
+                            <p>Sleep Out in Times Square is a fundraising event to support homeless youth, hosted by Covenant House. They accomplish this by working with the Time Square Alliance, city agencies, and our company at Eventage to deploy barricades, staffing, food and beverage, and other items to welcome thousnads of sleepers into the area to raise awareness to the blight that many homeless face in cold NYC nights. The event happens on as of writing, an annual basis.</p>
                             <h2>My Role</h2>
-                            <p>As Post-Production Aide, I contributed to the successful execution of this major fundraising event in Times Square.</p>
+                            <p>I was broguht out following the event taking place, to assist in the aftermath of data-base inventory as a Post-Production Aide. Essentially, I worked to comb through datasheets, messages, and receipts to organize each of our staffers role at the event, alongside building a database for how many of these events they have attended.</p>
                         </div>
-                        <div class="project-sidebar">
-                            <h3>Quick Facts</h3>
-                            <p><strong>Location:</strong> Times Square, NYC</p>
-                            <p><strong>Year:</strong> 2026</p>
-                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -819,58 +863,25 @@
                     <div class="project-content">
                         <div class="project-main">
                             <h2>About the Event</h2>
-                            <p>The NYC Half Marathon is one of the premier road racing events in the world. As Post-Production Aide, I supported the event operations and post-production coordination.</p>
+                            <p>The NYC Half Marathon is one of the premier road racing events in the world. Sponsored by  United Airlines, it's an iconic 13.1-mile race hosted by the New York Road Runners (NYRR) that takes runners on a closed-streets journey from Brooklyn into Manhattan. It is the largest half marathon in the United States, drawing over 30,000 participants annually.</p>
                             <h2>My Role</h2>
-                            <p>As Post-Production Aide, I contributed to the successful execution of this major running event.</p>
+                            <p>I was brought onto the team following the event taking place, to assist in the aftermath of data-base inventory as a Post-Production Aide. Essentially, I worked to comb through datasheets, messages, and receipts to organize each of our staffers role at the event, alongside building a database for how many of these events they have attended.</p>
                         </div>
-                        <div class="project-sidebar">
-                            <h3>Quick Facts</h3>
-                            <p><strong>Location:</strong> New York City</p>
-                            <p><strong>Year:</strong> 2026</p>
-                        </div>
-                    </div>
+                                            </div>
                 </div>
             </div>
 
-            <div id="project-nyc-half-marathon" class="page">
-                <div class="back-button"><a class="back-link" onclick="showPage('experience')">← Back to All Experience</a></div>
-                <div class="project-detail-section">
-                    <div class="project-header">
-                        <h1 class="project-title">NYC Half Marathon</h1>
-                        <div class="project-meta">
-                            <p><strong>Role:</strong> Onsite Operations Assistant</p>
-                            <p><strong>Year:</strong> 2026</p>
-                            <p><strong>Supervisor:</strong> J.T. Woods</p>
-                        </div>
-                    </div>
-                    <div class="project-hero">
-                        <img src="https://placehold.co/1200x600/1a1a1a/ffffff?text=NYC+Half+Marathon" alt="NYC Half Marathon">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-main">
-                            <h2>About the Event</h2>
-                            <p>The NYC Half Marathon is one of the premier road racing events in the world. As Onsite Operations Assistant, I supported the event operations and coordination.</p>
-                            <h2>My Role</h2>
-                            <p>As Onsite Operations Assistant, I contributed to the successful execution of this major running event.</p>
-                        </div>
-                        <div class="project-sidebar">
-                            <h3>Quick Facts</h3>
-                            <p><strong>Location:</strong> New York City</p>
-                            <p><strong>Year:</strong> 2026</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+           
+                
             <div id="project-kindeva" class="page">
                 <div class="back-button"><a class="back-link" onclick="showPage('experience')">← Back to All Experience</a></div>
                 <div class="project-detail-section">
                     <div class="project-header">
                         <h1 class="project-title">Kindeva</h1>
                         <div class="project-meta">
-                            <p><strong>Role:</strong> Onsite Operations Assistant</p>
+                            <p><strong>Role:</strong> Assistant Production Manager</p>
                             <p><strong>Year:</strong> 2026</p>
-                            <p><strong>Supervisor:</strong> J.T. Woods</p>
+                            <p><strong>Supervisor:</strong> Jessica Ayello, Eventage</p>
                         </div>
                     </div>
                     <div class="project-hero">
@@ -879,18 +890,12 @@
                     <div class="project-content">
                         <div class="project-main">
                             <h2>About the Event</h2>
-                            <p>Kindeva is an event focused on innovation and community impact. As Onsite Operations Assistant, I supported the event operations and coordination.</p>
+                            <p>Kindeva is a Minnesota based Pharmaceutical Manufacturer, most well known for patenting the first version of the inhalher. To adetise their services at DCAT Week, the premier pharmaetucial convention hosted in NYC, their firm contracted us to produce a series of deliberavbles that would engage conference-goers to their organization. We acccomplished this with praise through renting two LED trucks that drove throughout the city with company insignia, a professional photographer to take snapshots for social, created customized candies, clothing, and squish-balls relevant to the company, and recruited staffing to hand out the previously mentioned to participants outside of the convention venue.</p>
                             <h2>My Role</h2>
-                            <p>As Onsite Operations Assistant, I contributed to the successful execution of this event.</p>
+                            <p>In the lead up to the event, I was responsible for assisting the project managers with any miscelleaneous tasks they needed assistance with. While I was not directly interfacing with the client, I was working in the background to ensure a smooth operation. This included creating customizable branding to identify our custom candies, work with warehouse opearations to ensure our inventory was ready for event day, and then on day-of working on the frontlines to assist our staff in distirbuting swag.</p>
                         </div>
-                        <div class="project-sidebar">
-                            <h3>Quick Facts</h3>
-                            <p><strong>Year:</strong> 2026</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+</div> </div> </div> 
+                        
             <div id="project-nyc-half-marathon-26" class="page">
                 <div class="back-button"><a class="back-link" onclick="showPage('experience')">← Back to All Experience</a></div>
                 <div class="project-detail-section">
@@ -1217,7 +1222,7 @@
                 </div>
             </div>
 
-            <!-- FABRICATION PROJECTS -->
+            <!-- FABRICATION PROJECTS WITH GALLERIES -->
             <div id="project-the-tempest" class="page">
                 <div class="back-button"><a class="back-link" onclick="showPage('experience')">← Back to All Experience</a></div>
                 <div class="project-detail-section">
@@ -1263,6 +1268,24 @@
                             <p><strong>Run Time:</strong> Approx. 2 hours 15 minutes</p>
                         </div>
                     </div>
+                    <!-- Photo Gallery -->
+                    <div class="project-gallery">
+                        <h3 class="gallery-title">Production Photos</h3>
+                        <div class="gallery-grid">
+                            <div class="gallery-item">
+                                <img src="https://github.com/b7ttd/DannButtWebsite/raw/main/images/Tempest1.png" alt="Tempest photo 1">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://github.com/b7ttd/DannButtWebsite/raw/main/images/Tempest2.png" alt="Tempest photo 2">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://github.com/b7ttd/DannButtWebsite/raw/main/images/Tempest3.png" alt="Tempest photo 3">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://github.com/b7ttd/DannButtWebsite/raw/main/images/Tempest4.png" alt="Tempest photo 4">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -1301,6 +1324,18 @@
                             <p><strong>Year:</strong> 2024</p>
                         </div>
                     </div>
+                    <!-- Photo Gallery -->
+                    <div class="project-gallery">
+                        <h3 class="gallery-title">Production Photos</h3>
+                        <div class="gallery-grid">
+                            <div class="gallery-item">
+                                <img src="https://github.com/b7ttd/DannButtWebsite/raw/main/images/Kentucky1.png" alt="Kentucky photo 1">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://github.com/b7ttd/DannButtWebsite/raw/main/images/Kentucky2.png" alt="Kentucky photo 2">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -1334,6 +1369,18 @@
                             <p><strong>Year:</strong> 2024</p>
                         </div>
                     </div>
+                    <!-- Photo Gallery -->
+                    <div class="project-gallery">
+                        <h3 class="gallery-title">Production Photos</h3>
+                        <div class="gallery-grid">
+                            <div class="gallery-item">
+                                <img src="https://github.com/b7ttd/DannButtWebsite/raw/main/images/ThreePenny1.png" alt="Three Penny Opera photo 1">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://github.com/b7ttd/DannButtWebsite/raw/main/images/ThreePenny2.png" alt="Three Penny Opera photo 2">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -1363,6 +1410,21 @@
                             <h3>Quick Facts</h3>
                             <p><strong>Company:</strong> Fordham Theater Company</p>
                             <p><strong>Year:</strong> 2025</p>
+                        </div>
+                    </div>
+                    <!-- Photo Gallery -->
+                    <div class="project-gallery">
+                        <h3 class="gallery-title">Production Photos</h3>
+                        <div class="gallery-grid">
+                            <div class="gallery-item">
+                                <img src="https://github.com/b7ttd/DannButtWebsite/raw/main/images/Lunar1.png" alt="Lunar Rhapsody photo 1">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://github.com/b7ttd/DannButtWebsite/raw/main/images/Lunar2.png" alt="Lunar Rhapsody photo 2">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://github.com/b7ttd/DannButtWebsite/raw/main/images/Lunar3.png" alt="Lunar Rhapsody photo 3">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1395,6 +1457,21 @@
                             <h3>Quick Facts</h3>
                             <p><strong>Playwright:</strong> Sarah Ruhl</p>
                             <p><strong>Year:</strong> 2026</p>
+                        </div>
+                    </div>
+                    <!-- Photo Gallery -->
+                    <div class="project-gallery">
+                        <h3 class="gallery-title">Production Photos</h3>
+                        <div class="gallery-grid">
+                            <div class="gallery-item">
+                                <img src="https://github.com/b7ttd/DannButtWebsite/raw/main/images/Eurydice1.png" alt="Eurydice photo 1">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://github.com/b7ttd/DannButtWebsite/raw/main/images/Eurydice2.png" alt="Eurydice photo 2">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://github.com/b7ttd/DannButtWebsite/raw/main/images/Eurydice3.png" alt="Eurydice photo 3">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1430,6 +1507,21 @@
                             <p><strong>Year:</strong> 2025</p>
                         </div>
                     </div>
+                    <!-- Photo Gallery -->
+                    <div class="project-gallery">
+                        <h3 class="gallery-title">Production Photos</h3>
+                        <div class="gallery-grid">
+                            <div class="gallery-item">
+                                <img src="https://github.com/b7ttd/DannButtWebsite/raw/main/images/VeraStark1.png" alt="Vera Stark photo 1">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://github.com/b7ttd/DannButtWebsite/raw/main/images/VeraStark2.png" alt="Vera Stark photo 2">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://github.com/b7ttd/DannButtWebsite/raw/main/images/VeraStark3.png" alt="Vera Stark photo 3">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -1459,6 +1551,18 @@
                             <h3>Quick Facts</h3>
                             <p><strong>Company:</strong> Fordham Theater Company</p>
                             <p><strong>Year:</strong> 2025</p>
+                        </div>
+                    </div>
+                    <!-- Photo Gallery -->
+                    <div class="project-gallery">
+                        <h3 class="gallery-title">Production Photos</h3>
+                        <div class="gallery-grid">
+                            <div class="gallery-item">
+                                <img src="https://github.com/b7ttd/DannButtWebsite/raw/main/images/BisforBaby1.png" alt="B is for Baby photo 1">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://github.com/b7ttd/DannButtWebsite/raw/main/images/BisforBaby2.png" alt="B is for Baby photo 2">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1492,6 +1596,18 @@
                             <p><strong>Year:</strong> 2024</p>
                         </div>
                     </div>
+                    <!-- Photo Gallery -->
+                    <div class="project-gallery">
+                        <h3 class="gallery-title">Production Photos</h3>
+                        <div class="gallery-grid">
+                            <div class="gallery-item">
+                                <img src="https://github.com/b7ttd/DannButtWebsite/raw/main/images/SorJuana1.png" alt="Sor Juana photo 1">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://github.com/b7ttd/DannButtWebsite/raw/main/images/SorJuana2.png" alt="Sor Juana photo 2">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -1521,6 +1637,21 @@
                             <h3>Quick Facts</h3>
                             <p><strong>Company:</strong> Fordham Theater Company</p>
                             <p><strong>Year:</strong> 2024</p>
+                        </div>
+                    </div>
+                    <!-- Photo Gallery -->
+                    <div class="project-gallery">
+                        <h3 class="gallery-title">Production Photos</h3>
+                        <div class="gallery-grid">
+                            <div class="gallery-item">
+                                <img src="https://github.com/b7ttd/DannButtWebsite/raw/main/images/Amethyst1.png" alt="Amethyst photo 1">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://github.com/b7ttd/DannButtWebsite/raw/main/images/Amethyst2.png" alt="Amethyst photo 2">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://github.com/b7ttd/DannButtWebsite/raw/main/images/Amethyst3.png" alt="Amethyst photo 3">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1554,10 +1685,25 @@
                             <p><strong>Year:</strong> 2025</p>
                         </div>
                     </div>
+                    <!-- Photo Gallery -->
+                    <div class="project-gallery">
+                        <h3 class="gallery-title">Production Photos</h3>
+                        <div class="gallery-grid">
+                            <div class="gallery-item">
+                                <img src="https://github.com/b7ttd/DannButtWebsite/raw/main/images/Horoscope1.png" alt="Horoscope photo 1">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://github.com/b7ttd/DannButtWebsite/raw/main/images/Horoscope2.png" alt="Horoscope photo 2">
+                            </div>
+                            <div class="gallery-item">
+                                <img src="https://github.com/b7ttd/DannButtWebsite/raw/main/images/Horoscope3.png" alt="Horoscope photo 3">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- TECHNICAL OVERSIGHT PROJECTS - All with full template -->
+            <!-- TECHNICAL OVERSIGHT PROJECTS (placeholders) -->
             <div id="project-kavalier-and-clay" class="page">
                 <div class="back-button"><a class="back-link" onclick="showPage('experience')">← Back to All Experience</a></div>
                 <div class="project-detail-section">
@@ -2585,7 +2731,7 @@
             return "https://placehold.co/600x400/1a1a1a/ffffff?text=" + encodeURIComponent(title.split(' ').slice(0,3).join('+'));
         }
         
-        // Project Management Data - with links for all entries
+        // Project Management Data
         const projectManagement = [
             { title: "Sleep Out in Times Square", role: "Post-Production Aide", supervisor: "Sarah Shulman (2026)", link: "sleep-out-in-times-square" },
             { title: "NYC Half Marathon '25", role: "Post-Production Aide", supervisor: "Sarah Shulman (2026)", link: "nyc-half-marathon-25" },
@@ -2604,7 +2750,7 @@
             { title: "Ravens", role: "Assistant Director", supervisor: "Kaylee Marcks (2024-2025)", link: "ravens" }
         ];
 
-        // Technical Oversight Data - with links for all entries
+        // Technical Oversight Data
         const technicalOversight = [
             { title: "Kavalier and Clay", role: "Uprigger/Board Operator", supervisor: "Matthew Miller (2025)", link: "kavalier-and-clay" },
             { title: "Carmen (Elec.)", role: "Uprigger/Board Operator", supervisor: "Matthew Miller (2025)", link: "carmen-elec" },
@@ -2641,7 +2787,7 @@
             { title: "Peerless", role: "Stagehand", supervisor: "Maya Kraskauskas (2026)", link: "peerless" }
         ];
 
-        // Fabrication Data - with project links for all entries
+        // Fabrication Data
         const fabrication = [
             { title: "Behold Vera Stark", role: "Shop Carpenter & Painter", supervisor: "Sophie Rodriguez (2025)", link: "behold-vera-stark" },
             { title: "B is for Baby", role: "Stagehand", supervisor: "Cristian Medeiros (2025)", link: "b-is-for-baby" },

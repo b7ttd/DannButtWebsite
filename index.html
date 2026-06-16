@@ -325,7 +325,7 @@
             color: #cccccc;
         }
 
-        /* ========== RESTORED PROJECT DETAIL STYLES ========== */
+        /* ========== PROJECT DETAIL STYLES ========== */
         .project-detail-section {
             padding: 2rem;
             max-width: 1200px;
@@ -537,6 +537,77 @@
             color: #dddddd;
         }
 
+        /* ========== NEW CERTIFICATIONS SECTION ========== */
+        .certifications-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #333333;
+        }
+
+        .certifications-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem 3rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cert-item {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #222222;
+            display: flex;
+            align-items: center;
+        }
+
+        .cert-item a {
+            color: #dddddd;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: 100%;
+        }
+
+        .cert-item a:hover {
+            color: #ffffff;
+            opacity: 1;
+        }
+
+        .cert-item a::before {
+            content: "📄";
+            font-size: 1rem;
+            opacity: 0.7;
+        }
+
+        .cert-note {
+            text-align: center;
+            margin-top: 1.5rem;
+            font-size: 0.85rem;
+            color: #888888;
+        }
+
+        @media (max-width: 768px) {
+            .cert-grid {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+                padding: 0 0.5rem;
+            }
+            .cert-item {
+                padding: 0.6rem 0;
+            }
+            .cert-item a {
+                font-size: 0.85rem;
+            }
+        }
+
         .references-note {
             text-align: center;
             margin-top: 2rem;
@@ -660,7 +731,7 @@
                 </div>
             </div>
 
-            <!-- ABOUT PAGE -->
+            <!-- ========== ABOUT PAGE ========== -->
             <div id="about-page" class="page">
                 <div class="about-page-container">
                     <div class="about-header"><h1>Resume and Experience</h1></div>
@@ -675,7 +746,7 @@
                         </div>
                         <div class="resume-document-area">
                             <a href="https://github.com/b7ttd/DannButtWebsite/raw/2f9fe82142631dc5abf5ba9f27d17952ecfdf06d/files/Butt%2C%20Dann%20-%20Resume.pdf" target="_blank" class="resume-image-link">
-                                <img src="https://github.com/b7ttd/DannButtWebsite/raw/main/images/ProductionResumeScreenshot.png" alt="Resume preview">
+                                <img src="https://placehold.co/400x520/111111/ffffff?text=Dann+Butt+Resume" alt="Resume preview">
                             </a>
                             <div class="resume-caption"><a href="https://github.com/b7ttd/DannButtWebsite/raw/2f9fe82142631dc5abf5ba9f27d17952ecfdf06d/files/Butt%2C%20Dann%20-%20Resume.pdf" target="_blank">Click Document to Open</a></div>
                         </div>
@@ -684,11 +755,30 @@
                         <div class="about-photo"><img class="circular-photo" src="https://media.licdn.com/dms/image/v2/D4D03AQHL2xBTYvnhJQ/profile-displayphoto-shrink_800_800/B4DZal7s.6H0Ag-/0/1746540614659?e=1782950400&v=beta&t=N58C5Jfd0eNRlcnD_RcWR9qmQP7xvTDd3qSpA_wr0-8" alt="Dann Butt" onerror="this.src='https://via.placeholder.com/400x400/222/white?text=Dann+Butt'"></div>
                         <div class="about-bio"><p>Dann Butt is a technical theater professional, project coordinator, and lifelong builder from Long Island, New York. He is currently pursuing a B.A. in Environmental Studies with a minor in Theatre at Fordham University.</p><p>Dann's work lives at the intersection of craft, logistics, and creative collaboration. From scene shops in the Bronx to the grand stage of the Metropolitan Opera, he has learned that the best productions are built on precision, communication, and grit.</p><p>Currently, Dann splits his time between Fordham Theater Company, The Metropolitan Opera, and American Ballet Theatre. When not backstage, he enjoys running trails, volunteering with event operations, and planning his next build project.</p><p>Dann believes in honest work, clear communication, and the power of collaboration.</p></div>
                     </div>
+                    
+                    <!-- ========== NEW CERTIFICATIONS SECTION ========== -->
+                    <div class="certifications-section">
+                        <h2 class="certifications-title">Certifications</h2>
+                        <div class="cert-grid">
+                            <div class="cert-item"><a href="#" target="_blank">Mandated Reporter Training</a></div>
+                            <div class="cert-item"><a href="#" target="_blank">FEMA IS100</a></div>
+                            <div class="cert-item"><a href="#" target="_blank">FEMA IS200</a></div>
+                            <div class="cert-item"><a href="#" target="_blank">FEMA IS700</a></div>
+                            <div class="cert-item"><a href="#" target="_blank">FEMA IS800</a></div>
+                            <div class="cert-item"><a href="#" target="_blank">TexEd Terrorism Training</a></div>
+                            <div class="cert-item"><a href="#" target="_blank">OSHA30</a></div>
+                            <div class="cert-item"><a href="#" target="_blank">Red Cross First Aid</a></div>
+                            <div class="cert-item"><a href="#" target="_blank">Red Cross CPR</a></div>
+                            <div class="cert-item"><a href="#" target="_blank">Nassau County Lifeguard Card</a></div>
+                        </div>
+                        <div class="cert-note">Clicking on any of the PDFs will open the document in a new tab.</div>
+                    </div>
+                    
                     <div class="references-note">References Available Upon Request</div>
                 </div>
             </div>
 
-            <!-- ========== FULLY RESTORED THE TEMPEST PROJECT PAGE ========== -->
+            <!-- PROJECT PAGES -->
             <div id="project-the-tempest" class="page">
                 <div class="back-button">
                     <a class="back-link" onclick="showPage('experience')">← Back to All Experience</a>
@@ -739,7 +829,6 @@
                 </div>
             </div>
 
-            <!-- OTHER PROJECT PAGES (simplified placeholders) -->
             <div id="project-kentucky" class="page"><div class="back-button"><a class="back-link" onclick="showPage('experience')">← Back to All Experience</a></div><div class="project-detail-section"><div class="project-header"><h1 class="project-title">Kentucky</h1><div class="project-meta"><p><strong>Role:</strong> Shop Carpenter & Painter</p><p><strong>Year:</strong> 2024</p><p><strong>Venue:</strong> Fordham Theater Company</p><p><strong>Director:</strong> Timothy Zay</p></div></div><div class="project-hero"><img src="https://images.squarespace-cdn.com/content/v1/66e8a3eeddfd12111f8eabbb/1e76c9ee-3e3b-4eea-9d66-42201c3f7aeb/L1090748.jpg?format=1500w" alt="Kentucky Production"></div><div class="project-content"><div class="project-main"><h2>About the Production</h2><p><em>Kentucky</em> is a theatrical production exploring themes of family, identity, and the ties that bind us to place.</p><div class="performance-schedule"><h3>Performance Schedule</h3><p><strong>Week 1:</strong> Nov 14-16 (8pm)</p><p><strong>Week 2:</strong> Nov 21-22 (8pm), Nov 23 (2pm & 8pm)</p></div><div class="talkback-notice"><p><strong>🎭 Special Talkback:</strong> Following the 2pm show on Nov 23 with director, cast, and crew.</p></div></div><div class="project-sidebar"><h3>Quick Facts</h3><p><strong>Playwright:</strong> Leah Nanako Winkler</p><p><strong>Company:</strong> Fordham Theater Company</p><p><strong>Year:</strong> 2024</p></div></div></div></div>
             <div id="project-three-penny-opera" class="page"><div class="back-button"><a class="back-link" onclick="showPage('experience')">← Back</a></div><div class="project-detail-section"><div class="project-header"><h1 class="project-title">Three Penny Opera</h1><div class="project-meta"><p>Shop Carpenter & Painter | 2024</p></div></div></div></div>
             <div id="project-a-lunar-rhapsody" class="page"><div class="back-button"><a class="back-link" onclick="showPage('experience')">← Back</a></div><div class="project-detail-section"><div class="project-header"><h1 class="project-title">A Lunar Rhapsody</h1><div class="project-meta"><p>Shop Carpenter & Painter | 2025</p></div></div></div></div>
